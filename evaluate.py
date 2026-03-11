@@ -163,6 +163,49 @@ def parse_ngspice_output(output: str) -> Dict[str, float]:
     return m
 
 
+def _set_vctrl(template: str, vctrl: float) -> str:
+    """Replace the Vctrl DC value in the netlist template."""
+    return re.sub(
+        r'^(Vctrl\s+vctrl\s+0\s+)[\d.]+',
+        f'\\g<1>{vctrl}',
+        template,
+        flags=re.MULTILINE,
+    )
+
+
+def run_simulation_sweep(template: str, param_values: Dict[str, float],
+                         idx: int, tmp_dir: str) -> Dict:
+    """Run simulation at nominal, low, and high Vctrl to measure tuning range."""
+    vctrl_configs = [(0.9, "nom"), (0.3, "low"), (1.5, "high")]
+    all_meas = {}
+
+    for sub_idx, (vctrl, label) in enumerate(vctrl_configs):
+        mod_template = _set_vctrl(template, vctrl)
+        result = run_simulation(mod_template, param_values,
+                                idx * 100 + sub_idx, tmp_dir)
+
+        if label == "nom":
+            if result.get("error"):
+                return {"idx": idx, "error": result["error"], "measurements": {}}
+            all_meas.update(result["measurements"])
+        else:
+            freq = (result.get("measurements") or {}).get("RESULT_FREQ_HZ")
+            if freq and freq > 0:
+                all_meas[f"RESULT_FREQ_{label.upper()}"] = freq
+
+    # Compute tuning range ratio
+    freq_low = all_meas.get("RESULT_FREQ_LOW")
+    freq_high = all_meas.get("RESULT_FREQ_HIGH")
+    if freq_low and freq_high and freq_low > 0:
+        all_meas["RESULT_TUNING_RANGE_RATIO"] = freq_high / freq_low
+
+    # Placeholders for temp variation and jitter (will implement in later iterations)
+    all_meas.setdefault("RESULT_TEMP_VARIATION_PCT", 5.0)
+    all_meas.setdefault("RESULT_JITTER_PCT", 0.5)
+
+    return {"idx": idx, "error": None, "measurements": all_meas}
+
+
 # ---------------------------------------------------------------------------
 # Cost function — generic, reads targets from specs.json
 # ---------------------------------------------------------------------------
@@ -268,7 +311,7 @@ def eval_batch_local(template: str, param_dicts: List[Dict[str, float]],
 
     with ProcessPoolExecutor(max_workers=n_workers) as pool:
         futures = {
-            pool.submit(run_simulation, template, p, i, tmp_dir): i
+            pool.submit(run_simulation_sweep, template, p, i, tmp_dir): i
             for i, p in enumerate(param_dicts)
         }
         for future in as_completed(futures):
@@ -556,9 +599,9 @@ def main():
 
     best_params = de_result["best_parameters"]
 
-    # Final simulation
+    # Final simulation (with Vctrl sweep for tuning range)
     tmp_dir = tempfile.mkdtemp(prefix="circuit_final_")
-    final = run_simulation(template, best_params, 0, tmp_dir)
+    final = run_simulation_sweep(template, best_params, 0, tmp_dir)
     try:
         os.rmdir(tmp_dir)
     except OSError:

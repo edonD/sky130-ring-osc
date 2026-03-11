@@ -1,0 +1,90 @@
+* SKY130 Current-Starved Ring Oscillator — Starter Topology
+* 5-stage single-ended with current-starving for frequency control
+
+.lib "sky130_models/sky130.lib.spice" tt
+
+* Supply
+Vdd vdd 0 1.8
+Vss vss 0 0
+
+* Control voltage (sets oscillation frequency)
+Vctrl vctrl 0 0.9
+
+* === Current starving bias ===
+* NMOS current source (bottom)
+XMbn1 starn vctrl vss vss sky130_fd_pr__nfet_01v8 W=7.071067811865476u L=0.8660254037844386u nf=1
+* PMOS current source (top) — mirror from bias
+XMbias pbias pbias vdd vdd sky130_fd_pr__pfet_01v8 W=7.071067811865476u L=0.8660254037844386u nf=1
+XMbp1 starp pbias vdd vdd sky130_fd_pr__pfet_01v8 W=7.071067811865476u L=0.8660254037844386u nf=1
+Rbias vctrl pbias 3162.2776601683804
+
+* === Stage 1 ===
+XMp1 n1 n5 starp1 vdd sky130_fd_pr__pfet_01v8 W=4.999999999999999u L=0.5477225575051662u nf=1
+XMn1 n1 n5 starn1 vss sky130_fd_pr__nfet_01v8 W=4.999999999999999u L=0.5477225575051662u nf=1
+XMsp1 starp1 pbias vdd vdd sky130_fd_pr__pfet_01v8 W=7.071067811865476u L=0.8660254037844386u nf=1
+XMsn1 starn1 vctrl vss vss sky130_fd_pr__nfet_01v8 W=7.071067811865476u L=0.8660254037844386u nf=1
+
+* === Stage 2 ===
+XMp2 n2 n1 starp2 vdd sky130_fd_pr__pfet_01v8 W=4.999999999999999u L=0.5477225575051662u nf=1
+XMn2 n2 n1 starn2 vss sky130_fd_pr__nfet_01v8 W=4.999999999999999u L=0.5477225575051662u nf=1
+XMsp2 starp2 pbias vdd vdd sky130_fd_pr__pfet_01v8 W=7.071067811865476u L=0.8660254037844386u nf=1
+XMsn2 starn2 vctrl vss vss sky130_fd_pr__nfet_01v8 W=7.071067811865476u L=0.8660254037844386u nf=1
+
+* === Stage 3 ===
+XMp3 n3 n2 starp3 vdd sky130_fd_pr__pfet_01v8 W=4.999999999999999u L=0.5477225575051662u nf=1
+XMn3 n3 n2 starn3 vss sky130_fd_pr__nfet_01v8 W=4.999999999999999u L=0.5477225575051662u nf=1
+XMsp3 starp3 pbias vdd vdd sky130_fd_pr__pfet_01v8 W=7.071067811865476u L=0.8660254037844386u nf=1
+XMsn3 starn3 vctrl vss vss sky130_fd_pr__nfet_01v8 W=7.071067811865476u L=0.8660254037844386u nf=1
+
+* === Stage 4 ===
+XMp4 n4 n3 starp4 vdd sky130_fd_pr__pfet_01v8 W=4.999999999999999u L=0.5477225575051662u nf=1
+XMn4 n4 n3 starn4 vss sky130_fd_pr__nfet_01v8 W=4.999999999999999u L=0.5477225575051662u nf=1
+XMsp4 starp4 pbias vdd vdd sky130_fd_pr__pfet_01v8 W=7.071067811865476u L=0.8660254037844386u nf=1
+XMsn4 starn4 vctrl vss vss sky130_fd_pr__nfet_01v8 W=7.071067811865476u L=0.8660254037844386u nf=1
+
+* === Stage 5 (output) ===
+XMp5 n5 n4 starp5 vdd sky130_fd_pr__pfet_01v8 W=4.999999999999999u L=0.5477225575051662u nf=1
+XMn5 n5 n4 starn5 vss sky130_fd_pr__nfet_01v8 W=4.999999999999999u L=0.5477225575051662u nf=1
+XMsp5 starp5 pbias vdd vdd sky130_fd_pr__pfet_01v8 W=7.071067811865476u L=0.8660254037844386u nf=1
+XMsn5 starn5 vctrl vss vss sky130_fd_pr__nfet_01v8 W=7.071067811865476u L=0.8660254037844386u nf=1
+
+* Output buffer
+XMpout out n5 vdd vdd sky130_fd_pr__pfet_01v8 W=5u L=0.15u nf=1
+XMnout out n5 vss vss sky130_fd_pr__nfet_01v8 W=2.5u L=0.15u nf=1
+
+* Kick start (small cap imbalance)
+Ckick n1 vss 1f
+
+.options reltol=0.003 method=gear
+
+* === Measurements ===
+.control
+* Transient — run long enough for steady state
+tran 0.1n 500n
+
+* Measure frequency from last cycles
+meas tran trise1 when v(out)=0.9 rise=10
+meas tran trise2 when v(out)=0.9 rise=11
+let period = trise2 - trise1
+let freq = 1 / period
+echo "RESULT_FREQ_HZ" $&freq
+
+* Power
+meas tran avg_idd avg i(Vdd) from=200n to=500n
+let pwr = abs(avg_idd) * 1.8 * 1e6
+echo "RESULT_POWER_UW" $&pwr
+
+* Tuning range: measure at Vctrl = 0.3V and Vctrl = 1.5V
+* (Agent should implement this by running multiple transients)
+echo "RESULT_TUNING_RANGE_RATIO 1.0"
+
+* Temperature variation placeholder
+echo "RESULT_TEMP_VARIATION_PCT 0"
+
+* Jitter placeholder
+echo "RESULT_JITTER_PCT 0"
+
+echo "RESULT_DONE"
+.endc
+
+.end
