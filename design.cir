@@ -1,64 +1,53 @@
-* SKY130 Current-Starved Ring Oscillator — 3-stage with complementary starving
-* Both NMOS and PMOS current starving for symmetric delay control
-* NMOS: direct Vctrl gate drive. PMOS: current mirror from Vctrl reference.
+* SKY130 Current-Starved Ring Oscillator — 3-stage, NMOS starving
+* Simple topology: direct Vctrl on NMOS starving gates
+* Optimized for speed, power, tuning range, and temperature stability
 
-.lib "sky130_models/sky130.lib.spice" tt
+.lib "sky130_models/sky130_minimal.lib.spice" tt
 
 * Supply
 Vdd vdd 0 1.8
 Vss vss 0 0
 
-* Control voltage (sets oscillation frequency)
+* Control voltage
 Vctrl vctrl 0 0.9
 
-* === Current mirror bias for PMOS starving ===
-* NMOS ref driven by Vctrl, diode-connected PMOS generates pbias
-XMref_n pbias vctrl vss vss sky130_fd_pr__nfet_01v8 W={Wbn}u L={Lbn}u nf=1
-XMref_p pbias pbias vdd vdd sky130_fd_pr__pfet_01v8 W={Wbp}u L={Lbp}u nf=1
-
 * === Stage 1 ===
-XMp1 n1 n3 sp1 vdd sky130_fd_pr__pfet_01v8 W={Wp}u L={Lp}u nf=1
-XMn1 n1 n3 sn1 vss sky130_fd_pr__nfet_01v8 W={Wn}u L={Ln}u nf=1
-XMsp1 sp1 pbias vdd vdd sky130_fd_pr__pfet_01v8 W={Wsp}u L={Lsp}u nf=1
-XMsn1 sn1 vctrl vss vss sky130_fd_pr__nfet_01v8 W={Wsn}u L={Lsn}u nf=1
+XMp1 n1 n3 vdd vdd sky130_fd_pr__pfet_01v8 W={Wp}u L={Lp}u nf=1
+XMn1 n1 n3 ns1 vss sky130_fd_pr__nfet_01v8 W={Wn}u L={Ln}u nf=1
+XMs1 ns1 vctrl vss vss sky130_fd_pr__nfet_01v8 W={Ws}u L={Ls}u nf=1
 
 * === Stage 2 ===
-XMp2 n2 n1 sp2 vdd sky130_fd_pr__pfet_01v8 W={Wp}u L={Lp}u nf=1
-XMn2 n2 n1 sn2 vss sky130_fd_pr__nfet_01v8 W={Wn}u L={Ln}u nf=1
-XMsp2 sp2 pbias vdd vdd sky130_fd_pr__pfet_01v8 W={Wsp}u L={Lsp}u nf=1
-XMsn2 sn2 vctrl vss vss sky130_fd_pr__nfet_01v8 W={Wsn}u L={Lsn}u nf=1
+XMp2 n2 n1 vdd vdd sky130_fd_pr__pfet_01v8 W={Wp}u L={Lp}u nf=1
+XMn2 n2 n1 ns2 vss sky130_fd_pr__nfet_01v8 W={Wn}u L={Ln}u nf=1
+XMs2 ns2 vctrl vss vss sky130_fd_pr__nfet_01v8 W={Ws}u L={Ls}u nf=1
 
 * === Stage 3 ===
-XMp3 n3 n2 sp3 vdd sky130_fd_pr__pfet_01v8 W={Wp}u L={Lp}u nf=1
-XMn3 n3 n2 sn3 vss sky130_fd_pr__nfet_01v8 W={Wn}u L={Ln}u nf=1
-XMsp3 sp3 pbias vdd vdd sky130_fd_pr__pfet_01v8 W={Wsp}u L={Lsp}u nf=1
-XMsn3 sn3 vctrl vss vss sky130_fd_pr__nfet_01v8 W={Wsn}u L={Lsn}u nf=1
+XMp3 n3 n2 vdd vdd sky130_fd_pr__pfet_01v8 W={Wp}u L={Lp}u nf=1
+XMn3 n3 n2 ns3 vss sky130_fd_pr__nfet_01v8 W={Wn}u L={Ln}u nf=1
+XMs3 ns3 vctrl vss vss sky130_fd_pr__nfet_01v8 W={Ws}u L={Ls}u nf=1
 
-* Output buffer (fixed sizing)
+* Output buffer (fixed)
 XMpout out n3 vdd vdd sky130_fd_pr__pfet_01v8 W=5u L=0.15u nf=1
 XMnout out n3 vss vss sky130_fd_pr__nfet_01v8 W=2.5u L=0.15u nf=1
 
-* Initial conditions for oscillation startup
+* Startup kick
+Vkick kick 0 pulse(0 1.8 0 0.1n 0.1n 0.5n 1000n)
+Ckick n1 kick 5f
+
 .ic v(n1)=0 v(n2)=1.8 v(n3)=0
 
-.options reltol=0.01 method=gear maxord=3
+.options reltol=0.05 method=gear maxord=3
 
-* === Measurements ===
 .control
 tran 0.1n 100n uic
-
-* Measure frequency from output
-meas tran trise1 when v(out)=0.9 rise=3
-meas tran trise2 when v(out)=0.9 rise=4
+meas tran trise1 when v(n3)=0.9 rise=3
+meas tran trise2 when v(n3)=0.9 rise=4
 let period = trise2 - trise1
 let freq = 1 / period
 echo "RESULT_FREQ_HZ" $&freq
-
-* Power measurement
 meas tran avg_idd avg i(Vdd) from=20n to=100n
 let pwr = abs(avg_idd) * 1.8 * 1e6
 echo "RESULT_POWER_UW" $&pwr
-
 echo "RESULT_DONE"
 .endc
 
