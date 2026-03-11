@@ -1,7 +1,6 @@
-* SKY130 Current-Starved Ring Oscillator — 3-stage with varactor loads
-* Current-mirror bias: NMOS ref driven by Vctrl mirrors to PMOS current sources
-* Separate starving transistor sizes for NMOS/PMOS paths
-* MOS varactor loads on each stage for extended tuning range
+* SKY130 Current-Starved Ring Oscillator — 3-stage, NMOS starving, direct Vctrl
+* Simplified topology: no current mirror, no varactors
+* Vctrl directly drives NMOS starving transistors for wide tuning range
 
 .lib "sky130_models/sky130.lib.spice" tt
 
@@ -12,35 +11,20 @@ Vss vss 0 0
 * Control voltage (sets oscillation frequency)
 Vctrl vctrl 0 0.9
 
-* === Current mirror bias ===
-* NMOS reference: Vctrl on gate sets current
-* Diode-connected PMOS: generates pbias for all PMOS current sources
-XMref_n pbias vctrl vss vss sky130_fd_pr__nfet_01v8 W={Wbn}u L={Lbn}u nf=1
-XMref_p pbias pbias vdd vdd sky130_fd_pr__pfet_01v8 W={Wbp}u L={Lbp}u nf=1
-
 * === Stage 1 ===
-XMp1 n1 n3 starp1 vdd sky130_fd_pr__pfet_01v8 W={Wp}u L={Lp}u nf=1
-XMn1 n1 n3 starn1 vss sky130_fd_pr__nfet_01v8 W={Wn}u L={Ln}u nf=1
-XMsp1 starp1 pbias vdd vdd sky130_fd_pr__pfet_01v8 W={Wsp}u L={Lsp}u nf=1
-XMsn1 starn1 vctrl vss vss sky130_fd_pr__nfet_01v8 W={Wsn}u L={Lsn}u nf=1
-* Varactor load: NMOS cap — Cvar depends on Vctrl vs n1
-XMvar1 n1 n1 vctrl vctrl sky130_fd_pr__nfet_01v8 W={Wvar}u L={Lvar}u nf=1
+XMp1 n1 n3 vdd vdd sky130_fd_pr__pfet_01v8 W={Wp}u L={Lp}u nf=1
+XMn1 n1 n3 ns1 vss sky130_fd_pr__nfet_01v8 W={Wn}u L={Ln}u nf=1
+XMs1 ns1 vctrl vss vss sky130_fd_pr__nfet_01v8 W={Ws}u L={Ls}u nf=1
 
 * === Stage 2 ===
-XMp2 n2 n1 starp2 vdd sky130_fd_pr__pfet_01v8 W={Wp}u L={Lp}u nf=1
-XMn2 n2 n1 starn2 vss sky130_fd_pr__nfet_01v8 W={Wn}u L={Ln}u nf=1
-XMsp2 starp2 pbias vdd vdd sky130_fd_pr__pfet_01v8 W={Wsp}u L={Lsp}u nf=1
-XMsn2 starn2 vctrl vss vss sky130_fd_pr__nfet_01v8 W={Wsn}u L={Lsn}u nf=1
-* Varactor load
-XMvar2 n2 n2 vctrl vctrl sky130_fd_pr__nfet_01v8 W={Wvar}u L={Lvar}u nf=1
+XMp2 n2 n1 vdd vdd sky130_fd_pr__pfet_01v8 W={Wp}u L={Lp}u nf=1
+XMn2 n2 n1 ns2 vss sky130_fd_pr__nfet_01v8 W={Wn}u L={Ln}u nf=1
+XMs2 ns2 vctrl vss vss sky130_fd_pr__nfet_01v8 W={Ws}u L={Ls}u nf=1
 
 * === Stage 3 (output) ===
-XMp3 n3 n2 starp3 vdd sky130_fd_pr__pfet_01v8 W={Wp}u L={Lp}u nf=1
-XMn3 n3 n2 starn3 vss sky130_fd_pr__nfet_01v8 W={Wn}u L={Ln}u nf=1
-XMsp3 starp3 pbias vdd vdd sky130_fd_pr__pfet_01v8 W={Wsp}u L={Lsp}u nf=1
-XMsn3 starn3 vctrl vss vss sky130_fd_pr__nfet_01v8 W={Wsn}u L={Lsn}u nf=1
-* Varactor load
-XMvar3 n3 n3 vctrl vctrl sky130_fd_pr__nfet_01v8 W={Wvar}u L={Lvar}u nf=1
+XMp3 n3 n2 vdd vdd sky130_fd_pr__pfet_01v8 W={Wp}u L={Lp}u nf=1
+XMn3 n3 n2 ns3 vss sky130_fd_pr__nfet_01v8 W={Wn}u L={Ln}u nf=1
+XMs3 ns3 vctrl vss vss sky130_fd_pr__nfet_01v8 W={Ws}u L={Ls}u nf=1
 
 * Output buffer
 XMpout out n3 vdd vdd sky130_fd_pr__pfet_01v8 W=5u L=0.15u nf=1

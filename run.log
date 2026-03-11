@@ -1,8 +1,28 @@
 Loading design...
 Design: SKY130 Voltage-Controlled Ring Oscillator
-Parameters: 12
+Parameters: 14
 Specs: 5
 
-DE: 12 params, pop=30, patience=10, workers=32
-[DE] iter    1 | best: -6.227568e+00 | no_improve:   0 | div: 0.2881 | dt: 47.275s
-[DE] iter    2 | best: -6.227568e+00 | no_improve:   1 | div: 0.2670 | dt: 47.273s
+DE: 14 params, pop=30, patience=10, workers=32
+[DE] iter    1 | best: -5.970288e+00 | no_improve:   0 | div: 0.2880 | dt: 42.172s
+[DE] iter    2 | best: -6.059168e+00 | no_improve:   0 | div: 0.2613 | dt: 50.198s
+[DE] iter    3 | best: -6.126141e+00 | no_improve:   0 | div: 0.2417 | dt: 50.313s
+[DE] iter    4 | best: -6.126141e+00 | no_improve:   1 | div: 0.2376 | dt: 46.352s
+[DE] iter    5 | best: -6.126141e+00 | no_improve:   2 | div: 0.2286 | dt: 58.360s
+[DE] iter    6 | best: -6.274677e+00 | no_improve:   0 | div: 0.2330 | dt: 52.907s
+[DE] iter    7 | best: -6.274677e+00 | no_improve:   1 | div: 0.2157 | dt: 57.191s
+[DE] iter    8 | best: -6.274677e+00 | no_improve:   2 | div: 0.2128 | dt: 57.261s
+[DE] iter    9 | best: -6.274677e+00 | no_improve:   3 | div: 0.2085 | dt: 64.803s
+[DE] iter   10 | best: -6.274677e+00 | no_improve:   4 | div: 0.2025 | dt: 60.835s
+[DE] iter   11 | best: -6.274677e+00 | no_improve:   5 | div: 0.1954 | dt: 65.217s
+[DE] iter   12 | best: -6.307921e+00 | no_improve:   0 | div: 0.1881 | dt: 60.839s
+[DE] iter   13 | best: -6.307921e+00 | no_improve:   1 | div: 0.1856 | dt: 65.175s
+[DE] iter   14 | best: -6.307921e+00 | no_improve:   2 | div: 0.1856 | dt: 6.566s
+[DE] iter   15 | best: -6.307921e+00 | no_improve:   3 | div: 0.1864 | dt: 70.434s
+[DE] iter   16 | best: -6.307921e+00 | no_improve:   4 | div: 0.1733 | dt: 62.408s
+[DE] iter   17 | best: -6.307921e+00 | no_improve:   5 | div: 0.1694 | dt: 59.015s
+[DE] iter   18 | best: -6.307921e+00 | no_improve:   6 | div: 0.1631 | dt: 64.634s
+[DE] iter   19 | best: -6.307921e+00 | no_improve:   7 | div: 0.1567 | dt: 61.973s
+[DE] iter   20 | best: -6.307921e+00 | no_improve:   8 | div: 0.1459 | dt: 65.574s
+[DE] iter   21 | best: -6.307921e+00 | no_improve:   9 | div: 0.1459 | dt: 57.534s
+[DE] iter   22 | best: -6.307921e+00 | no_improve:  10 | div: 0.1478 | dt: 41.232s
