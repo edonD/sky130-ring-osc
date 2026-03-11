@@ -119,7 +119,7 @@ def run_simulation(template: str, param_values: Dict[str, float],
     try:
         result = subprocess.run(
             [NGSPICE, "-b", path],
-            capture_output=True, text=True, timeout=120,
+            capture_output=True, text=True, timeout=30,
             cwd=PROJECT_DIR
         )
         output = result.stdout + result.stderr
@@ -176,7 +176,7 @@ def _set_vctrl(template: str, vctrl: float) -> str:
 def _set_tran_params(template: str, tran_time: str, rise_a: int, rise_b: int,
                      meas_from: str, meas_to: str) -> str:
     """Modify .control block transient and measurement parameters."""
-    t = re.sub(r'tran\s+[\d.]+n\s+[\d.]+n', f'tran 0.5n {tran_time}', template)
+    t = re.sub(r'tran\s+[\d.]+n\s+[\d.]+n(\s+uic)?', f'tran 0.05n {tran_time} uic', template)
     # Replace rise values: first→rise_a, second→rise_b
     count = [0]
     def _replace_rise(m):
@@ -203,7 +203,7 @@ def run_simulation_sweep(template: str, param_values: Dict[str, float],
     # (vctrl, label, tran_time, rise_a, rise_b, meas_from, meas_to)
     vctrl_configs = [
         (0.9, "nom", "200n", 5, 6, "50n", "200n"),
-        (0.5, "low", "4000n", 2, 3, "1000n", "4000n"),
+        (0.6, "low", "500n", 2, 3, "100n", "500n"),
         (1.8, "high", "200n", 5, 6, "50n", "200n"),
     ]
     all_meas = {}
