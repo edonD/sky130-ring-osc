@@ -1,0 +1,37 @@
+{
+  "name": "SKY130 Voltage-Controlled Ring Oscillator",
+  "supply_v": 1.8,
+  "supply_type": "single",
+  "measurements": {
+    "freq_hz": {
+      "target": ">50e6",
+      "weight": 20,
+      "unit": "Hz",
+      "description": "Oscillation frequency at nominal control voltage"
+    },
+    "tuning_range_ratio": {
+      "target": ">2",
+      "weight": 20,
+      "unit": "x",
+      "description": "Fmax/Fmin ratio over control voltage sweep"
+    },
+    "power_uw": {
+      "target": "<500",
+      "weight": 20,
+      "unit": "uW",
+      "description": "Total power dissipation at nominal frequency"
+    },
+    "temp_variation_pct": {
+      "target": "<10",
+      "weight": 20,
+      "unit": "%",
+      "description": "Frequency variation over -40C to 125C"
+    },
+    "jitter_pct": {
+      "target": "<1",
+      "weight": 20,
+      "unit": "%",
+      "description": "RMS period jitter as percentage of period"
+    }
+  }
+}
