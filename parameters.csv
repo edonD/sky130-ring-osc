@@ -11,3 +11,5 @@ Wbp,0.5,100,log
 Lbp,0.15,5,log
 Wbn,0.5,100,log
 Lbn,0.15,5,log
+Wvar,0.5,50,log
+Lvar,0.15,5,log
