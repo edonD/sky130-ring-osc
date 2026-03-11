@@ -1,7 +1,7 @@
 name,min,max,scale
 Wp,0.5,50,log
 Lp,0.15,2,log
-Wn,0.5,50,log
+Wn,0.5,25,log
 Ln,0.15,2,log
 Wsp,0.5,100,log
 Lsp,0.15,5,log

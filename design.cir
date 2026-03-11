@@ -1,6 +1,6 @@
-* SKY130 Current-Starved Ring Oscillator — 3-stage with dual starving
-* Dual current starving: PMOS via current mirror, NMOS via direct Vctrl
-* Ensures balanced pull-up/pull-down for reliable oscillation
+* SKY130 Current-Starved Ring Oscillator — 3-stage with complementary starving
+* Both NMOS and PMOS current starving for symmetric delay control
+* NMOS: direct Vctrl gate drive. PMOS: current mirror from Vctrl reference.
 
 .lib "sky130_models/sky130.lib.spice" tt
 
@@ -11,9 +11,8 @@ Vss vss 0 0
 * Control voltage (sets oscillation frequency)
 Vctrl vctrl 0 0.9
 
-* === Current mirror bias ===
-* NMOS reference: Vctrl on gate sets reference current
-* Diode-connected PMOS mirrors current to all stages
+* === Current mirror bias for PMOS starving ===
+* NMOS ref driven by Vctrl, diode-connected PMOS generates pbias
 XMref_n pbias vctrl vss vss sky130_fd_pr__nfet_01v8 W={Wbn}u L={Lbn}u nf=1
 XMref_p pbias pbias vdd vdd sky130_fd_pr__pfet_01v8 W={Wbp}u L={Lbp}u nf=1
 
@@ -29,35 +28,37 @@ XMn2 n2 n1 sn2 vss sky130_fd_pr__nfet_01v8 W={Wn}u L={Ln}u nf=1
 XMsp2 sp2 pbias vdd vdd sky130_fd_pr__pfet_01v8 W={Wsp}u L={Lsp}u nf=1
 XMsn2 sn2 vctrl vss vss sky130_fd_pr__nfet_01v8 W={Wsn}u L={Lsn}u nf=1
 
-* === Stage 3 (output) ===
+* === Stage 3 ===
 XMp3 n3 n2 sp3 vdd sky130_fd_pr__pfet_01v8 W={Wp}u L={Lp}u nf=1
 XMn3 n3 n2 sn3 vss sky130_fd_pr__nfet_01v8 W={Wn}u L={Ln}u nf=1
 XMsp3 sp3 pbias vdd vdd sky130_fd_pr__pfet_01v8 W={Wsp}u L={Lsp}u nf=1
 XMsn3 sn3 vctrl vss vss sky130_fd_pr__nfet_01v8 W={Wsn}u L={Lsn}u nf=1
 
-* Output buffer
+* Output buffer (fixed sizing)
 XMpout out n3 vdd vdd sky130_fd_pr__pfet_01v8 W=5u L=0.15u nf=1
 XMnout out n3 vss vss sky130_fd_pr__nfet_01v8 W=2.5u L=0.15u nf=1
 
-* Startup kick pulse — injects energy via coupling cap to break DC symmetry
-Vpulse kick_src 0 PULSE(0 1.8 1n 0.1n 0.1n 0.5n 1000n)
-Ckick n1 kick_src 100f
+* Kick start
+Vkick kick 0 pulse(0 1.8 0 0.1n 0.1n 0.5n 1000n)
+Ckick n1 kick 5f
 
-.options reltol=0.001 method=gear maxord=3
+.ic v(n1)=0 v(n2)=1.8 v(n3)=0
+
+.options reltol=0.01 method=gear maxord=3
 
 * === Measurements ===
 .control
-tran 0.05n 200n
+tran 0.1n 100n uic
 
-* Measure frequency from steady-state cycles
-meas tran trise1 when v(out)=0.9 rise=5
-meas tran trise2 when v(out)=0.9 rise=6
+* Measure frequency from internal ring node (reliable)
+meas tran trise1 when v(n3)=0.9 rise=3
+meas tran trise2 when v(n3)=0.9 rise=4
 let period = trise2 - trise1
 let freq = 1 / period
 echo "RESULT_FREQ_HZ" $&freq
 
 * Power measurement
-meas tran avg_idd avg i(Vdd) from=50n to=200n
+meas tran avg_idd avg i(Vdd) from=20n to=100n
 let pwr = abs(avg_idd) * 1.8 * 1e6
 echo "RESULT_POWER_UW" $&pwr
 
