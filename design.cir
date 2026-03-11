@@ -1,11 +1,12 @@
 * SKY130 Current-Starved Ring Oscillator — 3-stage with complementary starving
 * Both NMOS and PMOS current starving for symmetric delay control
 * NMOS: direct Vctrl gate drive. PMOS: current mirror from Vctrl reference.
+* VDD ramp startup with cap imbalance breaks symmetry for oscillation.
 
 .lib "sky130_models/sky130.lib.spice" tt
 
-* Supply
-Vdd vdd 0 1.8
+* Supply — ramp from 0 to 1.8V to enable oscillation startup with uic
+Vdd vdd 0 PWL(0 0 1n 1.8)
 Vss vss 0 0
 
 * Control voltage (sets oscillation frequency)
@@ -38,27 +39,24 @@ XMsn3 sn3 vctrl vss vss sky130_fd_pr__nfet_01v8 W={Wsn}u L={Lsn}u nf=1
 XMpout out n3 vdd vdd sky130_fd_pr__pfet_01v8 W=5u L=0.15u nf=1
 XMnout out n3 vss vss sky130_fd_pr__nfet_01v8 W=2.5u L=0.15u nf=1
 
-* Kick start
-Vkick kick 0 pulse(0 1.8 0 0.1n 0.1n 0.5n 1000n)
-Ckick n1 kick 5f
-
-.ic v(n1)=0 v(n2)=1.8 v(n3)=0
+* Capacitive imbalance on n1 for symmetry breaking during VDD ramp
+Ckick n1 vss 50f
 
 .options reltol=0.01 method=gear maxord=3
 
 * === Measurements ===
 .control
-tran 0.1n 100n uic
+tran 0.1n 30n uic
 
-* Measure frequency from internal ring node (reliable)
-meas tran trise1 when v(n3)=0.9 rise=3
-meas tran trise2 when v(n3)=0.9 rise=4
+* Measure frequency from output
+meas tran trise1 when v(out)=0.9 rise=3
+meas tran trise2 when v(out)=0.9 rise=4
 let period = trise2 - trise1
 let freq = 1 / period
 echo "RESULT_FREQ_HZ" $&freq
 
 * Power measurement
-meas tran avg_idd avg i(Vdd) from=20n to=100n
+meas tran avg_idd avg i(Vdd) from=5n to=30n
 let pwr = abs(avg_idd) * 1.8 * 1e6
 echo "RESULT_POWER_UW" $&pwr
 

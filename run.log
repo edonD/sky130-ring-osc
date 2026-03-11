@@ -4,5 +4,94 @@ Parameters: 12
 Specs: 5
 
 DE: 12 params, pop=30, patience=10, workers=32
-[DE] iter    1 | best: 1.956719e+02 | no_improve:   0 | div: 0.2890 | dt: 30.090s
-[DE] iter    2 | best: 2.255433e+01 | no_improve:   0 | div: 0.2855 | dt: 30.090s
+[DE] iter    1 | best: 1.000000e+06 | no_improve:   0 | div: 0.2882 | dt: 15.584s
+[DE] iter    2 | best: 1.000000e+06 | no_improve:   1 | div: 0.2882 | dt: 15.155s
+[DE] iter    3 | best: 1.000000e+06 | no_improve:   2 | div: 0.2882 | dt: 15.235s
+[DE] iter    4 | best: 1.000000e+06 | no_improve:   3 | div: 0.2882 | dt: 15.222s
+[DE] iter    5 | best: 1.000000e+06 | no_improve:   4 | div: 0.2882 | dt: 15.244s
+[DE] iter    6 | best: 2.255433e+01 | no_improve:   4 | div: 0.2821 | dt: 30.159s
+[DE] iter    7 | best: 2.255433e+01 | no_improve:   5 | div: 0.2821 | dt: 30.151s
+[DE] iter    8 | best: 2.255433e+01 | no_improve:   6 | div: 0.2821 | dt: 30.236s
+[DE] iter    9 | best: 2.255433e+01 | no_improve:   7 | div: 0.2821 | dt: 30.219s
+[DE] iter   10 | best: 2.255433e+01 | no_improve:   8 | div: 0.2821 | dt: 30.236s
+[DE] iter   11 | best: 2.255433e+01 | no_improve:   9 | div: 0.2821 | dt: 30.161s
+[DE] iter   12 | best: 2.255433e+01 | no_improve:  10 | div: 0.2821 | dt: 30.227s
+[DE] iter   13 | best: 2.255433e+01 | no_improve:  11 | div: 0.2821 | dt: 30.171s
+[DE] iter   14 | best: 2.255433e+01 | no_improve:  12 | div: 0.2821 | dt: 30.155s
+[DE] iter   15 | best: 2.255433e+01 | no_improve:  13 | div: 0.2821 | dt: 30.252s
+[DE] iter   16 | best: 2.255433e+01 | no_improve:  14 | div: 0.2821 | dt: 30.156s
+[DE] iter   17 | best: 2.255433e+01 | no_improve:  15 | div: 0.2821 | dt: 30.177s
+[DE] iter   18 | best: 2.255433e+01 | no_improve:  16 | div: 0.2821 | dt: 30.151s
+[DE] iter   19 | best: 2.255433e+01 | no_improve:  17 | div: 0.2821 | dt: 30.186s
+[DE] iter   20 | best: 2.255433e+01 | no_improve:  18 | div: 0.2821 | dt: 30.090s
+[DE] iter   21 | best: 2.255433e+01 | no_improve:  19 | div: 0.2821 | dt: 30.093s
+[DE] iter   22 | best: 2.255433e+01 | no_improve:  20 | div: 0.2835 | dt: 30.089s
+[DE] iter   23 | best: 2.255433e+01 | no_improve:  21 | div: 0.2835 | dt: 30.092s
+[DE] iter   24 | best: 2.255433e+01 | no_improve:  22 | div: 0.2835 | dt: 30.090s
+[DE] iter   25 | best: 2.255433e+01 | no_improve:  23 | div: 0.2825 | dt: 30.087s
+[DE] iter   26 | best: 2.255433e+01 | no_improve:  24 | div: 0.2825 | dt: 30.089s
+[DE] iter   27 | best: 1.000000e+06 | no_improve:  26 | div: 0.2882 | dt: 15.276s
+[DE] iter   28 | best: 1.000000e+06 | no_improve:  27 | div: 0.2882 | dt: 15.210s
+[DE] iter   29 | best: 1.000000e+06 | no_improve:  28 | div: 0.2882 | dt: 15.278s
+[DE] iter   30 | best: 1.000000e+06 | no_improve:  29 | div: 0.2882 | dt: 15.202s
+[DE] iter   31 | best: 1.000000e+06 | no_improve:  30 | div: 0.2882 | dt: 15.299s
+
+============================================================
+  Stop reason:  stagnated (div=0.2882, no_improve=30)
+  Converged:    True
+  Iterations:   31
+  Best metric:  1.000000e+06
+  Diversity:    0.2882
+  Best parameters:
+    Lbn: 8.431026e-01
+    Lbp: 2.803937e+00
+    Ln: 1.579416e+00
+    Lp: 4.478748e-01
+    Lsn: 7.102046e-01
+    Lsp: 2.823571e+00
+    Wbn: 4.813266e+01
+    Wbp: 6.723269e-01
+    Wn: 1.959413e+00
+    Wp: 5.739257e-01
+    Wsn: 3.036353e+01
+    Wsp: 2.477978e+00
+============================================================
+
+
+======================================================================
+  EVALUATION REPORT — SKY130 Voltage-Controlled Ring Oscillator
+======================================================================
+
+  Score: 0.00 / 1.00  |  Time: 473.8s
+  DE converged: True  |  Iterations: 31  |  Diversity: 0.2882
+  Stop reason: stagnated (div=0.2882, no_improve=30)
+
+  Specs met: 0/5
+
+  Spec                            Target     Measured     Unit   Status  Score
+  -------------------------------------------------------------------------
+  freq_hz                          >50e6          N/A       Hz     FAIL  0.00
+  tuning_range_ratio                  >2          N/A        x     FAIL  0.00
+  power_uw                          <500          N/A       uW     FAIL  0.00
+  temp_variation_pct                 <10          N/A        %     FAIL  0.00
+  jitter_pct                          <1          N/A        %     FAIL  0.00
+
+  Best Parameters:
+    Lbn                  = 8.4310e-01
+    Lbp                  = 2.8039e+00
+    Ln                   = 1.5794e+00
+    Lp                   = 4.4787e-01
+    Lsn                  = 7.1020e-01
+    Lsp                  = 2.8236e+00
+    Wbn                  = 4.8133e+01
+    Wbp                  = 6.7233e-01
+    Wn                   = 1.9594e+00
+    Wp                   = 5.7393e-01
+    Wsn                  = 3.0364e+01
+    Wsp                  = 2.4780e+00
+
+======================================================================
+
+
+Saved: best_parameters.csv, measurements.json, plots/
+Score: 0.00 | Specs met: 0/5 | Converged: True
