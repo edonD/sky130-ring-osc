@@ -173,16 +173,20 @@ def _set_vctrl(template: str, vctrl: float) -> str:
     )
 
 
-def _set_tran_params(template: str, tran_time: str, rise_a: int, rise_b: int,
+def _set_tran_params(template: str, tran_time: str, cross_a: int, cross_b: int,
                      meas_from: str, meas_to: str) -> str:
     """Modify .control block transient and measurement parameters."""
-    t = re.sub(r'tran\s+[\d.]+n\s+[\d.]+n(\s+uic)?', f'tran 0.1n {tran_time} uic', template)
-    # Replace rise values: first→rise_a, second→rise_b
+    t = re.sub(r'tran\s+[\d.]+n\s+[\d.]+n(\s+uic)?', f'tran 0.05n {tran_time} uic', template)
+    # Replace cross values
     count = [0]
-    def _replace_rise(m):
+    def _replace_cross(m):
         count[0] += 1
-        return f'rise={rise_a}' if count[0] == 1 else f'rise={rise_b}'
-    t = re.sub(r'rise=\d+', _replace_rise, t)
+        return f'cross={cross_a}' if count[0] == 1 else f'cross={cross_b}'
+    t = re.sub(r'cross=\d+', _replace_cross, t)
+    # Update period divisor to match cross count difference / 2
+    n_periods = (cross_b - cross_a) / 2
+    t = re.sub(r'let period = \(tcross_b - tcross_a\) / \d+',
+               f'let period = (tcross_b - tcross_a) / {int(n_periods)}', t)
     t = re.sub(r'from=[\d.]+n\s+to=[\d.]+n', f'from={meas_from} to={meas_to}', t)
     return t
 
@@ -202,9 +206,9 @@ def run_simulation_sweep(template: str, param_values: Dict[str, float],
     """Run simulation at nominal, low, and high Vctrl to measure tuning range and temperature."""
     # (vctrl, label, tran_time, rise_a, rise_b, meas_from, meas_to)
     vctrl_configs = [
-        (0.9, "nom", "100n", 3, 4, "20n", "100n"),
-        (0.6, "low", "500n", 2, 3, "100n", "500n"),
-        (1.8, "high", "100n", 3, 4, "20n", "100n"),
+        (0.9, "nom", "200n", 20, 30, "50n", "200n"),
+        (0.5, "low", "2000n", 4, 14, "500n", "2000n"),
+        (1.8, "high", "200n", 20, 30, "50n", "200n"),
     ]
     all_meas = {}
 
@@ -234,7 +238,7 @@ def run_simulation_sweep(template: str, param_values: Dict[str, float],
     temp_configs = [(-40, "cold"), (27, "nom_temp"), (125, "hot")]
     for sub_idx, (temp, label) in enumerate(temp_configs):
         mod_template = _set_temp(template, temp)
-        mod_template = _set_tran_params(mod_template, "100n", 3, 4, "20n", "100n")
+        mod_template = _set_tran_params(mod_template, "200n", 20, 30, "50n", "200n")
         result = run_simulation(mod_template, param_values,
                                 idx * 100 + 10 + sub_idx, tmp_dir)
         freq = (result.get("measurements") or {}).get("RESULT_FREQ_HZ")
