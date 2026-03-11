@@ -202,9 +202,9 @@ def run_simulation_sweep(template: str, param_values: Dict[str, float],
     """Run simulation at nominal, low, and high Vctrl to measure tuning range and temperature."""
     # (vctrl, label, tran_time, rise_a, rise_b, meas_from, meas_to)
     vctrl_configs = [
-        (0.9, "nom", "30n", 3, 4, "5n", "30n"),
-        (0.6, "low", "100n", 2, 3, "10n", "100n"),
-        (1.8, "high", "30n", 3, 4, "5n", "30n"),
+        (0.9, "nom", "100n", 3, 4, "20n", "100n"),
+        (0.6, "low", "500n", 2, 3, "100n", "500n"),
+        (1.8, "high", "100n", 3, 4, "20n", "100n"),
     ]
     all_meas = {}
 
@@ -234,7 +234,7 @@ def run_simulation_sweep(template: str, param_values: Dict[str, float],
     temp_configs = [(-40, "cold"), (27, "nom_temp"), (125, "hot")]
     for sub_idx, (temp, label) in enumerate(temp_configs):
         mod_template = _set_temp(template, temp)
-        mod_template = _set_tran_params(mod_template, "30n", 3, 4, "5n", "30n")
+        mod_template = _set_tran_params(mod_template, "100n", 3, 4, "20n", "100n")
         result = run_simulation(mod_template, param_values,
                                 idx * 100 + 10 + sub_idx, tmp_dir)
         freq = (result.get("measurements") or {}).get("RESULT_FREQ_HZ")
