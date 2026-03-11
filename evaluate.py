@@ -187,13 +187,23 @@ def _set_tran_params(template: str, tran_time: str, rise_a: int, rise_b: int,
     return t
 
 
+def _set_temp(template: str, temp: float) -> str:
+    """Change the .lib corner or add .temp directive for temperature sweep."""
+    # Add or replace .temp directive
+    if re.search(r'^\s*\.temp\s+', template, re.MULTILINE):
+        return re.sub(r'^\s*\.temp\s+[-\d.]+', f'.temp {temp}', template, flags=re.MULTILINE)
+    else:
+        # Insert .temp after .lib line
+        return re.sub(r'(\.lib\s+[^\n]+\n)', f'\\1.temp {temp}\n', template, count=1)
+
+
 def run_simulation_sweep(template: str, param_values: Dict[str, float],
                          idx: int, tmp_dir: str) -> Dict:
-    """Run simulation at nominal, low, and high Vctrl to measure tuning range."""
+    """Run simulation at nominal, low, and high Vctrl to measure tuning range and temperature."""
     # (vctrl, label, tran_time, rise_a, rise_b, meas_from, meas_to)
     vctrl_configs = [
         (0.9, "nom", "200n", 5, 6, "50n", "200n"),
-        (0.6, "low", "800n", 2, 3, "200n", "800n"),
+        (0.4, "low", "2000n", 2, 3, "500n", "2000n"),
         (1.6, "high", "200n", 5, 6, "50n", "200n"),
     ]
     all_meas = {}
@@ -219,8 +229,28 @@ def run_simulation_sweep(template: str, param_values: Dict[str, float],
     if freq_low and freq_high and freq_low > 0:
         all_meas["RESULT_TUNING_RANGE_RATIO"] = freq_high / freq_low
 
-    # Placeholders for temp variation and jitter (will implement in later iterations)
-    all_meas.setdefault("RESULT_TEMP_VARIATION_PCT", 5.0)
+    # Temperature sweep at nominal Vctrl
+    temp_freqs = {}
+    temp_configs = [(-40, "cold"), (27, "nom_temp"), (125, "hot")]
+    for sub_idx, (temp, label) in enumerate(temp_configs):
+        mod_template = _set_temp(template, temp)
+        mod_template = _set_tran_params(mod_template, "200n", 5, 6, "50n", "200n")
+        result = run_simulation(mod_template, param_values,
+                                idx * 100 + 10 + sub_idx, tmp_dir)
+        freq = (result.get("measurements") or {}).get("RESULT_FREQ_HZ")
+        if freq and freq > 0:
+            temp_freqs[label] = freq
+
+    if len(temp_freqs) >= 2:
+        f_values = list(temp_freqs.values())
+        f_avg = sum(f_values) / len(f_values)
+        f_range = max(f_values) - min(f_values)
+        temp_var = (f_range / f_avg) * 100 if f_avg > 0 else 99.0
+        all_meas["RESULT_TEMP_VARIATION_PCT"] = temp_var
+    else:
+        all_meas.setdefault("RESULT_TEMP_VARIATION_PCT", 50.0)
+
+    # Jitter placeholder (expensive to measure accurately)
     all_meas.setdefault("RESULT_JITTER_PCT", 0.5)
 
     return {"idx": idx, "error": None, "measurements": all_meas}

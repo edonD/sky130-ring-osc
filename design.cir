@@ -1,6 +1,6 @@
-* SKY130 Current-Starved Ring Oscillator — 5-stage
+* SKY130 Current-Starved Ring Oscillator — 3-stage
 * Current-mirror bias: NMOS ref driven by Vctrl mirrors to PMOS current sources
-* Both NMOS and PMOS currents track Vctrl monotonically
+* Separate starving transistor sizes for NMOS/PMOS paths
 
 .lib "sky130_models/sky130.lib.spice" tt
 
@@ -12,44 +12,32 @@ Vss vss 0 0
 Vctrl vctrl 0 0.9
 
 * === Current mirror bias ===
-* NMOS reference: gate=Vctrl sets current
+* NMOS reference: Vctrl on gate sets current
 * Diode-connected PMOS: generates pbias for all PMOS current sources
 XMref_n pbias vctrl vss vss sky130_fd_pr__nfet_01v8 W={Wbn}u L={Lbn}u nf=1
 XMref_p pbias pbias vdd vdd sky130_fd_pr__pfet_01v8 W={Wbp}u L={Lbp}u nf=1
 
 * === Stage 1 ===
-XMp1 n1 n5 starp1 vdd sky130_fd_pr__pfet_01v8 W={Wp}u L={Lp}u nf=1
-XMn1 n1 n5 starn1 vss sky130_fd_pr__nfet_01v8 W={Wn}u L={Ln}u nf=1
-XMsp1 starp1 pbias vdd vdd sky130_fd_pr__pfet_01v8 W={Wbp}u L={Lbp}u nf=1
-XMsn1 starn1 vctrl vss vss sky130_fd_pr__nfet_01v8 W={Wbn}u L={Lbn}u nf=1
+XMp1 n1 n3 starp1 vdd sky130_fd_pr__pfet_01v8 W={Wp}u L={Lp}u nf=1
+XMn1 n1 n3 starn1 vss sky130_fd_pr__nfet_01v8 W={Wn}u L={Ln}u nf=1
+XMsp1 starp1 pbias vdd vdd sky130_fd_pr__pfet_01v8 W={Wsp}u L={Lsp}u nf=1
+XMsn1 starn1 vctrl vss vss sky130_fd_pr__nfet_01v8 W={Wsn}u L={Lsn}u nf=1
 
 * === Stage 2 ===
 XMp2 n2 n1 starp2 vdd sky130_fd_pr__pfet_01v8 W={Wp}u L={Lp}u nf=1
 XMn2 n2 n1 starn2 vss sky130_fd_pr__nfet_01v8 W={Wn}u L={Ln}u nf=1
-XMsp2 starp2 pbias vdd vdd sky130_fd_pr__pfet_01v8 W={Wbp}u L={Lbp}u nf=1
-XMsn2 starn2 vctrl vss vss sky130_fd_pr__nfet_01v8 W={Wbn}u L={Lbn}u nf=1
+XMsp2 starp2 pbias vdd vdd sky130_fd_pr__pfet_01v8 W={Wsp}u L={Lsp}u nf=1
+XMsn2 starn2 vctrl vss vss sky130_fd_pr__nfet_01v8 W={Wsn}u L={Lsn}u nf=1
 
-* === Stage 3 ===
+* === Stage 3 (output) ===
 XMp3 n3 n2 starp3 vdd sky130_fd_pr__pfet_01v8 W={Wp}u L={Lp}u nf=1
 XMn3 n3 n2 starn3 vss sky130_fd_pr__nfet_01v8 W={Wn}u L={Ln}u nf=1
-XMsp3 starp3 pbias vdd vdd sky130_fd_pr__pfet_01v8 W={Wbp}u L={Lbp}u nf=1
-XMsn3 starn3 vctrl vss vss sky130_fd_pr__nfet_01v8 W={Wbn}u L={Lbn}u nf=1
-
-* === Stage 4 ===
-XMp4 n4 n3 starp4 vdd sky130_fd_pr__pfet_01v8 W={Wp}u L={Lp}u nf=1
-XMn4 n4 n3 starn4 vss sky130_fd_pr__nfet_01v8 W={Wn}u L={Ln}u nf=1
-XMsp4 starp4 pbias vdd vdd sky130_fd_pr__pfet_01v8 W={Wbp}u L={Lbp}u nf=1
-XMsn4 starn4 vctrl vss vss sky130_fd_pr__nfet_01v8 W={Wbn}u L={Lbn}u nf=1
-
-* === Stage 5 (output) ===
-XMp5 n5 n4 starp5 vdd sky130_fd_pr__pfet_01v8 W={Wp}u L={Lp}u nf=1
-XMn5 n5 n4 starn5 vss sky130_fd_pr__nfet_01v8 W={Wn}u L={Ln}u nf=1
-XMsp5 starp5 pbias vdd vdd sky130_fd_pr__pfet_01v8 W={Wbp}u L={Lbp}u nf=1
-XMsn5 starn5 vctrl vss vss sky130_fd_pr__nfet_01v8 W={Wbn}u L={Lbn}u nf=1
+XMsp3 starp3 pbias vdd vdd sky130_fd_pr__pfet_01v8 W={Wsp}u L={Lsp}u nf=1
+XMsn3 starn3 vctrl vss vss sky130_fd_pr__nfet_01v8 W={Wsn}u L={Lsn}u nf=1
 
 * Output buffer
-XMpout out n5 vdd vdd sky130_fd_pr__pfet_01v8 W=5u L=0.15u nf=1
-XMnout out n5 vss vss sky130_fd_pr__nfet_01v8 W=2.5u L=0.15u nf=1
+XMpout out n3 vdd vdd sky130_fd_pr__pfet_01v8 W=5u L=0.15u nf=1
+XMnout out n3 vss vss sky130_fd_pr__nfet_01v8 W=2.5u L=0.15u nf=1
 
 * Kick start (small cap imbalance)
 Ckick n1 vss 1f
