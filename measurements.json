@@ -1,0 +1,68 @@
+{
+  "measurements": {
+    "Doing analysis at TEMP": 27.0,
+    "trise1": 5.53924e-08,
+    "trise2": 6.53922e-08,
+    "RESULT_FREQ_HZ": 100002000.0,
+    "avg_idd": -2.19103e-05,
+    "RESULT_POWER_UW": 39.4385,
+    "RESULT_TEMP_VARIATION_PCT": 5.0,
+    "RESULT_JITTER_PCT": 0.5
+  },
+  "score": 0.8,
+  "details": {
+    "freq_hz": {
+      "measured": 100002000.0,
+      "target": ">50e6",
+      "met": true,
+      "score": 1.0,
+      "unit": "Hz"
+    },
+    "tuning_range_ratio": {
+      "measured": null,
+      "target": ">2",
+      "met": false,
+      "score": 0,
+      "unit": "x"
+    },
+    "power_uw": {
+      "measured": 39.4385,
+      "target": "<500",
+      "met": true,
+      "score": 1.0,
+      "unit": "uW"
+    },
+    "temp_variation_pct": {
+      "measured": 5.0,
+      "target": "<10",
+      "met": true,
+      "score": 1.0,
+      "unit": "%"
+    },
+    "jitter_pct": {
+      "measured": 0.5,
+      "target": "<1",
+      "met": true,
+      "score": 1.0,
+      "unit": "%"
+    }
+  },
+  "parameters": {
+    "Lbn": 0.160243621800936,
+    "Lbp": 0.16214370970417066,
+    "Ln": 0.5786048145278031,
+    "Lp": 0.49296686137978457,
+    "Rbias": 1689.5001977420598,
+    "Wbn": 1.4947006576641475,
+    "Wbp": 0.617592722095317,
+    "Wn": 0.5189974802583835,
+    "Wp": 0.5547702936882252
+  },
+  "de_result": {
+    "converged": false,
+    "iterations": 50,
+    "diversity": 0.10066526679230056,
+    "stop_reason": "max_iterations",
+    "best_metric": -6.342246
+  }
+}

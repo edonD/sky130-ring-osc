@@ -1,5 +1,6 @@
 * SKY130 Current-Starved Ring Oscillator — 5-stage
-* Iteration 1: Cleaned topology, proper measurements via evaluate.py sweep
+* Current-mirror bias: NMOS ref driven by Vctrl mirrors to PMOS current sources
+* Both NMOS and PMOS currents track Vctrl monotonically
 
 .lib "sky130_models/sky130.lib.spice" tt
 
@@ -10,10 +11,11 @@ Vss vss 0 0
 * Control voltage (sets oscillation frequency)
 Vctrl vctrl 0 0.9
 
-* === PMOS bias generation ===
-* Diode-connected PMOS + resistor from Vctrl generates complementary bias
-XMbias pbias pbias vdd vdd sky130_fd_pr__pfet_01v8 W={Wbp}u L={Lbp}u nf=1
-Rbias vctrl pbias {Rbias}
+* === Current mirror bias ===
+* NMOS reference: gate=Vctrl sets current
+* Diode-connected PMOS: generates pbias for all PMOS current sources
+XMref_n pbias vctrl vss vss sky130_fd_pr__nfet_01v8 W={Wbn}u L={Lbn}u nf=1
+XMref_p pbias pbias vdd vdd sky130_fd_pr__pfet_01v8 W={Wbp}u L={Lbp}u nf=1
 
 * === Stage 1 ===
 XMp1 n1 n5 starp1 vdd sky130_fd_pr__pfet_01v8 W={Wp}u L={Lp}u nf=1
@@ -52,22 +54,22 @@ XMnout out n5 vss vss sky130_fd_pr__nfet_01v8 W=2.5u L=0.15u nf=1
 * Kick start (small cap imbalance)
 Ckick n1 vss 1f
 
-.options reltol=0.003 method=gear
+.options reltol=0.01 method=gear maxord=3
 
 * === Measurements ===
 * evaluate.py sweeps Vctrl and computes tuning range externally
 .control
-tran 0.1n 300n
+tran 0.5n 200n
 
 * Measure frequency from steady-state cycles
-meas tran trise1 when v(out)=0.9 rise=8
-meas tran trise2 when v(out)=0.9 rise=9
+meas tran trise1 when v(out)=0.9 rise=5
+meas tran trise2 when v(out)=0.9 rise=6
 let period = trise2 - trise1
 let freq = 1 / period
 echo "RESULT_FREQ_HZ" $&freq
 
 * Power measurement
-meas tran avg_idd avg i(Vdd) from=100n to=300n
+meas tran avg_idd avg i(Vdd) from=50n to=200n
 let pwr = abs(avg_idd) * 1.8 * 1e6
 echo "RESULT_POWER_UW" $&pwr
 

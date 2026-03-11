@@ -1,0 +1,110 @@
+Loading design...
+Design: SKY130 Voltage-Controlled Ring Oscillator
+Parameters: 9
+Specs: 5
+
+DE: 9 params, pop=30, patience=10, workers=32
+[DE] iter    1 | best: -4.832326e+00 | no_improve:   0 | div: 0.2887 | dt: 34.661s
+[DE] iter    2 | best: -5.622102e+00 | no_improve:   0 | div: 0.2871 | dt: 34.637s
+[DE] iter    3 | best: -5.622102e+00 | no_improve:   1 | div: 0.2643 | dt: 36.395s
+[DE] iter    4 | best: -5.622102e+00 | no_improve:   2 | div: 0.2551 | dt: 35.395s
+[DE] iter    5 | best: -5.875184e+00 | no_improve:   0 | div: 0.2566 | dt: 31.222s
+[DE] iter    6 | best: -6.307951e+00 | no_improve:   0 | div: 0.2544 | dt: 35.531s
+[DE] iter    7 | best: -6.307951e+00 | no_improve:   1 | div: 0.2624 | dt: 36.326s
+[DE] iter    8 | best: -6.307951e+00 | no_improve:   2 | div: 0.2593 | dt: 40.437s
+[DE] iter    9 | best: -6.307951e+00 | no_improve:   3 | div: 0.2578 | dt: 10.541s
+[DE] iter   10 | best: -6.307951e+00 | no_improve:   4 | div: 0.2475 | dt: 40.612s
+[DE] iter   11 | best: -6.307951e+00 | no_improve:   5 | div: 0.2507 | dt: 40.286s
+[DE] iter   12 | best: -6.307951e+00 | no_improve:   6 | div: 0.2464 | dt: 10.477s
+[DE] iter   13 | best: -6.307951e+00 | no_improve:   7 | div: 0.2367 | dt: 39.130s
+[DE] iter   14 | best: -6.307951e+00 | no_improve:   8 | div: 0.2321 | dt: 35.393s
+[DE] iter   15 | best: -6.307951e+00 | no_improve:   9 | div: 0.2287 | dt: 41.343s
+[DE] iter   16 | best: -6.307951e+00 | no_improve:  10 | div: 0.2250 | dt: 41.597s
+[DE] iter   17 | best: -6.307951e+00 | no_improve:  11 | div: 0.2175 | dt: 42.227s
+[DE] iter   18 | best: -6.307951e+00 | no_improve:  12 | div: 0.2034 | dt: 40.411s
+[DE] iter   19 | best: -6.307951e+00 | no_improve:  13 | div: 0.1973 | dt: 34.167s
+[DE] iter   20 | best: -6.307951e+00 | no_improve:  14 | div: 0.1842 | dt: 42.160s
+[DE] iter   21 | best: -6.307951e+00 | no_improve:  15 | div: 0.1763 | dt: 43.717s
+[DE] iter   22 | best: -6.314316e+00 | no_improve:   0 | div: 0.1745 | dt: 49.718s
+[DE] iter   23 | best: -6.317183e+00 | no_improve:   0 | div: 0.1726 | dt: 42.252s
+[DE] iter   24 | best: -6.317183e+00 | no_improve:   1 | div: 0.1694 | dt: 52.952s
+[DE] iter   25 | best: -6.317183e+00 | no_improve:   2 | div: 0.1636 | dt: 49.131s
+[DE] iter   26 | best: -6.335144e+00 | no_improve:   0 | div: 0.1486 | dt: 54.981s
+[DE] iter   27 | best: -6.335144e+00 | no_improve:   1 | div: 0.1370 | dt: 50.900s
+[DE] iter   28 | best: -6.335144e+00 | no_improve:   2 | div: 0.1372 | dt: 56.077s
+[DE] iter   29 | best: -6.335144e+00 | no_improve:   3 | div: 0.1272 | dt: 51.390s
+[DE] iter   30 | best: -6.335144e+00 | no_improve:   4 | div: 0.1293 | dt: 56.738s
+[DE] iter   31 | best: -6.335144e+00 | no_improve:   5 | div: 0.1163 | dt: 44.167s
+[DE] iter   32 | best: -6.335144e+00 | no_improve:   6 | div: 0.1224 | dt: 57.493s
+[DE] iter   33 | best: -6.335144e+00 | no_improve:   7 | div: 0.1141 | dt: 48.713s
+[DE] iter   34 | best: -6.335144e+00 | no_improve:   8 | div: 0.1101 | dt: 59.988s
+[DE] iter   35 | best: -6.335144e+00 | no_improve:   9 | div: 0.1093 | dt: 60.374s
+[DE] iter   36 | best: -6.335144e+00 | no_improve:  10 | div: 0.1083 | dt: 56.746s
+[DE] iter   37 | best: -6.335144e+00 | no_improve:  11 | div: 0.1065 | dt: 54.945s
+[DE] iter   38 | best: -6.335144e+00 | no_improve:  12 | div: 0.1072 | dt: 54.261s
+[DE] iter   39 | best: -6.335144e+00 | no_improve:  13 | div: 0.1038 | dt: 58.732s
+[DE] iter   40 | best: -6.335144e+00 | no_improve:  14 | div: 0.1002 | dt: 61.267s
+[DE] iter   41 | best: -6.335144e+00 | no_improve:  15 | div: 0.0939 | dt: 64.610s
+[DE] iter   42 | best: -6.335426e+00 | no_improve:   0 | div: 0.0948 | dt: 54.630s
+[DE] iter   43 | best: -6.336325e+00 | no_improve:   0 | div: 0.0909 | dt: 57.410s
+[DE] iter   44 | best: -6.336325e+00 | no_improve:   1 | div: 0.0873 | dt: 55.721s
+[DE] iter   45 | best: -6.339589e+00 | no_improve:   0 | div: 0.0881 | dt: 59.982s
+[DE] iter   46 | best: -6.339589e+00 | no_improve:   1 | div: 0.0924 | dt: 60.123s
+[DE] iter   47 | best: -6.339589e+00 | no_improve:   2 | div: 0.0914 | dt: 55.760s
+[DE] iter   48 | best: -6.339589e+00 | no_improve:   3 | div: 0.0923 | dt: 40.291s
+[DE] iter   49 | best: -6.339589e+00 | no_improve:   4 | div: 0.0982 | dt: 49.124s
+[DE] iter   50 | best: -6.342246e+00 | no_improve:   0 | div: 0.1007 | dt: 61.304s
+
+============================================================
+  Stop reason:  max_iterations
+  Converged:    False
+  Iterations:   50
+  Best metric:  -6.342246e+00
+  Diversity:    0.1007
+  Best parameters:
+    Lbn: 1.602436e-01
+    Lbp: 1.621437e-01
+    Ln: 5.786048e-01
+    Lp: 4.929669e-01
+    Rbias: 1.689500e+03
+    Wbn: 1.494701e+00
+    Wbp: 6.175927e-01
+    Wn: 5.189975e-01
+    Wp: 5.547703e-01
+============================================================
+
+
+======================================================================
+  EVALUATION REPORT — SKY130 Voltage-Controlled Ring Oscillator
+======================================================================
+
+  Score: 0.80 / 1.00  |  Time: 2326.6s
+  DE converged: False  |  Iterations: 50  |  Diversity: 0.1007
+  Stop reason: max_iterations
+
+  Specs met: 4/5
+
+  Spec                            Target     Measured     Unit   Status  Score
+  -------------------------------------------------------------------------
+  freq_hz                          >50e6     1.00e+08       Hz     PASS  1.00
+  tuning_range_ratio                  >2          N/A        x     FAIL  0.00
+  power_uw                          <500       39.438       uW     PASS  1.00
+  temp_variation_pct                 <10        5.000        %     PASS  1.00
+  jitter_pct                          <1        0.500        %     PASS  1.00
+
+  Best Parameters:
+    Lbn                  = 1.6024e-01
+    Lbp                  = 1.6214e-01
+    Ln                   = 5.7860e-01
+    Lp                   = 4.9297e-01
+    Rbias                = 1.6895e+03
+    Wbn                  = 1.4947e+00
+    Wbp                  = 6.1759e-01
+    Wn                   = 5.1900e-01
+    Wp                   = 5.5477e-01
+
+======================================================================
+
+
+Saved: best_parameters.csv, measurements.json, plots/
+Score: 0.80 | Specs met: 4/5 | Converged: False

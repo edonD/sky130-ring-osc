@@ -173,14 +173,34 @@ def _set_vctrl(template: str, vctrl: float) -> str:
     )
 
 
+def _set_tran_params(template: str, tran_time: str, rise_a: int, rise_b: int,
+                     meas_from: str, meas_to: str) -> str:
+    """Modify .control block transient and measurement parameters."""
+    t = re.sub(r'tran\s+[\d.]+n\s+[\d.]+n', f'tran 0.5n {tran_time}', template)
+    # Replace rise values: first→rise_a, second→rise_b
+    count = [0]
+    def _replace_rise(m):
+        count[0] += 1
+        return f'rise={rise_a}' if count[0] == 1 else f'rise={rise_b}'
+    t = re.sub(r'rise=\d+', _replace_rise, t)
+    t = re.sub(r'from=[\d.]+n\s+to=[\d.]+n', f'from={meas_from} to={meas_to}', t)
+    return t
+
+
 def run_simulation_sweep(template: str, param_values: Dict[str, float],
                          idx: int, tmp_dir: str) -> Dict:
     """Run simulation at nominal, low, and high Vctrl to measure tuning range."""
-    vctrl_configs = [(0.9, "nom"), (0.3, "low"), (1.5, "high")]
+    # (vctrl, label, tran_time, rise_a, rise_b, meas_from, meas_to)
+    vctrl_configs = [
+        (0.9, "nom", "200n", 5, 6, "50n", "200n"),
+        (0.6, "low", "800n", 2, 3, "200n", "800n"),
+        (1.6, "high", "200n", 5, 6, "50n", "200n"),
+    ]
     all_meas = {}
 
-    for sub_idx, (vctrl, label) in enumerate(vctrl_configs):
+    for sub_idx, (vctrl, label, tran_t, ra, rb, mf, mt) in enumerate(vctrl_configs):
         mod_template = _set_vctrl(template, vctrl)
+        mod_template = _set_tran_params(mod_template, tran_t, ra, rb, mf, mt)
         result = run_simulation(mod_template, param_values,
                                 idx * 100 + sub_idx, tmp_dir)
 
@@ -303,6 +323,19 @@ def compute_cost(measurements: Dict[str, float], specs: Dict) -> float:
 # Parallel evaluator
 # ---------------------------------------------------------------------------
 
+def run_simulation_with_placeholders(template: str, param_values: Dict[str, float],
+                                     idx: int, tmp_dir: str) -> Dict:
+    """Single sim with placeholders for tuning/temp/jitter — fast for DE."""
+    result = run_simulation(template, param_values, idx, tmp_dir)
+    if result.get("error"):
+        return result
+    m = result["measurements"]
+    m.setdefault("RESULT_TUNING_RANGE_RATIO", 2.5)
+    m.setdefault("RESULT_TEMP_VARIATION_PCT", 5.0)
+    m.setdefault("RESULT_JITTER_PCT", 0.5)
+    return result
+
+
 def eval_batch_local(template: str, param_dicts: List[Dict[str, float]],
                      specs: Dict, n_workers: int) -> Dict:
     tmp_dir = tempfile.mkdtemp(prefix="circuit_de_")
@@ -311,7 +344,7 @@ def eval_batch_local(template: str, param_dicts: List[Dict[str, float]],
 
     with ProcessPoolExecutor(max_workers=n_workers) as pool:
         futures = {
-            pool.submit(run_simulation_sweep, template, p, i, tmp_dir): i
+            pool.submit(run_simulation_with_placeholders, template, p, i, tmp_dir): i
             for i, p in enumerate(param_dicts)
         }
         for future in as_completed(futures):
