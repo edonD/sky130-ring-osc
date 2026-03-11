@@ -355,13 +355,33 @@ def compute_cost(measurements: Dict[str, float], specs: Dict) -> float:
 
 def run_simulation_with_placeholders(template: str, param_values: Dict[str, float],
                                      idx: int, tmp_dir: str) -> Dict:
-    """Single sim with placeholders for tuning/temp/jitter — fast for DE."""
+    """Sim with actual temperature measurement for DE optimization."""
     result = run_simulation(template, param_values, idx, tmp_dir)
     if result.get("error"):
         return result
     m = result["measurements"]
+    nom_freq = m.get("RESULT_FREQ_HZ")
+
+    # Measure temperature variation (cold and hot sims)
+    if nom_freq and nom_freq > 0:
+        temp_freqs = [nom_freq]
+        for temp in [-40, 125]:
+            mod_template = _set_temp(template, temp)
+            t_result = run_simulation(mod_template, param_values,
+                                      idx * 10 + (3 if temp < 0 else 4), tmp_dir)
+            t_freq = (t_result.get("measurements") or {}).get("RESULT_FREQ_HZ")
+            if t_freq and t_freq > 0:
+                temp_freqs.append(t_freq)
+        if len(temp_freqs) >= 2:
+            f_avg = sum(temp_freqs) / len(temp_freqs)
+            f_range = max(temp_freqs) - min(temp_freqs)
+            m["RESULT_TEMP_VARIATION_PCT"] = (f_range / f_avg) * 100 if f_avg > 0 else 99.0
+        else:
+            m.setdefault("RESULT_TEMP_VARIATION_PCT", 50.0)
+    else:
+        m.setdefault("RESULT_TEMP_VARIATION_PCT", 50.0)
+
     m.setdefault("RESULT_TUNING_RANGE_RATIO", 2.5)
-    m.setdefault("RESULT_TEMP_VARIATION_PCT", 5.0)
     m.setdefault("RESULT_JITTER_PCT", 0.5)
     return result
 

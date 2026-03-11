@@ -3,5 +3,11 @@ Wp,0.5,20,log
 Lp,0.15,2,log
 Wn,0.5,10,log
 Ln,0.15,2,log
-Ws,0.5,20,log
-Ls,0.15,5,log
+Wsp,0.5,20,log
+Lsp,0.15,5,log
+Wsn,0.5,20,log
+Lsn,0.15,5,log
+Wbp,0.5,20,log
+Lbp,0.15,5,log
+Wbn,0.5,20,log
+Lbn,0.15,5,log
