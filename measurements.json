@@ -1,62 +1,68 @@
 {
-  "measurements": {},
-  "score": 0.0,
+  "measurements": {
+    "Doing analysis at TEMP": 27.0,
+    "trise1": 2.41171e-08,
+    "trise2": 3.37063e-08,
+    "RESULT_FREQ_HZ": 104284000.0,
+    "avg_idd": -1.48639e-05,
+    "RESULT_POWER_UW": 26.755,
+    "RESULT_FREQ_LOW": 5436650.0,
+    "RESULT_FREQ_HIGH": 265045000.0,
+    "RESULT_TUNING_RANGE_RATIO": 48.75152897464431,
+    "RESULT_TEMP_VARIATION_PCT": 12.056596967270366,
+    "RESULT_JITTER_PCT": 0.5
+  },
+  "score": 0.9658842876998652,
   "details": {
     "freq_hz": {
-      "measured": null,
+      "measured": 104284000.0,
       "target": ">50e6",
-      "met": false,
-      "score": 0,
+      "met": true,
+      "score": 1.0,
       "unit": "Hz"
     },
     "tuning_range_ratio": {
-      "measured": null,
+      "measured": 48.75152897464431,
       "target": ">2",
-      "met": false,
-      "score": 0,
+      "met": true,
+      "score": 1.0,
       "unit": "x"
     },
     "power_uw": {
-      "measured": null,
+      "measured": 26.755,
       "target": "<500",
-      "met": false,
-      "score": 0,
+      "met": true,
+      "score": 1.0,
       "unit": "uW"
     },
     "temp_variation_pct": {
-      "measured": null,
+      "measured": 12.056596967270366,
       "target": "<10",
       "met": false,
-      "score": 0,
+      "score": 0.8294214384993261,
       "unit": "%"
     },
     "jitter_pct": {
-      "measured": null,
+      "measured": 0.5,
       "target": "<1",
-      "met": false,
-      "score": 0,
+      "met": true,
+      "score": 1.0,
       "unit": "%"
     }
   },
   "parameters": {
-    "Lbn": 0.8431026210226712,
-    "Lbp": 2.8039367907496326,
-    "Ln": 1.5794160324306736,
-    "Lp": 0.44787476281975624,
-    "Lsn": 0.7102045583343611,
-    "Lsp": 2.8235711290139567,
-    "Wbn": 48.132655731866166,
-    "Wbp": 0.6723269359566091,
-    "Wn": 1.9594129183566245,
-    "Wp": 0.5739256948971341,
-    "Wsn": 30.3635304019318,
-    "Wsp": 2.4779784442070802
+    "Ln": 0.27785984044477874,
+    "Lp": 1.0769062189692598,
+    "Ls": 0.775059560398452,
+    "Wn": 0.5240714572135358,
+    "Wp": 0.6949127231213996,
+    "Ws": 0.5089714712421409
   },
   "de_result": {
-    "converged": true,
-    "iterations": 31,
-    "diversity": 0.28821431803551717,
-    "stop_reason": "stagnated (div=0.2882, no_improve=30)",
-    "best_metric": 1000000.0
+    "converged": false,
+    "iterations": 50,
+    "diversity": 0.03932721926234176,
+    "stop_reason": "max_iterations",
+    "best_metric": -6.39298
   }
 }

@@ -423,7 +423,7 @@ def run_de(template: str, params: List[Dict], specs: Dict,
     max_iter = 5000 if not quick else 50
 
     if not n_workers:
-        n_workers = os.cpu_count() or 8
+        n_workers = min(8, os.cpu_count() or 8)
 
     if server_url:
         def eval_func(parameters, **kwargs):
