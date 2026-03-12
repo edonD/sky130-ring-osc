@@ -95,3 +95,8 @@ DE: 7 params, pop=35, patience=30, workers=4
 [DE] iter   89 | best: -7.256933e+00 | no_improve:   6 | div: 0.0531 | dt: 33.868s
 [DE] iter   90 | best: -7.256933e+00 | no_improve:   7 | div: 0.0528 | dt: 33.278s
 [DE] iter   91 | best: -7.256933e+00 | no_improve:   8 | div: 0.0500 | dt: 32.225s
+[DE] iter   92 | best: -7.256933e+00 | no_improve:   9 | div: 0.0460 | dt: 32.447s
+[DE] iter   93 | best: -7.257050e+00 | no_improve:   0 | div: 0.0454 | dt: 31.166s
+[DE] iter   94 | best: -7.278363e+00 | no_improve:   0 | div: 0.0463 | dt: 33.736s
+[DE] iter   95 | best: -7.278363e+00 | no_improve:   1 | div: 0.0464 | dt: 33.855s
+[DE] iter   96 | best: -7.278363e+00 | no_improve:   2 | div: 0.0429 | dt: 33.685s
