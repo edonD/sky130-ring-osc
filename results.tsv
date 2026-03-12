@@ -1,4 +1,5 @@
 step	commit	score	topology	specs_met	notes
 6	c87d529	0.97	3-stage NMOS-starved direct Vctrl	4/5	freq=104MHz tuning=48.8x pwr=27uW temp_var=12%(FAIL) jitter=0.5%
 1	manual	0.95	3-stage-comp-starved	5/5	freq=264MHz pwr=76uW tune=7.8x temp=6.2%
-2	2e7de4b	0.98	3-stage-comp-starved-Lsn0.8	5/5	freq=282MHz pwr=78uW tune=174x temp=5.0%
+2	2e7de4b	0.97	3-stage-comp-starved-Lsn0.8	5/5	freq=282MHz pwr=78uW tune=174x temp=5.0%
+3	7e54647	0.98	3-stage-comp-starved-Lsn0.75	5/5	freq=287MHz pwr=79uW tune=176x temp=4.9%

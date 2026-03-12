@@ -73,3 +73,68 @@ DE: pop=30, patience=15, workers=4
 [DE] iter   71 | best: -7.241447e+00 | no_improve:  32 | div: 0.1199 | dt: 17.468s
 [DE] iter   72 | best: -7.241447e+00 | no_improve:  33 | div: 0.1184 | dt: 19.650s
 [DE] iter   73 | best: -7.241447e+00 | no_improve:  34 | div: 0.1182 | dt: 21.023s
+[DE] iter   74 | best: -7.241447e+00 | no_improve:  35 | div: 0.1182 | dt: 19.516s
+[DE] iter   75 | best: -7.241447e+00 | no_improve:  36 | div: 0.1184 | dt: 18.500s
+[DE] iter   76 | best: -7.241447e+00 | no_improve:  37 | div: 0.1189 | dt: 20.591s
+[DE] iter   77 | best: -7.241447e+00 | no_improve:  38 | div: 0.1181 | dt: 20.361s
+[DE] iter   78 | best: -7.241447e+00 | no_improve:  39 | div: 0.1171 | dt: 17.500s
+[DE] iter   79 | best: -7.241447e+00 | no_improve:  40 | div: 0.1171 | dt: 18.461s
+[DE] iter   80 | best: -7.241447e+00 | no_improve:  41 | div: 0.1171 | dt: 18.699s
+[DE] iter   81 | best: -7.241447e+00 | no_improve:  42 | div: 0.1151 | dt: 18.709s
+[DE] iter   82 | best: -7.241447e+00 | no_improve:  43 | div: 0.1117 | dt: 19.467s
+[DE] iter   83 | best: -7.241447e+00 | no_improve:  44 | div: 0.1117 | dt: 19.498s
+[DE] iter   84 | best: -7.241447e+00 | no_improve:  45 | div: 0.1117 | dt: 18.316s
+
+============================================================
+  Stop reason:  stagnated (div=0.1117, no_improve=45)
+  Converged:    True
+  Iterations:   84
+  Best metric:  -7.241447e+00
+  Diversity:    0.1117
+  Best parameters:
+    Lbn: 2.524039e+00
+    Lbp: 4.005554e+00
+    Ln: 1.009425e+00
+    Lp: 4.246489e-01
+    Lsn: 4.634604e-01
+    Lsp: 7.830039e-01
+    Wbn: 1.060873e+00
+    Wbp: 1.791600e+00
+    Wn: 2.209481e+00
+    Wp: 7.046991e-01
+    Wsn: 1.644777e+01
+    Wsp: 4.763090e+00
+============================================================
+
+
+DE done in 1652s, 84 iters
+Running final validation sweep...
+
+============================================================
+  Score: 0.80 / 1.00
+  Specs met: 4/5
+
+  Spec                          Target     Measured   Status
+  ---------------------------------------------------------
+  freq_hz                        >50e6     1.84e+08     PASS
+  tuning_range_ratio                >2          N/A     FAIL
+  power_uw                        <500       59.496     PASS
+  temp_variation_pct               <10        0.103     PASS
+  jitter_pct                        <1        0.500     PASS
+
+  Best parameters:
+    Lbn        = 2.5240
+    Lbp        = 4.0056
+    Ln         = 1.0094
+    Lp         = 0.4246
+    Lsn        = 0.4635
+    Lsp        = 0.7830
+    Wbn        = 1.0609
+    Wbp        = 1.7916
+    Wn         = 2.2095
+    Wp         = 0.7047
+    Wsn        = 16.4478
+    Wsp        = 4.7631
+============================================================
+
+Final score: 0.80 | Specs: 4/5

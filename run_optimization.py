@@ -278,8 +278,8 @@ def full_sweep(template, params, tmp_dir):
         return {"error": r["error"], "measurements": {}}
     measurements.update(r["measurements"])
 
-    # Low Vctrl
-    low_t = set_vctrl(template, 0.6)
+    # Low Vctrl (0.7V — below this the dual-starving topology stops oscillating)
+    low_t = set_vctrl(template, 0.7)
     low_t = set_tran(low_t, "200n", 2, 3, "10n", "200n")
     lr = run_sim(low_t, params, 1, tmp_dir)
     fl = (lr.get("measurements") or {}).get("RESULT_FREQ_HZ")

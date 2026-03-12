@@ -216,7 +216,7 @@ def run_simulation_sweep(template: str, param_values: Dict[str, float],
     # (vctrl, label, tran_time, rise_a, rise_b, meas_from, meas_to)
     vctrl_configs = [
         (0.9, "nom", "30n", 3, 4, "5n", "30n"),
-        (0.6, "low", "200n", 2, 3, "10n", "200n"),
+        (0.7, "low", "200n", 2, 3, "10n", "200n"),
         (1.8, "high", "30n", 3, 4, "5n", "30n"),
     ]
     all_meas = {}
