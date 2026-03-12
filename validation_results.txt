@@ -1,6 +1,6 @@
-freq_hz=108806000.0
-tuning_range_ratio=2.500149784396061
-power_uw=34.6147
-temp_variation_pct=0.11021004197165765
-jitter_pct=0.0009372806752808678
+freq_hz=109549000.0
+tuning_range_ratio=3.673077603148381
+power_uw=58.1587
+temp_variation_pct=0.04472244701759083
+jitter_pct=0.0005155991053417766
 specs_met=5
