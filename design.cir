@@ -1,11 +1,11 @@
 * SKY130 Complementary Current-Starved Ring Oscillator — 3-stage
 * NMOS starving: direct Vctrl. PMOS starving: current mirror.
-* VDD ramp startup with cap imbalance breaks symmetry for oscillation.
+* Symmetric delay control for wide tuning and temperature stability.
 
-.lib "sky130_models/sky130_minimal.lib.spice" tt
+.lib "sky130_models/sky130.lib.spice" tt
 
-* Supply — ramp from 0 to 1.8V to enable oscillation startup with uic
-Vdd vdd 0 PWL(0 0 1n 1.8)
+* Supply
+Vdd vdd 0 1.8
 Vss vss 0 0
 
 * Control voltage
@@ -37,24 +37,26 @@ XMsn3 sn3 vctrl vss vss sky130_fd_pr__nfet_01v8 W={Wsn}u L={Lsn}u nf=1
 XMpout out n3 vdd vdd sky130_fd_pr__pfet_01v8 W=5u L=0.15u nf=1
 XMnout out n3 vss vss sky130_fd_pr__nfet_01v8 W=2.5u L=0.15u nf=1
 
-* Capacitive imbalance on n1 for symmetry breaking during VDD ramp
-Ckick n1 vss 50f
+* Startup kick
+Vkick kick 0 pulse(0 1.8 0 0.1n 0.1n 0.5n 1000n)
+Ckick n1 kick 5f
 
-.options reltol=0.01 method=gear maxord=3
+.ic v(n1)=0 v(n2)=1.8 v(n3)=0
 
-* === Measurements ===
+.options reltol=0.02 method=gear maxord=3
+
 .control
-tran 0.1n 30n uic
+tran 0.05n 200n uic
 
-* Measure frequency from output
-meas tran trise1 when v(out)=0.9 rise=3
-meas tran trise2 when v(out)=0.9 rise=4
-let period = trise2 - trise1
+* Measure frequency using zero-crossings (cross counts both rising and falling)
+meas tran tcross_a when v(n3)=0.9 cross=20
+meas tran tcross_b when v(n3)=0.9 cross=30
+let period = (tcross_b - tcross_a) / 5
 let freq = 1 / period
 echo "RESULT_FREQ_HZ" $&freq
 
 * Power measurement
-meas tran avg_idd avg i(Vdd) from=5n to=30n
+meas tran avg_idd avg i(Vdd) from=50n to=200n
 let pwr = abs(avg_idd) * 1.8 * 1e6
 echo "RESULT_POWER_UW" $&pwr
 
