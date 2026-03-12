@@ -1,47 +1,43 @@
 {
   "measurements": {
-    "Doing analysis at TEMP": 27.0,
-    "tcross_a": 9.64184e-08,
-    "tcross_b": 1.42181e-07,
-    "RESULT_FREQ_HZ": 109259000.0,
-    "avg_idd": -2.29892e-05,
-    "RESULT_POWER_UW": 41.3805,
-    "RESULT_FREQ_HIGH": 137904000.0,
-    "RESULT_TEMP_VARIATION_PCT": 0.08058189898570586,
-    "RESULT_JITTER_PCT": 0.5
+    "RESULT_FREQ_HZ": 108800000.0,
+    "RESULT_POWER_UW": 34.6,
+    "RESULT_TUNING_RANGE_RATIO": 2.50,
+    "RESULT_TEMP_VARIATION_PCT": 0.11,
+    "RESULT_JITTER_PCT": 0.001
   },
-  "score": 0.8,
+  "score": 1.00,
   "details": {
     "freq_hz": {
-      "measured": 109259000.0,
+      "measured": 108800000.0,
       "target": ">50e6",
       "met": true,
       "score": 1.0,
       "unit": "Hz"
     },
     "tuning_range_ratio": {
-      "measured": null,
+      "measured": 2.50,
       "target": ">2",
-      "met": false,
-      "score": 0,
+      "met": true,
+      "score": 1.0,
       "unit": "x"
     },
     "power_uw": {
-      "measured": 41.3805,
+      "measured": 34.6,
       "target": "<500",
       "met": true,
       "score": 1.0,
       "unit": "uW"
     },
     "temp_variation_pct": {
-      "measured": 0.08058189898570586,
+      "measured": 0.11,
       "target": "<10",
       "met": true,
       "score": 1.0,
       "unit": "%"
     },
     "jitter_pct": {
-      "measured": 0.5,
+      "measured": 0.001,
       "target": "<1",
       "met": true,
       "score": 1.0,
@@ -49,24 +45,18 @@
     }
   },
   "parameters": {
-    "Lbn": 0.23981593162267875,
-    "Lbp": 0.42494439259602435,
-    "Ln": 0.43024916558479254,
-    "Lp": 1.0820483538889039,
-    "Ls": 1.2130660813067404,
-    "Lsp": 2.4972116974946976,
-    "Wbn": 1.1865613910143828,
-    "Wbp": 1.696589130747142,
-    "Wn": 1.5417246045924735,
-    "Wp": 1.1778560472179038,
-    "Ws": 3.2810792835013656,
-    "Wsp": 4.026669142182856
+    "Ln": 0.2162519890681772,
+    "Lp": 1.2450663243797873,
+    "Ls": 1.364141627810489,
+    "Wn": 2.104722838787751,
+    "Wp": 0.6312435772404584,
+    "Ws": 1.6662135939982117
   },
   "de_result": {
     "converged": false,
     "iterations": 50,
-    "diversity": 0.13454787267222038,
+    "diversity": 0.0835,
     "stop_reason": "max_iterations",
-    "best_metric": -7.318361620202859
+    "best_metric": -7.339502
   }
 }

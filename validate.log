@@ -1,55 +1,55 @@
-Parameters: {'Lbn': 0.76133, 'Lbp': 1.34, 'Ln': 0.80843, 'Lp': 0.71356, 'Ls': 1.1429, 'Lsp': 1.1571, 'Wbn': 8.9728, 'Wbp': 5.3037, 'Wn': 1.2258, 'Wp': 0.54208, 'Ws': 3.8389, 'Wsp': 2.195}
+Parameters: {'Ln': 0.2162519890681772, 'Lp': 1.2450663243797873, 'Ls': 1.364141627810489, 'Wn': 2.104722838787751, 'Wp': 0.6312435772404584, 'Ws': 1.6662135939982117}
 
 ============================================================
 CHECK 1: Verify oscillation at nominal Vctrl=0.9V
 ============================================================
-  PASS: Oscillating at 170.3 MHz
-  Period: 5.87 ns
-  Cycles in 500ns: 85
-  Power: 48.7 uW
+  PASS: Oscillating at 108.8 MHz
+  Period: 9.19 ns
+  Cycles in 500ns: 54
+  Power: 34.6 uW
 
 ============================================================
 CHECK 2: Tuning range sweep
 ============================================================
   Vctrl=0.3V: No oscillation
   Vctrl=0.5V: No oscillation
-  Vctrl=0.7V: 121.7 MHz
-  Vctrl=0.9V: 170.3 MHz
-  Vctrl=1.2V: 181.9 MHz
-  Vctrl=1.5V: 185.8 MHz
-  Vctrl=1.8V: 187.6 MHz
+  Vctrl=0.7V: 58.4 MHz
+  Vctrl=0.9V: 108.8 MHz
+  Vctrl=1.2V: 133.6 MHz
+  Vctrl=1.5V: 141.9 MHz
+  Vctrl=1.8V: 146.1 MHz
 
-  Fmin=121.7 MHz, Fmax=187.6 MHz
-  Tuning range ratio: 1.54x
-  FAIL: Tuning range < 2x
+  Fmin=58.4 MHz, Fmax=146.1 MHz
+  Tuning range ratio: 2.50x
+  PASS: Tuning range > 2x
 
 ============================================================
 CHECK 3: Temperature variation
 ============================================================
-  T= -40C: 175.8 MHz
-  T=  27C: 170.3 MHz
-  T= 125C: 164.7 MHz
+  T= -40C: 108.9 MHz
+  T=  27C: 108.8 MHz
+  T= 125C: 108.9 MHz
 
-  Temperature variation: 6.49%
+  Temperature variation: 0.11%
   PASS: < 10%
 
 ============================================================
 CHECK 4: Period jitter measurement
 ============================================================
   Measured 20 periods
-  Mean period: 5.867 ns
-  Std period:  0.071 ps
-  RMS jitter:  0.0012%
+  Mean period: 9.184 ns
+  Std period:  0.086 ps
+  RMS jitter:  0.0009%
   PASS: Jitter < 1%
 
 ============================================================
 VALIDATION SUMMARY
 ============================================================
-  Frequency:      170.3 MHz (target: >50 MHz)   PASS
-  Tuning range:   1.54x (target: >2x)           FAIL
-  Power:          48.7 uW (target: <500 uW)     PASS
-  Temp variation: 6.49% (target: <10%)        PASS
-  Jitter:         0.0012% (target: <1%)       PASS
+  Frequency:      108.8 MHz (target: >50 MHz)   PASS
+  Tuning range:   2.50x (target: >2x)           PASS
+  Power:          34.6 uW (target: <500 uW)     PASS
+  Temp variation: 0.11% (target: <10%)        PASS
+  Jitter:         0.0009% (target: <1%)       PASS
 
-  Specs met: 4/5
+  Specs met: 5/5
 ============================================================
