@@ -125,3 +125,8 @@ mprove:   7 | div: 0.1099 | dt: 30.641s
 [DE] iter   92 | best: -7.353465e+00 | no_improve:   4 | div: 0.0666 | dt: 30.113s
 [DE] iter   93 | best: -7.353465e+00 | no_improve:   5 | div: 0.0647 | dt: 29.977s
 [DE] iter   94 | best: -7.353465e+00 | no_improve:   6 | div: 0.0650 | dt: 30.032s
+[DE] iter   95 | best: -7.353465e+00 | no_improve:   7 | div: 0.0655 | dt: 30.121s
+[DE] iter   96 | best: -7.353465e+00 | no_improve:   8 | div: 0.0654 | dt: 30.232s
+[DE] iter   97 | best: -7.353465e+00 | no_improve:   9 | div: 0.0650 | dt: 27.684s
+[DE] iter   98 | best: -7.353465e+00 | no_improve:  10 | div: 0.0654 | dt: 29.898s
+[DE] iter   99 | best: -7.353465e+00 | no_improve:  11 | div: 0.0649 | dt: 30.094s
