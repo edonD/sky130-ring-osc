@@ -5,3 +5,4 @@ step	commit	score	topology	specs_met	notes
 3	7e54647	0.98	3-stage-comp-starved-Lsn0.75	5/5	freq=287MHz pwr=79uW tune=176x temp=4.9%
 4	pending	1.00	3-stage-comp-starved-DE-optimized	5/5	freq=184MHz pwr=60uW tune=2.2x temp=0.1% jitter=0.5%
 7	ddc92ab	1.00	3-stage NMOS-starved Ls=1.67u temp-comp	5/5	freq=665MHz tuning=5.17x pwr=189uW temp_var=1.66% jitter=0.5%
+8	156070a	1.00	5-stage NMOS-starved ring osc	5/5	freq=100MHz tuning=4.73x pwr=29uW temp_var=0.001% jitter=0.5%
