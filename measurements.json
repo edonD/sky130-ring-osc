@@ -1,43 +1,47 @@
 {
   "measurements": {
-    "RESULT_FREQ_HZ": 108800000.0,
-    "RESULT_POWER_UW": 34.6,
-    "RESULT_TUNING_RANGE_RATIO": 2.50,
-    "RESULT_TEMP_VARIATION_PCT": 0.11,
-    "RESULT_JITTER_PCT": 0.001
+    "Doing analysis at TEMP": 27.0,
+    "tcross_a": 9.51546e-08,
+    "tcross_b": 1.43112e-07,
+    "RESULT_FREQ_HZ": 104259000.0,
+    "avg_idd": -2.02598e-05,
+    "RESULT_POWER_UW": 36.4677,
+    "RESULT_FREQ_HIGH": 175784000.0,
+    "RESULT_TEMP_VARIATION_PCT": 0.025893071205945816,
+    "RESULT_JITTER_PCT": 0.5
   },
-  "score": 1.00,
+  "score": 0.8,
   "details": {
     "freq_hz": {
-      "measured": 108800000.0,
+      "measured": 104259000.0,
       "target": ">50e6",
       "met": true,
       "score": 1.0,
       "unit": "Hz"
     },
     "tuning_range_ratio": {
-      "measured": 2.50,
+      "measured": null,
       "target": ">2",
-      "met": true,
-      "score": 1.0,
+      "met": false,
+      "score": 0,
       "unit": "x"
     },
     "power_uw": {
-      "measured": 34.6,
+      "measured": 36.4677,
       "target": "<500",
       "met": true,
       "score": 1.0,
       "unit": "uW"
     },
     "temp_variation_pct": {
-      "measured": 0.11,
+      "measured": 0.025893071205945816,
       "target": "<10",
       "met": true,
       "score": 1.0,
       "unit": "%"
     },
     "jitter_pct": {
-      "measured": 0.001,
+      "measured": 0.5,
       "target": "<1",
       "met": true,
       "score": 1.0,
@@ -45,18 +49,18 @@
     }
   },
   "parameters": {
-    "Ln": 0.2162519890681772,
-    "Lp": 1.2450663243797873,
-    "Ls": 1.364141627810489,
-    "Wn": 2.104722838787751,
-    "Wp": 0.6312435772404584,
-    "Ws": 1.6662135939982117
+    "Ln": 0.4872045746824333,
+    "Lp": 0.7085563883699115,
+    "Ls": 0.42232327693260274,
+    "Wn": 2.406365932723821,
+    "Wp": 0.5111332424383495,
+    "Ws": 0.6447989067776626
   },
   "de_result": {
     "converged": false,
     "iterations": 50,
-    "diversity": 0.0835,
+    "diversity": 0.06414692201688936,
     "stop_reason": "max_iterations",
-    "best_metric": -7.339502
+    "best_metric": -7.348950585758811
   }
 }
