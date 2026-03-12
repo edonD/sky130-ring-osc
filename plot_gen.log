@@ -1,37 +1,37 @@
-Parameters: {'Lbn': 1.0, 'Lbp': 1.0, 'Ln': 0.15, 'Lp': 0.15, 'Lsn': 1.0, 'Lsp': 1.0, 'Wbn': 1.0, 'Wbp': 2.0, 'Wn': 1.0, 'Wp': 2.0, 'Wsn': 1.0, 'Wsp': 2.0}
+Parameters: {'Lbn': 1.0, 'Lbp': 1.0, 'Ln': 0.15, 'Lp': 0.15, 'Lsn': 0.8, 'Lsp': 1.0, 'Wbn': 1.0, 'Wbp': 2.0, 'Wn': 1.0, 'Wp': 2.0, 'Wsn': 1.0, 'Wsp': 2.0}
 
 Generating waveform.png...
-  Done: freq=264.0 MHz, power=76.5 µW
+  Done: freq=281.7 MHz, power=78.0 µW
 Generating freq_vs_vctrl.png...
   Vctrl=0.3V: no oscillation
   Vctrl=0.4V: no oscillation
   Vctrl=0.5V: no oscillation
-  Vctrl=0.6V: f=5.5 MHz, P=25.5 µW
-  Vctrl=0.7V: f=33.9 MHz, P=35.4 µW
-  Vctrl=0.8V: f=120.2 MHz, P=54.1 µW
-  Vctrl=0.9V: f=264.0 MHz, P=76.5 µW
-  Vctrl=1.0V: f=425.6 MHz, P=98.9 µW
-  Vctrl=1.1V: f=563.2 MHz, P=116.1 µW
-  Vctrl=1.2V: f=666.7 MHz, P=128.0 µW
-  Vctrl=1.3V: f=744.5 MHz, P=136.7 µW
-  Vctrl=1.4V: f=800.7 MHz, P=143.5 µW
-  Vctrl=1.5V: f=845.9 MHz, P=148.9 µW
-  Vctrl=1.6V: f=882.7 MHz, P=153.4 µW
-  Vctrl=1.7V: f=909.1 MHz, P=156.7 µW
-  Vctrl=1.8V: f=936.3 MHz, P=160.0 µW
-  Done: tuning ratio = 169.84x
+  Vctrl=0.6V: f=5.6 MHz, P=24.9 µW
+  Vctrl=0.7V: f=35.3 MHz, P=35.3 µW
+  Vctrl=0.8V: f=127.6 MHz, P=55.2 µW
+  Vctrl=0.9V: f=281.7 MHz, P=78.0 µW
+  Vctrl=1.0V: f=452.4 MHz, P=101.2 µW
+  Vctrl=1.1V: f=592.6 MHz, P=118.4 µW
+  Vctrl=1.2V: f=695.9 MHz, P=130.6 µW
+  Vctrl=1.3V: f=769.7 MHz, P=139.6 µW
+  Vctrl=1.4V: f=833.3 MHz, P=146.9 µW
+  Vctrl=1.5V: f=875.1 MHz, P=151.8 µW
+  Vctrl=1.6V: f=909.1 MHz, P=156.0 µW
+  Vctrl=1.7V: f=945.0 MHz, P=159.9 µW
+  Vctrl=1.8V: f=968.9 MHz, P=162.9 µW
+  Done: tuning ratio = 173.74x
 Generating spectrum.png...
-  Done: fundamental = 264.4 MHz
+  Done: fundamental = 282.2 MHz
 Generating freq_vs_temp.png...
-  T= -40°C: f=248.2 MHz, P=50.9 µW
-  T= -20°C: f=255.4 MHz, P=57.8 µW
-  T=   0°C: f=260.5 MHz, P=65.4 µW
-  T=  27°C: f=264.0 MHz, P=76.5 µW
-  T=  50°C: f=264.5 MHz, P=86.4 µW
-  T=  75°C: f=263.1 MHz, P=97.9 µW
-  T= 100°C: f=260.5 MHz, P=109.4 µW
-  T= 125°C: f=256.5 MHz, P=120.7 µW
-  Done: temp variation = 6.3%
+  T= -40°C: f=267.8 MHz, P=52.3 µW
+  T= -20°C: f=275.0 MHz, P=59.2 µW
+  T=   0°C: f=279.4 MHz, P=67.0 µW
+  T=  27°C: f=281.7 MHz, P=78.0 µW
+  T=  50°C: f=281.5 MHz, P=88.1 µW
+  T=  75°C: f=279.0 MHz, P=99.4 µW
+  T= 100°C: f=274.9 MHz, P=110.1 µW
+  T= 125°C: f=269.4 MHz, P=121.4 µW
+  Done: temp variation = 5.0%
 Generating progress.png...
   Done
 

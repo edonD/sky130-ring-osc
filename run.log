@@ -1,11 +1,58 @@
 Loading design...
+Design: SKY130 Voltage-Controlled Ring Oscillator
+Parameters: 6
+Specs: 5
 
-VALIDATION ERRORS:
-  - Placeholder {Lbn} in design.cir has no entry in parameters.csv
-  - Placeholder {Lbp} in design.cir has no entry in parameters.csv
-  - Placeholder {Lsn} in design.cir has no entry in parameters.csv
-  - Placeholder {Lsp} in design.cir has no entry in parameters.c[DE] iter    3 | best: -7.119397e+00 | no_improve:   1 | div: 0.2604 | dt: 16.161s
-[DE] iter    4 | best: -7.119397e+00 | no_improve:   2 | div: 0.2705 | dt: 13.987s
-[DE] iter    5 | best: -7.119397e+00 | no_improve:   3 | div: 0.2597 | dt: 14.973s
-[DE] iter    6 | best: -7.119397e+00 | no_improve:   4 | div: 0.2471 | dt: 20.322s
-[DE] iter    7 | best: -7.119397e+00 | no_improve:   5 | div: 0.2382 | dt: 20.367s
+DE: 6 params, pop=30, patience=30, workers=4
+[DE] iter    1 | best: -8.500000e+00 | no_improve:   0 | div: 0.2885 | dt: 14.082s
+[DE] iter    2 | best: -8.500000e+00 | no_improve:   1 | div: 0.2719 | dt: 19.299s
+[DE] iter    3 | best: -9.000000e+00 | no_improve:   0 | div: 0.2417 | dt: 20.504s
+[DE] iter    4 | best: -9.000000e+00 | no_improve:   1 | div: 0.2272 | dt: 22.647s
+[DE] iter    5 | best: -9.000000e+00 | no_improve:   2 | div: 0.2026 | dt: 22.739s
+[DE] iter    6 | best: -9.000000e+00 | no_improve:   3 | div: 0.1705 | dt: 23.752s
+[DE] iter    7 | best: -9.000000e+00 | no_improve:   4 | div: 0.1516 | dt: 25.801s
+[DE] iter    8 | best: -9.000000e+00 | no_improve:   5 | div: 0.1308 | dt: 25.856s
+[DE] iter    9 | best: -9.000000e+00 | no_improve:   6 | div: 0.1220 | dt: 25.682s
+[DE] iter   10 | best: -9.000000e+00 | no_improve:   7 | div: 0.1159 | dt: 25.778s
+[DE] iter   11 | best: -9.000000e+00 | no_improve:   8 | div: 0.0949 | dt: 25.856s
+[DE] iter   12 | best: -9.000000e+00 | no_improve:   9 | div: 0.0938 | dt: 25.907s
+[DE] iter   13 | best: -9.000000e+00 | no_improve:  10 | div: 0.0954 | dt: 25.894s
+[DE] iter   14 | best: -9.000000e+00 | no_improve:  11 | div: 0.0825 | dt: 26.129s
+[DE] iter   15 | best: -9.000000e+00 | no_improve:  12 | div: 0.0818 | dt: 26.055s
+[DE] iter   16 | best: -9.000000e+00 | no_improve:  13 | div: 0.0809 | dt: 25.885s
+[DE] iter   17 | best: -9.000000e+00 | no_improve:  14 | div: 0.0809 | dt: 25.975s
+[DE] iter   18 | best: -9.000000e+00 | no_improve:  15 | div: 0.0809 | dt: 25.824s
+[DE] iter   19 | best: -9.000000e+00 | no_improve:  16 | div: 0.0809 | dt: 25.889s
+[DE] iter   20 | best: -9.000000e+00 | no_improve:  17 | div: 0.0809 | dt: 25.824s
+[DE] iter   21 | best: -9.000000e+00 | no_improve:  18 | div: 0.0809 | dt: 26.176s
+[DE] iter   22 | best: -9.000000e+00 | no_improve:  19 | div: 0.0809 | dt: 25.637s
+[DE] iter   23 | best: -9.000000e+00 | no_improve:  20 | div: 0.0809 | dt: 24.937s
+[DE] iter   24 | best: -9.000000e+00 | no_improve:  21 | div: 0.0809 | dt: 25.642s
+[DE] iter   25 | best: -9.000000e+00 | no_improve:  22 | div: 0.0809 | dt: 25.764s
+[DE] iter   26 | best: -9.000000e+00 | no_improve:  23 | div: 0.0809 | dt: 25.781s
+[DE] iter   27 | best: -9.000000e+00 | no_improve:  24 | div: 0.0809 | dt: 25.854s
+[DE] iter   28 | best: -9.000000e+00 | no_improve:  25 | div: 0.0809 | dt: 25.968s
+[DE] iter   29 | best: -9.000000e+00 | no_improve:  26 | div: 0.0809 | dt: 25.945s
+[DE] iter   30 | best: -9.000000e+00 | no_improve:  27 | div: 0.0809 | dt: 25.737s
+[DE] iter   31 | best: -9.000000e+00 | no_improve:  28 | div: 0.0809 | dt: 25.994s
+[DE] iter   32 | best: -9.000000e+00 | no_improve:  29 | div: 0.0809 | dt: 25.948s
+[DE] iter   33 | best: -9.000000e+00 | no_improve:  30 | div: 0.0809 | dt: 25.983s
+[DE] iter   34 | best: -9.000000e+00 | no_improve:  31 | div: 0.0809 | dt: 25.705s
+[DE] iter   35 | best: -9.000000e+00 | no_improve:  32 | div: 0.0809 | dt: 25.965s
+[DE] iter   36 | best: -9.000000e+00 | no_improve:  33 | div: 0.0809 | dt: 25.983s
+[DE] iter   37 | best: -9.000000e+00 | no_improve:  34 | div: 0.0809 | dt: 25.943s
+[DE] iter   38 | best: -9.000000e+00 | no_improve:  35 | div: 0.0809 | dt: 25.722s
+[DE] iter   39 | best: -9.000000e+00 | no_improve:  36 | div: 0.0809 | dt: 25.724s
+[DE] iter   40 | best: -9.000000e+00 | no_improve:  37 | div: 0.0809 | dt: 25.829s
+[DE] iter   41 | best: -9.000000e+00 | no_improve:  38 | div: 0.0809 | dt: 25.667s
+[DE] iter   42 | best: -9.000000e+00 | no_improve:  39 | div: 0.0809 | dt: 25.928s
+[DE] iter   43 | best: -9.000000e+00 | no_improve:  40 | div: 0.0809 | dt: 26.024s
+[DE] iter   44 | best: -9.000000e+00 | no_improve:  41 | div: 0.0809 | dt: 25.870s
+[DE] iter   45 | best: -9.000000e+00 | no_improve:  42 | div: 0.0809 | dt: 23.847s
+[DE] iter   46 | best: -9.000000e+00 | no_improve:  43 | div: 0.0809 | dt: 25.821s
+[DE] iter   47 | best: -9.000000e+00 | no_improve:  44 | div: 0.0809 | dt: 25.902s
+[DE] iter   48 | best: -9.000000e+00 | no_improve:  45 | div: 0.0809 | dt: 25.891s
+[DE] iter   49 | best: -9.000000e+00 | no_improve:  46 | div: 0.0809 | dt: 25.999s
+[DE] iter   50 | best: -9.000000e+00 | no_improve:  47 | div: 0.0809 | dt: 25.659s
+[DE] iter   51 | best: -9.000000e+00 | no_improve:  48 | div: 0.0809 | dt: 26.001s
+[DE] iter   52 | best: -9.000000e+00 | no_improve:  49 | div: 0.0809 | dt: 25.921s
