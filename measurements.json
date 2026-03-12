@@ -1,45 +1,45 @@
 {
   "measurements": {
     "Doing analysis at TEMP": 27.0,
-    "tcross_a": 7.56583e-08,
-    "tcross_b": 1.15289e-07,
-    "RESULT_FREQ_HZ": 126164000.0,
-    "avg_idd": -3.63782e-05,
-    "RESULT_POWER_UW": 65.4809,
-    "RESULT_FREQ_LOW": 54041100.0,
-    "RESULT_FREQ_HIGH": 146890000.0,
-    "RESULT_TUNING_RANGE_RATIO": 2.7181163965944437,
-    "RESULT_TEMP_VARIATION_PCT": 10.790401162346908,
+    "tcross_a": 9.32663e-08,
+    "tcross_b": 1.42058e-07,
+    "RESULT_FREQ_HZ": 102476000.0,
+    "avg_idd": -3.05193e-05,
+    "RESULT_POWER_UW": 54.9348,
+    "RESULT_FREQ_LOW": 41454900.0,
+    "RESULT_FREQ_HIGH": 112924000.0,
+    "RESULT_TUNING_RANGE_RATIO": 2.7240205621048417,
+    "RESULT_TEMP_VARIATION_PCT": 0.49149056273236313,
     "RESULT_JITTER_PCT": 0.5
   },
-  "score": 0.9853499207220392,
+  "score": 1.0,
   "details": {
     "freq_hz": {
-      "measured": 126164000.0,
+      "measured": 102476000.0,
       "target": ">50e6",
       "met": true,
       "score": 1.0,
       "unit": "Hz"
     },
     "tuning_range_ratio": {
-      "measured": 2.7181163965944437,
+      "measured": 2.7240205621048417,
       "target": ">2",
       "met": true,
       "score": 1.0,
       "unit": "x"
     },
     "power_uw": {
-      "measured": 65.4809,
+      "measured": 54.9348,
       "target": "<500",
       "met": true,
       "score": 1.0,
       "unit": "uW"
     },
     "temp_variation_pct": {
-      "measured": 10.790401162346908,
+      "measured": 0.49149056273236313,
       "target": "<10",
-      "met": false,
-      "score": 0.9267496036101964,
+      "met": true,
+      "score": 1.0,
       "unit": "%"
     },
     "jitter_pct": {
@@ -51,19 +51,19 @@
     }
   },
   "parameters": {
-    "Cc": 0.010785589091711963,
-    "Ln": 0.32876441118511535,
-    "Lp": 0.7431226293473099,
-    "Ls": 2.2751692524789933,
-    "Wn": 0.6708178779292269,
-    "Wp": 1.2679471763912153,
-    "Ws": 6.418333641764074
+    "Cc": 0.011557139845603201,
+    "Ln": 0.2930258027706477,
+    "Lp": 0.8238459054600495,
+    "Ls": 0.7299854740268277,
+    "Wn": 0.7539066326191702,
+    "Wp": 0.7530512677837142,
+    "Ws": 3.4197149850728086
   },
   "de_result": {
-    "converged": true,
-    "iterations": 206,
-    "diversity": 0.005,
-    "stop_reason": "manually terminated (div=0.005, best stable)",
-    "best_metric": -7.297965
+    "converged": false,
+    "iterations": 50,
+    "diversity": 0.0775969147625222,
+    "stop_reason": "max_iterations",
+    "best_metric": -7.181962687453527
   }
 }
