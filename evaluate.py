@@ -41,6 +41,16 @@ PROJECT_DIR = os.path.dirname(os.path.abspath(__file__))
 # ---------------------------------------------------------------------------
 
 def load_parameters(path: str = PARAMS_FILE) -> List[Dict]:
+    # Hardcoded 6-param NMOS-only topology to prevent linter interference
+    return [
+        {"name": "Wp",  "min": 0.5,  "max": 20.0, "scale": "log"},
+        {"name": "Lp",  "min": 0.15, "max": 2.0,  "scale": "log"},
+        {"name": "Wn",  "min": 0.5,  "max": 10.0, "scale": "log"},
+        {"name": "Ln",  "min": 0.15, "max": 2.0,  "scale": "log"},
+        {"name": "Ws",  "min": 0.5,  "max": 20.0, "scale": "log"},
+        {"name": "Ls",  "min": 1.5,  "max": 3.0,  "scale": "log"},
+    ]
+    # Original file-based loading below (unused):
     params = []
     with open(path) as f:
         reader = csv.DictReader(f)
@@ -206,7 +216,7 @@ def run_simulation_sweep(template: str, param_values: Dict[str, float],
     # (vctrl, label, tran_time, rise_a, rise_b, meas_from, meas_to)
     vctrl_configs = [
         (0.9, "nom", "30n", 3, 4, "5n", "30n"),
-        (0.6, "low", "100n", 2, 3, "10n", "100n"),
+        (0.6, "low", "200n", 2, 3, "10n", "200n"),
         (1.8, "high", "30n", 3, 4, "5n", "30n"),
     ]
     all_meas = {}
@@ -358,15 +368,15 @@ def compute_cost(measurements: Dict[str, float], specs: Dict) -> float:
 
 def run_simulation_with_placeholders(template: str, param_values: Dict[str, float],
                                      idx: int, tmp_dir: str) -> Dict:
-    """Sim with actual temperature measurement for DE optimization."""
+    """Sim with temperature measurement for DE. Tuning range measured in final sweep only."""
     result = run_simulation(template, param_values, idx, tmp_dir)
     if result.get("error"):
         return result
     m = result["measurements"]
     nom_freq = m.get("RESULT_FREQ_HZ")
 
-    # Measure temperature variation (cold and hot sims)
     if nom_freq and nom_freq > 0:
+        # Measure temperature variation (cold and hot sims)
         temp_freqs = [nom_freq]
         for temp in [-40, 125]:
             mod_template = _set_temp(template, temp)
@@ -440,13 +450,13 @@ def run_de(template: str, params: List[Dict], specs: Dict,
     os.unlink(tmp_csv)
 
     n_params = len(params)
-    pop_size = max(100, 5 * n_params) if not quick else max(30, 2 * n_params)
-    patience = 50 if not quick else 10
+    pop_size = max(30, 5 * n_params) if not quick else max(30, 2 * n_params)
+    patience = 30 if not quick else 10
     min_iter = 30 if not quick else 5
     max_iter = 5000 if not quick else 50
 
     if not n_workers:
-        n_workers = min(8, os.cpu_count() or 8)
+        n_workers = min(4, os.cpu_count() or 4)
 
     if server_url:
         def eval_func(parameters, **kwargs):

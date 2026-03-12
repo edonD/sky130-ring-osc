@@ -1,0 +1,25 @@
+=== Baseline evaluation ===
+Freq: 264.0 MHz | Power: 76.5 µW | Tuning: 3.55x | Temp var: 6.2%
+
+=== Parameter sweep for temperature stability ===
+  Lsp=0.5: freq=319.0MHz tune=3.66x pwr=77.5µW temp=22.0% FAIL
+  Lsp=0.8: freq=279.4MHz tune=3.55x pwr=76.1µW temp=11.1% FAIL
+  Lsp=1.5: freq=285.4MHz tune=3.27x pwr=86.4µW temp=23.8% FAIL
+  Lsp=2.0: freq=379.7MHz tune=2.38x pwr=107.3µW temp=57.5% FAIL
+  Lsn=0.5: freq=198.2MHz tune=3.14x pwr=65.8µW temp=9.1% PASS
+  Lsn=0.8: freq=173.8MHz tune=3.36x pwr=62.4µW temp=7.1% PASS
+  Lsn=1.5: freq=141.5MHz tune=3.58x pwr=57.7µW temp=3.1% PASS
+    ** New best! temp_var=3.1%
+  Wsp=3.0: freq=198.2MHz tune=3.72x pwr=65.6µW temp=4.6% PASS
+  Wsp=5.0: freq=251.1MHz tune=3.63x pwr=67.8µW temp=15.8% FAIL
+  Wsn=2.0: freq=248.4MHz tune=2.61x pwr=70.9µW temp=11.0% FAIL
+  Wsn=3.0: freq=284.9MHz tune=2.34x pwr=73.2µW temp=8.7% PASS
+  Lbp=1.5: freq=188.9MHz tune=3.11x pwr=64.5µW temp=4.8% PASS
+  Lbp=2.0: freq=204.6MHz tune=2.98x pwr=63.0µW temp=9.6% PASS
+  Lbn=0.5: freq=187.2MHz tune=3.14x pwr=74.1µW temp=4.9% PASS
+  Lbn=1.5: freq=139.8MHz tune=3.69x pwr=50.4µW temp=50.0% FAIL
+
+=== Best result ===
+Freq: 141.5 MHz | Power: 57.7 µW | Tuning: 3.58x | Temp var: 3.1%
+Parameters: {'Wp': 2.0, 'Lp': 0.15, 'Wn': 1.0, 'Ln': 0.15, 'Wsp': 2.0, 'Lsp': 1.0, 'Wsn': 1.0, 'Lsn': 1.5, 'Wbp': 2.0, 'Lbp': 1.0, 'Wbn': 1.0, 'Lbn': 1.0}
+Saved improved parameters to best_parameters.csv
