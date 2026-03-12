@@ -1,0 +1,69 @@
+* SKY130 5-Stage Current-Starved Ring Oscillator - Validation
+* Vctrl=1.5V, Temp=27C
+
+.lib "sky130_models/sky130.lib.spice" tt
+
+* Supply
+Vdd vdd 0 1.8
+Vss vss 0 0
+
+* Control voltage
+Vctrl vctrl 0 1.5
+
+* === Stage 1 ===
+XMp1 n1 n5 vdd vdd sky130_fd_pr__pfet_01v8 W=0.8453u L=0.4786u nf=1
+XMn1 n1 n5 sn1 vss sky130_fd_pr__nfet_01v8 W=1.0032u L=1.3918u nf=1
+XMsn1 sn1 vctrl vss vss sky130_fd_pr__nfet_01v8 W=1.6835u L=0.994u nf=1
+
+* === Stage 2 ===
+XMp2 n2 n1 vdd vdd sky130_fd_pr__pfet_01v8 W=0.8453u L=0.4786u nf=1
+XMn2 n2 n1 sn2 vss sky130_fd_pr__nfet_01v8 W=1.0032u L=1.3918u nf=1
+XMsn2 sn2 vctrl vss vss sky130_fd_pr__nfet_01v8 W=1.6835u L=0.994u nf=1
+
+* === Stage 3 ===
+XMp3 n3 n2 vdd vdd sky130_fd_pr__pfet_01v8 W=0.8453u L=0.4786u nf=1
+XMn3 n3 n2 sn3 vss sky130_fd_pr__nfet_01v8 W=1.0032u L=1.3918u nf=1
+XMsn3 sn3 vctrl vss vss sky130_fd_pr__nfet_01v8 W=1.6835u L=0.994u nf=1
+
+* === Stage 4 ===
+XMp4 n4 n3 vdd vdd sky130_fd_pr__pfet_01v8 W=0.8453u L=0.4786u nf=1
+XMn4 n4 n3 sn4 vss sky130_fd_pr__nfet_01v8 W=1.0032u L=1.3918u nf=1
+XMsn4 sn4 vctrl vss vss sky130_fd_pr__nfet_01v8 W=1.6835u L=0.994u nf=1
+
+* === Stage 5 ===
+XMp5 n5 n4 vdd vdd sky130_fd_pr__pfet_01v8 W=0.8453u L=0.4786u nf=1
+XMn5 n5 n4 sn5 vss sky130_fd_pr__nfet_01v8 W=1.0032u L=1.3918u nf=1
+XMsn5 sn5 vctrl vss vss sky130_fd_pr__nfet_01v8 W=1.6835u L=0.994u nf=1
+
+* Output buffer (fixed)
+XMpout out n5 vdd vdd sky130_fd_pr__pfet_01v8 W=5u L=0.15u nf=1
+XMnout out n5 vss vss sky130_fd_pr__nfet_01v8 W=2.5u L=0.15u nf=1
+
+* Startup kick
+Vkick kick 0 pulse(0 1.8 0 0.1n 0.1n 0.5n 1000n)
+Ckick n1 kick 5f
+
+.ic v(n1)=0 v(n2)=1.8 v(n3)=0 v(n4)=1.8 v(n5)=0
+
+.options reltol=0.02 method=gear maxord=3
+.temp 27
+
+.control
+tran 0.05n 200n uic
+
+* Measure frequency using zero-crossings
+meas tran tcross_a when v(n5)=0.9 cross=20
+meas tran tcross_b when v(n5)=0.9 cross=30
+let period = (tcross_b - tcross_a) / 5
+let freq = 1 / period
+echo "RESULT_FREQ_HZ" $&freq
+
+* Power measurement
+meas tran avg_idd avg i(Vdd) from=50n to=200n
+let pwr = abs(avg_idd) * 1.8 * 1e6
+echo "RESULT_POWER_UW" $&pwr
+
+echo "RESULT_DONE"
+.endc
+
+.end
