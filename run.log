@@ -3,13 +3,95 @@ Design: SKY130 Voltage-Controlled Ring Oscillator
 Parameters: 12
 Specs: 5
 
-DE: 12 params, pop=30, patience=10, workers=8
-[DE] iter    1 | best: -7.157198e+00 | no_improve:   0 | div: 0.2878 | dt: 10.296s
-[DE] iter    2 | best: -7.157198e+00 | no_improve:   1 | div: 0.2637 | dt: 52.030s
-[DE] iter    3 | best: -7.157198e+00 | no_improve:   2 | div: 0.2497 | dt: 25.475s
-[DE] iter    4 | best: -7.157198e+00 | no_improve:   3 | div: 0.2318 | dt: 77.406s
-[DE] iter    5 | best: -7.157198e+00 | no_improve:   4 | div: 0.2256 | dt: 18.298s
-] iter    6 | best: -7.157631e+00 | no_improve:   5 | div: 0.2403 | dt: 54.004s
-[DE] iter    7 | best: -7.157631e+00 | no_improve:   6 | div: 0.2319 | dt: 26.493s
-[DE] iter    8 | best: -7.157631e+00 | no_improve:   7 | div: 0.2301 | dt: 86.670s
-[DE] iter    9 | best: -7.157631e+00 | no_improve:   8 | div: 0.2287 | dt: 24.613s
+DE: 12 params, pop=30, patience=10, workers=4
+[DE] iter    1 | best: -5.958509e+00 | no_improve:   0 | div: 0.2891 | dt: 109.417s
+[DE] iter    2 | best: -6.573637e+00 | no_improve:   0 | div: 0.2768 | dt: 158.244s
+[DE] iter    3 | best: -6.573637e+00 | no_improve:   1 | div: 0.2540 | dt: 20.195s
+[DE] iter    4 | best: -6.632145e+00 | no_improve:   0 | div: 0.2424 | dt: 28.557s
+[DE] iter    5 | best: -6.632145e+00 | no_improve:   1 | div: 0.2381 | dt: 158.884s
+[DE] iter    6 | best: -6.669032e+00 | no_improve:   0 | div: 0.2283 | dt: 21.514s
+[DE] iter    7 | best: -6.669032e+00 | no_improve:   1 | div: 0.2240 | dt: 173.511s
+[DE] iter    8 | best: -6.974323e+00 | no_improve:   0 | div: 0.2136 | dt: 67.628s
+[DE] iter    9 | best: -6.974323e+00 | no_improve:   1 | div: 0.2159 | dt: 167.955s
+[DE] iter   10 | best: -7.021073e+00 | no_improve:   0 | div: 0.2142 | dt: 54.597s
+[DE] iter   11 | best: -7.021073e+00 | no_improve:   1 | div: 0.2208 | dt: 30.973s
+[DE] iter   12 | best: -7.021073e+00 | no_improve:   2 | div: 0.2108 | dt: 28.789s
+[DE] iter   13 | best: -7.201671e+00 | no_improve:   0 | div: 0.2093 | dt: 18.972s
+[DE] iter   14 | best: -7.201671e+00 | no_improve:   1 | div: 0.2070 | dt: 19.382s
+[DE] iter   15 | best: -7.201671e+00 | no_improve:   2 | div: 0.2079 | dt: 20.045s
+[DE] iter   16 | best: -7.201671e+00 | no_improve:   3 | div: 0.2070 | dt: 28.112s
+[DE] iter   17 | best: -7.201671e+00 | no_improve:   4 | div: 0.2020 | dt: 19.996s
+[DE] iter   18 | best: -7.201671e+00 | no_improve:   5 | div: 0.1986 | dt: 22.273s
+DE] iter   19 | best: -7.157198e+00 | no_improve:  18 | div: 0.1881 | dt: 163.656s
+[DE] iter   20 | best: -7.157198e+00 | no_improve:  19 | div: 0.1845 | dt: 13.680s
+[DE] iter   21 | best: -7.157198e+00 | no_improve:  20 | div: 0.1845 | dt: 49.419s
+[DE] iter   22 | best: -7.157198e+00 | no_improve:  21 | div: 0.1827 | dt: 17.701s
+[DE] iter   23 | best: -7.157198e+00 | no_improve:  22 | div: 0.1866 | dt: 11.171s
+[DE] iter   24 | best: -7.157198e+00 | no_improve:  23 | div: 0.1797 | dt: 16.799s
+[DE] iter   25 | best: -7.157198e+00 | no_improve:  24 | div: 0.1778 | dt: 11.043s
+[DE] iter   26 | best: -7.157198e+00 | no_improve:  25 | div: 0.1779 | dt: 12.192s
+[DE] iter   27 | best: -7.157198e+00 | no_improve:  26 | div: 0.1767 | dt: 11.339s
+[DE] iter   28 | best: -7.157198e+00 | no_improve:  27 | div: 0.1785 | dt: 10.055s
+[DE] iter   29 | best: -7.157198e+00 | no_improve:  28 | div: 0.1785 | dt: 11.135s
+[DE] iter   30 | best: -7.157198e+00 | no_improve:  29 | div: 0.1804 | dt: 11.279s
+[DE] iter   31 | best: -7.157198e+00 | no_improve:  30 | div: 0.1845 | dt: 20.332s
+
+============================================================
+  Stop reason:  stagnated (div=0.1845, no_improve=30)
+  Converged:    True
+  Iterations:   31
+  Best metric:  -7.157198e+00
+  Diversity:    0.1845
+  Best parameters:
+    Lbn: 1.148082e+00
+    Lbp: 7.150808e-01
+    Ln: 1.508530e+00
+    Lp: 2.106068e-01
+    Lsn: 3.207694e-01
+    Lsp: 6.942065e-01
+    Wbn: 7.034949e-01
+    Wbp: 1.632897e+00
+    Wn: 8.285765e-01
+    Wp: 4.044584e+00
+    Wsn: 5.571020e+00
+    Wsp: 7.007428e+00
+============================================================
+
+
+======================================================================
+  EVALUATION REPORT — SKY130 Voltage-Controlled Ring Oscillator
+======================================================================
+
+  Score: 0.80 / 1.00  |  Time: 1333.4s
+  DE converged: True  |  Iterations: 31  |  Diversity: 0.1845
+  Stop reason: stagnated (div=0.1845, no_improve=30)
+
+  Specs met: 4/5
+
+  Spec                            Target     Measured     Unit   Status  Score
+  -------------------------------------------------------------------------
+  freq_hz                          >50e6     1.50e+08       Hz     PASS  1.00
+  tuning_range_ratio                  >2          N/A        x     FAIL  0.00
+  power_uw                          <500       56.355       uW     PASS  1.00
+  temp_variation_pct                 <10        0.587        %     PASS  1.00
+  jitter_pct                          <1        0.500        %     PASS  1.00
+
+  Best Parameters:
+    Lbn                  = 1.1481e+00
+    Lbp                  = 7.1508e-01
+    Ln                   = 1.5085e+00
+    Lp                   = 2.1061e-01
+    Lsn                  = 3.2077e-01
+    Lsp                  = 6.9421e-01
+    Wbn                  = 7.0349e-01
+    Wbp                  = 1.6329e+00
+    Wn                   = 8.2858e-01
+    Wp                   = 4.0446e+00
+    Wsn                  = 5.5710e+00
+    Wsp                  = 7.0074e+00
+
+======================================================================
+
+
+Saved: best_parameters.csv, measurements.json, plots/
+Score: 0.80 | Specs met: 4/5 | Converged: True

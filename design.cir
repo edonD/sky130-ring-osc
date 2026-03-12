@@ -1,6 +1,6 @@
-* SKY130 Current-Starved Ring Oscillator — 3-stage with complementary starving
-* Both NMOS and PMOS current starving for symmetric delay control
-* NMOS: direct Vctrl gate drive. PMOS: current mirror from Vctrl reference.
+* SKY130 Current-Starved Ring Oscillator — 3-stage NMOS-starved
+* Direct Vctrl gate drive on NMOS starving transistors
+* Longer Ls channel for temperature compensation (sweet spot ~2u)
 * VDD ramp startup with cap imbalance breaks symmetry for oscillation.
 
 .lib "sky130_models/sky130_minimal.lib.spice" tt
@@ -12,27 +12,20 @@ Vss vss 0 0
 * Control voltage (sets oscillation frequency)
 Vctrl vctrl 0 0.9
 
-* === Current mirror bias for PMOS starving ===
-XMref_n pbias vctrl vss vss sky130_fd_pr__nfet_01v8 W={Wbn}u L={Lbn}u nf=1
-XMref_p pbias pbias vdd vdd sky130_fd_pr__pfet_01v8 W={Wbp}u L={Lbp}u nf=1
-
 * === Stage 1 ===
-XMp1 n1 n3 sp1 vdd sky130_fd_pr__pfet_01v8 W={Wp}u L={Lp}u nf=1
-XMn1 n1 n3 sn1 vss sky130_fd_pr__nfet_01v8 W={Wn}u L={Ln}u nf=1
-XMsp1 sp1 pbias vdd vdd sky130_fd_pr__pfet_01v8 W={Wsp}u L={Lsp}u nf=1
-XMsn1 sn1 vctrl vss vss sky130_fd_pr__nfet_01v8 W={Wsn}u L={Lsn}u nf=1
+XMp1 n1 n3 vdd vdd sky130_fd_pr__pfet_01v8 W={Wp}u L={Lp}u nf=1
+XMn1 n1 n3 ns1 vss sky130_fd_pr__nfet_01v8 W={Wn}u L={Ln}u nf=1
+XMs1 ns1 vctrl vss vss sky130_fd_pr__nfet_01v8 W={Ws}u L={Ls}u nf=1
 
 * === Stage 2 ===
-XMp2 n2 n1 sp2 vdd sky130_fd_pr__pfet_01v8 W={Wp}u L={Lp}u nf=1
-XMn2 n2 n1 sn2 vss sky130_fd_pr__nfet_01v8 W={Wn}u L={Ln}u nf=1
-XMsp2 sp2 pbias vdd vdd sky130_fd_pr__pfet_01v8 W={Wsp}u L={Lsp}u nf=1
-XMsn2 sn2 vctrl vss vss sky130_fd_pr__nfet_01v8 W={Wsn}u L={Lsn}u nf=1
+XMp2 n2 n1 vdd vdd sky130_fd_pr__pfet_01v8 W={Wp}u L={Lp}u nf=1
+XMn2 n2 n1 ns2 vss sky130_fd_pr__nfet_01v8 W={Wn}u L={Ln}u nf=1
+XMs2 ns2 vctrl vss vss sky130_fd_pr__nfet_01v8 W={Ws}u L={Ls}u nf=1
 
 * === Stage 3 ===
-XMp3 n3 n2 sp3 vdd sky130_fd_pr__pfet_01v8 W={Wp}u L={Lp}u nf=1
-XMn3 n3 n2 sn3 vss sky130_fd_pr__nfet_01v8 W={Wn}u L={Ln}u nf=1
-XMsp3 sp3 pbias vdd vdd sky130_fd_pr__pfet_01v8 W={Wsp}u L={Lsp}u nf=1
-XMsn3 sn3 vctrl vss vss sky130_fd_pr__nfet_01v8 W={Wsn}u L={Lsn}u nf=1
+XMp3 n3 n2 vdd vdd sky130_fd_pr__pfet_01v8 W={Wp}u L={Lp}u nf=1
+XMn3 n3 n2 ns3 vss sky130_fd_pr__nfet_01v8 W={Wn}u L={Ln}u nf=1
+XMs3 ns3 vctrl vss vss sky130_fd_pr__nfet_01v8 W={Ws}u L={Ls}u nf=1
 
 * Output buffer (fixed sizing)
 XMpout out n3 vdd vdd sky130_fd_pr__pfet_01v8 W=5u L=0.15u nf=1
