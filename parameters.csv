@@ -1,10 +1,8 @@
 name,min,max,scale
-Wp,0.5,20,log
-Lp,0.15,1.5,log
-Wn,0.5,15,log
-Ln,0.15,2,log
-Ws,0.5,50,log
-Ls,0.15,5,log
-Wsp,0.5,50,log
-Lsp,0.15,5,log
-Cc,0.01,10,log
+Wp,0.5,25,log
+Lp,0.15,2,log
+Wn,0.5,20,log
+Ln,0.15,2.5,log
+Ws,0.5,80,log
+Ls,0.15,8,log
+Cc,0.01,15,log

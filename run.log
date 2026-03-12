@@ -1,36 +1,21 @@
 Loading design...
 Design: SKY130 Voltage-Controlled Ring Oscillator
-Parameters: 14
+Parameters: 9
 Specs: 5
 
-DE: 14 params, pop=30, patience=10, workers=4
-[DE] iter    1 | best: 1.796517e+03 | no_improve:   0 | div: 0.2884 | dt: 10.561s
-[DE] iter    2 | best: 1.796517e+03 | no_improve:   1 | div: 0.2702 | dt: 26.977s
-[DE] iter    3 | best: 1.796517e+03 | no_improve:   2 | div: 0.2521 | dt: 10.549s
-[DE] iter    4 | best: 1.796517e+03 | no_improve:   3 | div: 0.2385 | dt: 10.467s
-[DE] iter    5 | best: 1.796517e+03 | no_improve:   4 | div: 0.2301 | dt: 10.930s
-[DE] iter    6 | best: 1.796517e+03 | no_improve:   5 | div: 0.2234 | dt: 34.857s
-[DE] iter    7 | best: 1.796517e+03 | no_improve:   6 | div: 0.2103 | dt: 10.438s
-[DE] iter    8 | best: 1.796517e+03 | no_improve:   7 | div: 0.2092 | dt: 10.556s
-[DE] iter    9 | best: 1.796517e+03 | no_improve:   8 | div: 0.2047 | dt: 10.630s
-[DE] iter   10 | best: 1.796516e+03 | no_improve:   0 | div: 0.2092 | dt: 54.085s
-[DE] iter   11 | best: 1.796516e+03 | no_improve:   1 | div: 0.2013 | dt: 11.059s
-[DE] iter   12 | best: 1.796516e+03 | no_improve:   2 | div: 0.2008 | dt: 31.594s
-[DE] iter   13 | best: 1.796516e+03 | no_improve:   0 | div: 0.1996 | dt: 12.499s
-[DE] iter   14 | best: 1.796516e+03 | no_improve:   1 | div: 0.1994 | dt: 27.158s
-[DE] iter   15 | best: 1.796516e+03 | no_improve:   0 | div: 0.1930 | dt: 37.819s
-[DE] iter   16 | best: 1.796516e+03 | no_improve:   1 | div: 0.1954 | dt: 10.508s
-[DE] iter   17 | best: 1.796516e+03 | no_improve:   2 | div: 0.1949 | dt: 10.492s
-[DE] iter   18 | best: 1.796516e+03 | no_improve:   0 | div: 0.1992 | dt: 12.018s
-[DE] iter   19 | best: 1.796516e+03 | no_improve:   0 | div: 0.1940 | dt: 52.662s
-[DE] iter   20 | best: 1.796516e+03 | no_improve:   0 | div: 0.2031 | dt: 68.683s
-[DE] iter   21 | best: 1.796516e+03 | no_improve:   1 | div: 0.1993 | dt: 10.488s
-[DE] iter   22 | best: 1.796516e+03 | no_improve:   2 | div: 0.2023 | dt: 10.758s
-[DE] iter   23 | best: 1.796516e+03 | no_improve:   3 | div: 0.2046 | dt: 42.573s
-[DE] iter   24 | best: 1.796516e+03 | no_improve:   4 | div: 0.2028 | dt: 10.520s
-[DE] iter   25 | best: 1.796516e+03 | no_improve:   5 | div: 0.2021 | dt: 10.690s
-[DE] iter   26 | best: 1.796516e+03 | no_improve:   0 | div: 0.1958 | dt: 10.682s
-[DE] iter   27 | best: 1.796516e+03 | no_improve:   1 | div: 0.1917 | dt: 29.787s
-[DE] iter   28 | best: 1.796516e+03 | no_improve:   2 | div: 0.1844 | dt: 10.601s
-[DE] iter   29 | best: 1.796516e+03 | no_improve:   3 | div: 0.1801 | dt: 10.821s
-[DE] iter   30 | best: 1.796516e+03 | no_improve:   0 | div: 0.1796 | dt: 12.092s
+DE: 9 params, pop=30, patience=10, workers=4
+[DE] iter    1 | best: 2.411360e+02 | no_improve:   0 | div: 0.2897 | dt: 55.853s
+[DE] iter    2 | best: 2.411360e+02 | no_improve:   1 | div: 0.2735 | dt: 21.717s
+[DE] iter    3 | best: 2.411360e+02 | no_improve:   2 | div: 0.2588 | dt: 49.055s
+[DE] iter    4 | best: 2.411360e+02 | no_improve:   3 | div: 0.2573 | dt: 10.290s
+[DE] iter    5 | best: 2.411360e+02 | no_improve:   4 | div: 0.2558 | dt: 10.509s
+[DE] iter    6 | best: 2.411360e+02 | no_improve:   5 | div: 0.2497 | dt: 10.779s
+[DE] iter    7 | best: 2.411360e+02 | no_improve:   6 | div: 0.2441 | dt: 10.704s
+[DE] iter    8 | best: 2.411360e+02 | no_improve:   7 | div: 0.2416 | dt: 10.478s
+[DE] iter    9 | best: 2.411360e+02 | no_improve:   8 | div: 0.2388 | dt: 37.878s
+[DE] iter   10 | best: 2.411360e+02 | no_improve:   9 | div: 0.2338 | dt: 10.737s
+[DE] iter   11 | best: 2.411360e+02 | no_improve:  10 | div: 0.2259 | dt: 10.556s
+[DE] iter   12 | best: 2.411360e+02 | no_improve:  11 | div: 0.2303 | dt: 10.758s
+[DE] iter   13 | best: 2.411360e+02 | no_improve:  12 | div: 0.2303 | dt: 25.118s
+[DE] iter   14 | best: 2.411360e+02 | no_improve:  13 | div: 0.2380 | dt: 10.814s
+[DE] iter   15 | best: 2.411360e+02 | no_improve:  14 | div: 0.2380 | dt: 10.617s

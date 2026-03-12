@@ -124,3 +124,9 @@ DE: 7 params, pop=35, patience=30, workers=4
 [DE] iter  118 | best: -7.279186e+00 | no_improve:   1 | div: 0.0274 | dt: 52.253s
 [DE] iter  119 | best: -7.279186e+00 | no_improve:   2 | div: 0.0276 | dt: 37.529s
 [DE] iter  120 | best: -7.279186e+00 | no_improve:   3 | div: 0.0275 | dt: 31.506s
+[DE] iter  121 | best: -7.279186e+00 | no_improve:   4 | div: 0.0271 | dt: 73.788s
+[DE] iter  122 | best: -7.279298e+00 | no_improve:   0 | div: 0.0245 | dt: 86.566s
+[DE] iter  123 | best: -7.279298e+00 | no_improve:   1 | div: 0.0240 | dt: 33.260s
+[DE] iter  124 | best: -7.279298e+00 | no_improve:   2 | div: 0.0241 | dt: 60.565s
+[DE] iter  125 | best: -7.279298e+00 | no_improve:   3 | div: 0.0239 | dt: 47.883s
+[DE] iter  126 | best: -7.280002e+00 | no_improve:   0 | div: 0.0219 | dt: 46.151s
