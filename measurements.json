@@ -1,25 +1,64 @@
 {
   "measurements": {
-    "RESULT_FREQ_HZ": 287100000.0,
-    "RESULT_POWER_UW": 78.5,
-    "RESULT_TUNING_RANGE_RATIO": 175.75,
-    "RESULT_TEMP_VARIATION_PCT": 4.9,
+    "RESULT_FREQ_HZ": 665422000.0,
+    "RESULT_POWER_UW": 189.404,
+    "RESULT_FREQ_LOW": 145827000.0,
+    "RESULT_FREQ_HIGH": 754104000.0,
+    "RESULT_TUNING_RANGE_RATIO": 5.17122343598922,
+    "RESULT_TEMP_VARIATION_PCT": 1.6641546467685255,
     "RESULT_JITTER_PCT": 0.5
   },
-  "parameters": {
-    "Wp": 2.0,
-    "Lp": 0.15,
-    "Wn": 1.0,
-    "Ln": 0.15,
-    "Wsp": 2.0,
-    "Lsp": 1.0,
-    "Wsn": 1.0,
-    "Lsn": 0.75,
-    "Wbp": 2.0,
-    "Lbp": 1.0,
-    "Wbn": 1.0,
-    "Lbn": 1.0
+  "score": 1.0,
+  "details": {
+    "freq_hz": {
+      "measured": 665422000.0,
+      "target": ">50e6",
+      "met": true,
+      "score": 1.0,
+      "unit": "Hz"
+    },
+    "tuning_range_ratio": {
+      "measured": 5.17122343598922,
+      "target": ">2",
+      "met": true,
+      "score": 1.0,
+      "unit": "x"
+    },
+    "power_uw": {
+      "measured": 189.404,
+      "target": "<500",
+      "met": true,
+      "score": 1.0,
+      "unit": "uW"
+    },
+    "temp_variation_pct": {
+      "measured": 1.6641546467685255,
+      "target": "<10",
+      "met": true,
+      "score": 1.0,
+      "unit": "%"
+    },
+    "jitter_pct": {
+      "measured": 0.5,
+      "target": "<1",
+      "met": true,
+      "score": 1.0,
+      "unit": "%"
+    }
   },
-  "specs_met": "5/5",
-  "score": 0.98
+  "parameters": {
+    "Ln": 0.7160077332311959,
+    "Lp": 0.21908937319202793,
+    "Ls": 1.6693827534769634,
+    "Wn": 1.6970617507059702,
+    "Wp": 1.9435254150365375,
+    "Ws": 13.777809656517311
+  },
+  "de_result": {
+    "converged": true,
+    "iterations": 93,
+    "diversity": 0.08085521249319193,
+    "stop_reason": "stagnated (div=0.0809, no_improve=90)",
+    "best_metric": -9.0
+  }
 }
