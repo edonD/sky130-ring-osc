@@ -1,0 +1,38 @@
+Parameters: {'Lbn': 1.0, 'Lbp': 1.0, 'Ln': 0.15, 'Lp': 0.15, 'Lsn': 1.0, 'Lsp': 1.0, 'Wbn': 1.0, 'Wbp': 2.0, 'Wn': 1.0, 'Wp': 2.0, 'Wsn': 1.0, 'Wsp': 2.0}
+
+Generating waveform.png...
+  Done: freq=161.2 MHz, power=63.4 µW
+Generating freq_vs_vctrl.png...
+  Vctrl=0.3V: no oscillation
+  Vctrl=0.4V: no oscillation
+  Vctrl=0.5V: no oscillation
+  Vctrl=0.6V: no oscillation
+  Vctrl=0.7V: f=19.9 MHz, P=23.4 µW
+  Vctrl=0.8V: no oscillation
+  Vctrl=0.9V: f=161.2 MHz, P=63.4 µW
+  Vctrl=1.0V: f=252.7 MHz, P=84.4 µW
+  Vctrl=1.1V: f=330.0 MHz, P=100.7 µW
+  Vctrl=1.2V: f=389.1 MHz, P=112.2 µW
+  Vctrl=1.3V: f=432.6 MHz, P=120.5 µW
+  Vctrl=1.4V: f=464.2 MHz, P=126.8 µW
+  Vctrl=1.5V: f=487.9 MHz, P=131.6 µW
+  Vctrl=1.6V: f=506.6 MHz, P=135.6 µW
+  Vctrl=1.7V: f=521.6 MHz, P=138.7 µW
+  Vctrl=1.8V: f=534.0 MHz, P=141.4 µW
+  Done: tuning ratio = 26.78x
+Generating spectrum.png...
+  Done: fundamental = 162.2 MHz
+Generating freq_vs_temp.png...
+  T= -40°C: f=158.2 MHz, P=44.3 µW
+  T= -20°C: f=160.6 MHz, P=48.7 µW
+  T=   0°C: f=161.2 MHz, P=53.4 µW
+  T=  27°C: f=160.9 MHz, P=60.1 µW
+  T=  50°C: f=159.4 MHz, P=66.3 µW
+  T=  75°C: f=157.3 MHz, P=73.2 µW
+  T= 100°C: f=154.6 MHz, P=80.4 µW
+  T= 125°C: f=151.5 MHz, P=87.7 µW
+  Done: temp variation = 6.1%
+Generating progress.png...
+  Done
+
+All plots generated in plots/

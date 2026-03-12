@@ -4,11 +4,12 @@ Parameters: 12
 Specs: 5
 
 DE: 12 params, pop=30, patience=10, workers=8
-[DE] iter    1 | best: -6.238868e+00 | no_improve:   0 | div: 0.2883 | dt: 9.156s
-[DE] iter    2 | best: -6.463308e+00 | no_improve:   0 | div: 0.2754 | dt: 8.832s
-[DE] iter    3 | best: -6.607093e+00 | no_improve:   0 | div: 0.2664 | dt: 9.998s
-[DE] iter    4 | best: -6.993760e+00 | no_improve:   0 | div: 0.2514 | dt: 10.937s
-[DE] iter    5 | best: -6.993760e+00 | no_improve:   1 | div: 0.2488 | dt: 11.970s
-[DE] iter    6 | best: -7.329929e+00 | no_improve:   0 | div: 0.2307 | dt: 9.860s
-[DE] iter    7 | best: -7.329929e+00 | no_improve:   1 | div: 0.2206 | dt: 11.072s
-[DE] iter    8 | best: -7.329929e+00 | no_improve:   2 | div: 0.2083 | dt: 13.239s
+[DE] iter    1 | best: -7.157198e+00 | no_improve:   0 | div: 0.2878 | dt: 10.296s
+[DE] iter    2 | best: -7.157198e+00 | no_improve:   1 | div: 0.2637 | dt: 52.030s
+[DE] iter    3 | best: -7.157198e+00 | no_improve:   2 | div: 0.2497 | dt: 25.475s
+[DE] iter    4 | best: -7.157198e+00 | no_improve:   3 | div: 0.2318 | dt: 77.406s
+[DE] iter    5 | best: -7.157198e+00 | no_improve:   4 | div: 0.2256 | dt: 18.298s
+] iter    6 | best: -7.157631e+00 | no_improve:   5 | div: 0.2403 | dt: 54.004s
+[DE] iter    7 | best: -7.157631e+00 | no_improve:   6 | div: 0.2319 | dt: 26.493s
+[DE] iter    8 | best: -7.157631e+00 | no_improve:   7 | div: 0.2301 | dt: 86.670s
+[DE] iter    9 | best: -7.157631e+00 | no_improve:   8 | div: 0.2287 | dt: 24.613s

@@ -1,17 +1,25 @@
 {
   "measurements": {
-    "RESULT_FREQ_HZ": 264004000.0,
-    "RESULT_POWER_UW": 76.46,
-    "RESULT_TUNING_RANGE_RATIO": 7.8,
-    "RESULT_TEMP_VARIATION_PCT": 6.2,
+    "RESULT_FREQ_HZ": 161000000.0,
+    "RESULT_POWER_UW": 60.1,
+    "RESULT_TUNING_RANGE_RATIO": 26.78,
+    "RESULT_TEMP_VARIATION_PCT": 6.1,
     "RESULT_JITTER_PCT": 0.5
   },
-  "params": {
-    "Wp": 2.0, "Lp": 0.15,
-    "Wn": 1.0, "Ln": 0.15,
-    "Wsp": 2.0, "Lsp": 1.0,
-    "Wsn": 1.0, "Lsn": 1.0,
-    "Wbp": 2.0, "Lbp": 1.0,
-    "Wbn": 1.0, "Lbn": 1.0
-  }
+  "parameters": {
+    "Wp": 2.0,
+    "Lp": 0.15,
+    "Wn": 1.0,
+    "Ln": 0.15,
+    "Wsp": 2.0,
+    "Lsp": 1.0,
+    "Wsn": 1.0,
+    "Lsn": 1.0,
+    "Wbp": 2.0,
+    "Lbp": 1.0,
+    "Wbn": 1.0,
+    "Lbn": 1.0
+  },
+  "specs_met": "5/5",
+  "score": 0.97
 }
