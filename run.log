@@ -3,130 +3,211 @@ Design: SKY130 Voltage-Controlled Ring Oscillator
 Parameters: 6
 Specs: 5
 
-DE: 6 params, pop=30, patience=10, workers=4
-[DE] iter    1 | best: -6.966728e+00 | no_improve:   0 | div: 0.2873 | dt: 46.370s
-[DE] iter    2 | best: -6.966728e+00 | no_improve:   1 | div: 0.2628 | dt: 27.371s
-[DE] iter    3 | best: -6.966728e+00 | no_improve:   2 | div: 0.2652 | dt: 30.894s
-[DE] iter    4 | best: -6.966728e+00 | no_improve:   3 | div: 0.2501 | dt: 69.501s
-[DE] iter    5 | best: -6.966728e+00 | no_improve:   4 | div: 0.2412 | dt: 30.722s
-[DE] iter    6 | best: -7.026189e+00 | no_improve:   0 | div: 0.2311 | dt: 27.784s
-[DE] iter    7 | best: -7.053621e+00 | no_improve:   0 | div: 0.2250 | dt: 30.628s
-[DE] iter    8 | best: -7.104696e+00 | no_improve:   0 | div: 0.2280 | dt: 29.616s
-[DE] iter    9 | best: -7.164164e+00 | no_improve:   0 | div: 0.2121 | dt: 25.745s
-[DE] iter   10 | best: -7.164164e+00 | no_improve:   1 | div: 0.2073 | dt: 29.182s
-[DE] iter   11 | best: -7.164164e+00 | no_improve:   2 | div: 0.2047 | dt: 29.030s
-[DE] iter   12 | best: -7.164164e+00 | no_improve:   3 | div: 0.2016 | dt: 30.154s
-[DE] iter   13 | best: -7.164164e+00 | no_improve:   4 | div: 0.1962 | dt: 55.595s
-[DE] iter   14 | best: -7.164164e+00 | no_improve:   5 | div: 0.1881 | dt: 44.641s
-[DE] iter   15 | best: -7.164164e+00 | no_improve:   6 | div: 0.1892 | dt: 57.228s
-[DE] iter   16 | best: -7.164164e+00 | no_improve:   7 | div: 0.1871 | dt: 27.794s
-[DE] iter   17 | best: -7.164164e+00 | no_improve:   8 | div: 0.1909 | dt: 44.711s
-[DE] iter   18 | best: -7.185866e+00 | no_improve:   0 | div: 0.1852 | dt: 28.250s
-[DE] iter   19 | best: -7.185866e+00 | no_improve:   1 | div: 0.1916 | dt: 31.143s
-[DE] iter   20 | best: -7.227382e+00 | no_improve:   0 | div: 0.1782 | dt: 29.760s
-[DE] iter   21 | best: -7.227382e+00 | no_improve:   1 | div: 0.1763 | dt: 57.495s
-[DE] iter   22 | best: -7.227382e+00 | no_improve:   2 | div: 0.1710 | dt: 62.418s
-[DE] iter   23 | best: -7.227382e+00 | no_improve:   3 | div: 0.1680 | dt: 29.173s
-[DE] iter   24 | best: -7.227382e+00 | no_improve:   4 | div: 0.1678 | dt: 28.477s
-[DE] iter   25 | best: -7.248674e+00 | no_improve:   0 | div: 0.1685 | dt: 27.211s
-[DE] iter   26 | best: -7.248674e+00 | no_improve:   1 | div: 0.1650 | dt: 27.073s
-[DE] iter   27 | best: -7.271806e+00 | no_improve:   0 | div: 0.1513 | dt: 28.207s
-[DE] iter   28 | best: -7.271806e+00 | no_improve:   1 | div: 0.1470 | dt: 28.030s
-[DE] iter   29 | best: -7.271806e+00 | no_improve:   2 | div: 0.1257 | dt: 81.268s
-[DE] iter   30 | best: -7.288693e+00 | no_improve:   0 | div: 0.1149 | dt: 31.165s
-[DE] iter   31 | best: -7.288693e+00 | no_improve:   1 | div: 0.1076 | dt: 28.040s
-[DE] iter   32 | best: -7.288693e+00 | no_improve:   2 | div: 0.1077 | dt: 30.693s
-[DE] iter   33 | best: -7.290162e+00 | no_improve:   0 | div: 0.0896 | dt: 27.797s
-[DE] iter   34 | best: -7.318079e+00 | no_improve:   0 | div: 0.0841 | dt: 30.723s
-[DE] iter   35 | best: -7.318079e+00 | no_improve:   1 | div: 0.0912 | dt: 27.855s
-[DE] iter   36 | best: -7.318079e+00 | no_improve:   2 | div: 0.0898 | dt: 30.672s
-[DE] iter   37 | best: -7.318079e+00 | no_improve:   3 | div: 0.0852 | dt: 30.650s
-[DE] iter   38 | best: -7.318079e+00 | no_improve:   4 | div: 0.0865 | dt: 30.441s
-[DE] iter   39 | best: -7.318079e+00 | no_improve:   5 | div: 0.0865 | dt: 69.935s
-[DE] iter   40 | best: -7.318079e+00 | no_improve:   6 | div: 0.0846 | dt: 28.263s
-[DE] iter   41 | best: -7.318079e+00 | no_improve:   7 | div: 0.0814 | dt: 28.085s
-[DE] iter   42 | best: -7.337435e+00 | no_improve:   0 | div: 0.0854 | dt: 30.726s
-[DE] iter   43 | best: -7.337435e+00 | no_improve:   1 | div: 0.0835 | dt: 41.239s
-[DE] iter   44 | best: -7.337435e+00 | no_improve:   2 | div: 0.0818 | dt: 26.789s
-[DE] iter   45 | best: -7.337435e+00 | no_improve:   3 | div: 0.0840 | dt: 28.214s
-[DE] iter   46 | best: -7.337435e+00 | no_improve:   4 | div: 0.0840 | dt: 25.458s
-[DE] iter   47 | best: -7.339502e+00 | no_improve:   0 | div: 0.0840 | dt: 28.596s
-[DE] iter   48 | best: -7.339502e+00 | no_improve:   1 | div: 0.0838 | dt: 30.934s
-[DE] iter   49 | best: -7.339502e+00 | no_improve:   2 | div: 0.0838 | dt: 30.731s
-[DE] iter   50 | best: -7.339502e+00 | no_improve:   3 | div: 0.0835 | dt: 52.062s
-
-============================================================
-  Stop reason:  max_iterations
-  Converged:    False
-  Iterations:   50
-  Best metric:  -7.339502e+00
-  Diversity:    0.0835
-  Best parameters:
-    Ln: 2.162520e-01
-    Lp: 1.245066e+00
-    Ls: 1.364142e+00
-    Wn: 2.104723e+00
-    Wp: 6.312436e-01
-    Ws: 1.666214e+00
-============================================================
-
-
-======================================================================
-  EVALUATION REPORT — SKY130 Voltage-Controlled Ring Oscillator
-======================================================================
-
-  Score: 1.00 / 1.00  |  Time: 1784.7s
-  DE converged: False  |  Iterations: 50  |  Diversity: 0.0835
-  Stop reason: max_iterations
-
-  Specs met: 5/5
-
-  Spec                            Target     Measured     Unit   Status  Score
-  -------------------------------------------------------------------------
-  freq_hz                          >50e6     1.09e+08       Hz     PASS  1.00
-  tuning_range_ratio                  >2        2.500        x     PASS  1.00
-  power_uw                          <500       34.614       uW     PASS  1.00
-  temp_variation_pct                 <10        0.110        %     PASS  1.00
-  jitter_pct                          <1        0.500        %     PASS  1.00
-
-  Best Parameters:
-    Ln                   = 2.1625e-01
-    Lp                   = 1.2451e+00
-    Ls                   = 1.3641e+00
-    Wn                   = 2.1047e+00
-    Wp                   = 6.3124e-01
-    Ws                   = 1.6662e+00
-
-======================================================================
-
-
-Saved: best_parameters.csv, measurements.json, plots/
-Score: 1.00 | Specs met: 5/5 | Converged: False
-mprove:   7 | div: 0.1099 | dt: 30.641s
-[DE] iter   73 | best: -7.324125e+00 | no_improve:   8 | div: 0.1087 | dt: 30.768s
-[DE] iter   74 | best: -7.324125e+00 | no_improve:   9 | div: 0.1074 | dt: 43.854s
-[DE] iter   75 | best: -7.333305e+00 | no_improve:   0 | div: 0.1075 | dt: 30.584s
-[DE] iter   76 | best: -7.333305e+00 | no_improve:   1 | div: 0.1084 | dt: 28.315s
-[DE] iter   77 | best: -7.333305e+00 | no_improve:   2 | div: 0.1020 | dt: 28.206s
-[DE] iter   78 | best: -7.339056e+00 | no_improve:   0 | div: 0.0969 | dt: 31.078s
-[DE] iter   79 | best: -7.339056e+00 | no_improve:   1 | div: 0.0958 | dt: 30.436s
-[DE] iter   80 | best: -7.339056e+00 | no_improve:   2 | div: 0.0956 | dt: 55.255s
-[DE] iter   81 | best: -7.339056e+00 | no_improve:   3 | div: 0.0822 | dt: 27.142s
-[DE] iter   82 | best: -7.339056e+00 | no_improve:   4 | div: 0.0796 | dt: 29.469s
-[DE] iter   83 | best: -7.339056e+00 | no_improve:   5 | div: 0.0806 | dt: 30.051s
-[DE] iter   84 | best: -7.343605e+00 | no_improve:   0 | div: 0.0776 | dt: 30.182s
-[DE] iter   85 | best: -7.343605e+00 | no_improve:   1 | div: 0.0779 | dt: 30.229s
-[DE] iter   86 | best: -7.350887e+00 | no_improve:   0 | div: 0.0740 | dt: 27.807s
-[DE] iter   87 | best: -7.350887e+00 | no_improve:   1 | div: 0.0698 | dt: 30.180s
-[DE] iter   88 | best: -7.353465e+00 | no_improve:   0 | div: 0.0696 | dt: 30.257s
-[DE] iter   89 | best: -7.353465e+00 | no_improve:   1 | div: 0.0684 | dt: 30.081s
-[DE] iter   90 | best: -7.353465e+00 | no_improve:   2 | div: 0.0684 | dt: 29.903s
-[DE] iter   91 | best: -7.353465e+00 | no_improve:   3 | div: 0.0678 | dt: 30.005s
-[DE] iter   92 | best: -7.353465e+00 | no_improve:   4 | div: 0.0666 | dt: 30.113s
-[DE] iter   93 | best: -7.353465e+00 | no_improve:   5 | div: 0.0647 | dt: 29.977s
-[DE] iter   94 | best: -7.353465e+00 | no_improve:   6 | div: 0.0650 | dt: 30.032s
-[DE] iter   95 | best: -7.353465e+00 | no_improve:   7 | div: 0.0655 | dt: 30.121s
-[DE] iter   96 | best: -7.353465e+00 | no_improve:   8 | div: 0.0654 | dt: 30.232s
-[DE] iter   97 | best: -7.353465e+00 | no_improve:   9 | div: 0.0650 | dt: 27.684s
-[DE] iter   98 | best: -7.353465e+00 | no_improve:  10 | div: 0.0654 | dt: 29.898s
-[DE] iter   99 | best: -7.353465e+00 | no_improve:  11 | div: 0.0649 | dt: 30.094s
+DE: 6 params, pop=30, patience=30, workers=4
+[DE] iter    1 | best: -6.830685e+00 | no_improve:   0 | div: 0.2878 | dt: 48.157s
+[DE] iter    2 | best: -7.222056e+00 | no_improve:   0 | div: 0.2810 | dt: 27.497s
+[DE] iter    3 | best: -7.222056e+00 | no_improve:   1 | div: 0.2608 | dt: 29.899s
+[DE] iter    4 | best: -7.222056e+00 | no_improve:   2 | div: 0.2321 | dt: 28.377s
+[DE] iter    5 | best: -7.222056e+00 | no_improve:   3 | div: 0.2286 | dt: 25.501s
+[DE] iter    6 | best: -7.222056e+00 | no_improve:   4 | div: 0.2249 | dt: 28.828s
+[DE] iter    7 | best: -7.231582e+00 | no_improve:   0 | div: 0.2275 | dt: 28.864s
+[DE] iter    8 | best: -7.231582e+00 | no_improve:   1 | div: 0.2227 | dt: 41.612s
+[DE] iter    9 | best: -7.256383e+00 | no_improve:   0 | div: 0.2242 | dt: 27.067s
+[DE] iter   10 | best: -7.256383e+00 | no_improve:   1 | div: 0.2174 | dt: 27.428s
+[DE] iter   11 | best: -7.256383e+00 | no_improve:   2 | div: 0.2156 | dt: 27.112s
+[DE] iter   12 | best: -7.256383e+00 | no_improve:   3 | div: 0.1954 | dt: 28.577s
+[DE] iter   13 | best: -7.256383e+00 | no_improve:   4 | div: 0.1953 | dt: 43.122s
+[DE] iter   14 | best: -7.256383e+00 | no_improve:   5 | div: 0.1909 | dt: 30.645s
+[DE] iter   15 | best: -7.256383e+00 | no_improve:   6 | div: 0.1884 | dt: 28.012s
+[DE] iter   16 | best: -7.256383e+00 | no_improve:   7 | div: 0.1720 | dt: 28.444s
+[DE] iter   17 | best: -7.256383e+00 | no_improve:   8 | div: 0.1604 | dt: 54.499s
+[DE] iter   18 | best: -7.256383e+00 | no_improve:   9 | div: 0.1568 | dt: 30.169s
+[DE] iter   19 | best: -7.256383e+00 | no_improve:  10 | div: 0.1564 | dt: 28.528s
+[DE] iter   20 | best: -7.256383e+00 | no_improve:  11 | div: 0.1582 | dt: 29.102s
+[DE] iter   21 | best: -7.256383e+00 | no_improve:  12 | div: 0.1589 | dt: 39.000s
+[DE] iter   22 | best: -7.315198e+00 | no_improve:   0 | div: 0.1539 | dt: 57.676s
+[DE] iter   23 | best: -7.315198e+00 | no_improve:   1 | div: 0.1523 | dt: 30.909s
+[DE] iter   24 | best: -7.315198e+00 | no_improve:   2 | div: 0.1520 | dt: 28.222s
+[DE] iter   25 | best: -7.333362e+00 | no_improve:   0 | div: 0.1413 | dt: 25.590s
+[DE] iter   26 | best: -7.333362e+00 | no_improve:   1 | div: 0.1328 | dt: 90.136s
+[DE] iter   27 | best: -7.333362e+00 | no_improve:   2 | div: 0.1306 | dt: 27.050s
+[DE] iter   28 | best: -7.333362e+00 | no_improve:   3 | div: 0.1259 | dt: 31.045s
+[DE] iter   29 | best: -7.333362e+00 | no_improve:   4 | div: 0.1199 | dt: 29.577s
+[DE] iter   30 | best: -7.333362e+00 | no_improve:   5 | div: 0.1200 | dt: 28.191s
+[DE] iter   31 | best: -7.333362e+00 | no_improve:   6 | div: 0.1214 | dt: 115.988s
+[DE] iter   32 | best: -7.333362e+00 | no_improve:   7 | div: 0.1178 | dt: 27.995s
+[DE] iter   33 | best: -7.333362e+00 | no_improve:   8 | div: 0.1054 | dt: 49.545s
+[DE] iter   34 | best: -7.333362e+00 | no_improve:   9 | div: 0.1008 | dt: 54.419s
+[DE] iter   35 | best: -7.333362e+00 | no_improve:  10 | div: 0.0938 | dt: 28.328s
+[DE] iter   36 | best: -7.333362e+00 | no_improve:  11 | div: 0.0990 | dt: 28.727s
+[DE] iter   37 | best: -7.333362e+00 | no_improve:  12 | div: 0.0957 | dt: 28.656s
+[DE] iter   38 | best: -7.333362e+00 | no_improve:  13 | div: 0.0964 | dt: 30.427s
+[DE] iter   39 | best: -7.333741e+00 | no_improve:   0 | div: 0.0942 | dt: 27.767s
+[DE] iter   40 | best: -7.333741e+00 | no_improve:   1 | div: 0.0907 | dt: 28.221s
+[DE] iter   41 | best: -7.333741e+00 | no_improve:   2 | div: 0.0862 | dt: 30.566s
+[DE] iter   42 | best: -7.333741e+00 | no_improve:   3 | div: 0.0879 | dt: 60.936s
+[DE] iter   43 | best: -7.336105e+00 | no_improve:   0 | div: 0.0872 | dt: 68.486s
+[DE] iter   44 | best: -7.336105e+00 | no_improve:   1 | div: 0.0851 | dt: 28.295s
+[DE] iter   45 | best: -7.336105e+00 | no_improve:   2 | div: 0.0851 | dt: 30.447s
+[DE] iter   46 | best: -7.352617e+00 | no_improve:   0 | div: 0.0841 | dt: 56.674s
+[DE] iter   47 | best: -7.352617e+00 | no_improve:   1 | div: 0.0834 | dt: 30.935s
+[DE] iter   48 | best: -7.352617e+00 | no_improve:   2 | div: 0.0793 | dt: 28.801s
+[DE] iter   49 | best: -7.352617e+00 | no_improve:   3 | div: 0.0769 | dt: 31.363s
+[DE] iter   50 | best: -7.352617e+00 | no_improve:   4 | div: 0.0748 | dt: 28.217s
+[DE] iter   51 | best: -7.354894e+00 | no_improve:   0 | div: 0.0747 | dt: 30.661s
+[DE] iter   52 | best: -7.354894e+00 | no_improve:   1 | div: 0.0726 | dt: 36.774s
+[DE] iter   53 | best: -7.354894e+00 | no_improve:   2 | div: 0.0710 | dt: 30.514s
+[DE] iter   54 | best: -7.364744e+00 | no_improve:   0 | div: 0.0739 | dt: 30.414s
+[DE] iter   55 | best: -7.364744e+00 | no_improve:   1 | div: 0.0732 | dt: 30.716s
+[DE] iter   56 | best: -7.364744e+00 | no_improve:   2 | div: 0.0753 | dt: 28.248s
+[DE] iter   57 | best: -7.364744e+00 | no_improve:   3 | div: 0.0747 | dt: 30.530s
+[DE] iter   58 | best: -7.366505e+00 | no_improve:   0 | div: 0.0730 | dt: 30.489s
+[DE] iter   59 | best: -7.366505e+00 | no_improve:   1 | div: 0.0687 | dt: 30.502s
+[DE] iter   60 | best: -7.366505e+00 | no_improve:   2 | div: 0.0679 | dt: 30.507s
+[DE] iter   61 | best: -7.366505e+00 | no_improve:   3 | div: 0.0655 | dt: 30.383s
+[DE] iter   62 | best: -7.366505e+00 | no_improve:   4 | div: 0.0664 | dt: 30.375s
+[DE] iter   63 | best: -7.366505e+00 | no_improve:   5 | div: 0.0664 | dt: 31.013s
+[DE] iter   64 | best: -7.366505e+00 | no_improve:   6 | div: 0.0665 | dt: 28.272s
+[DE] iter   65 | best: -7.366505e+00 | no_improve:   7 | div: 0.0615 | dt: 30.610s
+[DE] iter   66 | best: -7.366505e+00 | no_improve:   8 | div: 0.0582 | dt: 30.200s
+[DE] iter   67 | best: -7.366505e+00 | no_improve:   9 | div: 0.0577 | dt: 66.938s
+[DE] iter   68 | best: -7.366505e+00 | no_improve:  10 | div: 0.0597 | dt: 97.844s
+[DE] iter   69 | best: -7.366505e+00 | no_improve:  11 | div: 0.0599 | dt: 31.444s
+[DE] iter   70 | best: -7.369860e+00 | no_improve:   0 | div: 0.0594 | dt: 28.214s
+[DE] iter   71 | best: -7.369860e+00 | no_improve:   1 | div: 0.0592 | dt: 71.612s
+[DE] iter   72 | best: -7.369860e+00 | no_improve:   2 | div: 0.0588 | dt: 73.160s
+[DE] iter   73 | best: -7.369860e+00 | no_improve:   3 | div: 0.0573 | dt: 30.915s
+[DE] iter   74 | best: -7.369860e+00 | no_improve:   4 | div: 0.0548 | dt: 42.259s
+[DE] iter   75 | best: -7.369860e+00 | no_improve:   5 | div: 0.0476 | dt: 30.776s
+[DE] iter   76 | best: -7.369860e+00 | no_improve:   6 | div: 0.0432 | dt: 30.672s
+[DE] iter   77 | best: -7.374584e+00 | no_improve:   0 | div: 0.0435 | dt: 30.717s
+[DE] iter   78 | best: -7.374584e+00 | no_improve:   1 | div: 0.0420 | dt: 30.685s
+[DE] iter   79 | best: -7.374584e+00 | no_improve:   2 | div: 0.0408 | dt: 30.429s
+[DE] iter   80 | best: -7.374584e+00 | no_improve:   3 | div: 0.0398 | dt: 30.563s
+[DE] iter   81 | best: -7.374584e+00 | no_improve:   4 | div: 0.0393 | dt: 30.941s
+[DE] iter   82 | best: -7.374584e+00 | no_improve:   5 | div: 0.0377 | dt: 30.538s
+[DE] iter   83 | best: -7.374584e+00 | no_improve:   6 | div: 0.0378 | dt: 30.340s
+[DE] iter   84 | best: -7.374584e+00 | no_improve:   7 | div: 0.0323 | dt: 30.617s
+[DE] iter   85 | best: -7.374584e+00 | no_improve:   8 | div: 0.0311 | dt: 30.726s
+[DE] iter   86 | best: -7.375156e+00 | no_improve:   0 | div: 0.0309 | dt: 30.502s
+[DE] iter   87 | best: -7.375156e+00 | no_improve:   1 | div: 0.0237 | dt: 30.475s
+[DE] iter   88 | best: -7.375156e+00 | no_improve:   2 | div: 0.0230 | dt: 30.590s
+[DE] iter   89 | best: -7.375156e+00 | no_improve:   3 | div: 0.0223 | dt: 30.685s
+[DE] iter   90 | best: -7.375156e+00 | no_improve:   4 | div: 0.0208 | dt: 36.176s
+[DE] iter   91 | best: -7.375156e+00 | no_improve:   5 | div: 0.0205 | dt: 30.616s
+[DE] iter   92 | best: -7.375156e+00 | no_improve:   6 | div: 0.0201 | dt: 31.136s
+[DE] iter   93 | best: -7.375342e+00 | no_improve:   0 | div: 0.0191 | dt: 30.918s
+[DE] iter   94 | best: -7.375701e+00 | no_improve:   0 | div: 0.0190 | dt: 31.062s
+[DE] iter   95 | best: -7.377413e+00 | no_improve:   0 | div: 0.0190 | dt: 32.835s
+[DE] iter   96 | best: -7.377413e+00 | no_improve:   1 | div: 0.0188 | dt: 31.587s
+[DE] iter   97 | best: -7.377413e+00 | no_improve:   2 | div: 0.0184 | dt: 45.243s
+[DE] iter   98 | best: -7.377413e+00 | no_improve:   3 | div: 0.0184 | dt: 30.816s
+[DE] iter   99 | best: -7.377413e+00 | no_improve:   4 | div: 0.0185 | dt: 30.402s
+[DE] iter  100 | best: -7.377413e+00 | no_improve:   5 | div: 0.0189 | dt: 30.572s
+[DE] iter  101 | best: -7.377413e+00 | no_improve:   6 | div: 0.0189 | dt: 30.463s
+[DE] iter  102 | best: -7.377413e+00 | no_improve:   7 | div: 0.0177 | dt: 30.514s
+[DE] iter  103 | best: -7.377413e+00 | no_improve:   8 | div: 0.0176 | dt: 30.790s
+[DE] iter  104 | best: -7.377413e+00 | no_improve:   9 | div: 0.0173 | dt: 58.383s
+[DE] iter  105 | best: -7.377413e+00 | no_improve:  10 | div: 0.0173 | dt: 30.569s
+[DE] iter  106 | best: -7.377413e+00 | no_improve:  11 | div: 0.0120 | dt: 30.442s
+[DE] iter  107 | best: -7.377413e+00 | no_improve:  12 | div: 0.0121 | dt: 30.390s
+[DE] iter  108 | best: -7.377413e+00 | no_improve:  13 | div: 0.0121 | dt: 30.436s
+[DE] iter  109 | best: -7.379117e+00 | no_improve:   0 | div: 0.0122 | dt: 31.161s
+[DE] iter  110 | best: -7.379117e+00 | no_improve:   1 | div: 0.0125 | dt: 59.888s
+[DE] iter  111 | best: -7.379496e+00 | no_improve:   0 | div: 0.0124 | dt: 46.859s
+[DE] iter  112 | best: -7.379496e+00 | no_improve:   1 | div: 0.0121 | dt: 30.518s
+[DE] iter  113 | best: -7.379496e+00 | no_improve:   2 | div: 0.0115 | dt: 30.258s
+[DE] iter  114 | best: -7.380576e+00 | no_improve:   0 | div: 0.0109 | dt: 30.049s
+.0357 | dt: 57.992s
+[DE] iter  116 | best: -7.359007e+00 | no_improve:   0 | div: 0.0349 | dt: 30.035s
+[DE] iter  117 | best: -7.359998e+00 | no_improve:   0 | div: 0.0353 | dt: 30.565s
+[DE] iter  118 | best: -7.359998e+00 | no_improve:   1 | div: 0.0352 | dt: 31.344s
+[DE] iter  119 | best: -7.359998e+00 | no_improve:   2 | div: 0.0338 | dt: 43.355s
+[DE] iter  120 | best: -7.359998e+00 | no_improve:   3 | div: 0.0339 | dt: 58.327s
+[DE] iter  121 | best: -7.359998e+00 | no_improve:   4 | div: 0.0338 | dt: 30.332s
+[DE] iter  122 | best: -7.359998e+00 | no_improve:   5 | div: 0.0333 | dt: 30.628s
+[DE] iter  123 | best: -7.360756e+00 | no_improve:   0 | div: 0.0333 | dt: 30.597s
+[DE] iter  124 | best: -7.361549e+00 | no_improve:   0 | div: 0.0329 | dt: 89.458s
+[DE] iter  125 | best: -7.361549e+00 | no_improve:   1 | div: 0.0330 | dt: 30.646s
+[DE] iter  126 | best: -7.361549e+00 | no_improve:   2 | div: 0.0320 | dt: 31.243s
+[DE] iter  127 | best: -7.361796e+00 | no_improve:   0 | div: 0.0318 | dt: 30.211s
+[DE] iter  128 | best: -7.361796e+00 | no_improve:   1 | div: 0.0321 | dt: 117.748s
+[DE] iter  129 | best: -7.361796e+00 | no_improve:   2 | div: 0.0323 | dt: 30.264s
+[DE] iter  130 | best: -7.361796e+00 | no_improve:   3 | div: 0.0320 | dt: 50.643s
+[DE] iter  131 | best: -7.361796e+00 | no_improve:   4 | div: 0.0320 | dt: 56.411s
+[DE] iter  132 | best: -7.361796e+00 | no_improve:   5 | div: 0.0320 | dt: 30.354s
+[DE] iter  133 | best: -7.361796e+00 | no_improve:   6 | div: 0.0318 | dt: 30.808s
+[DE] iter  134 | best: -7.361796e+00 | no_improve:   7 | div: 0.0319 | dt: 30.922s
+[DE] iter  135 | best: -7.362215e+00 | no_improve:   0 | div: 0.0316 | dt: 30.443s
+[DE] iter  136 | best: -7.362215e+00 | no_improve:   1 | div: 0.0314 | dt: 30.183s
+[DE] iter  137 | best: -7.362736e+00 | no_improve:   0 | div: 0.0313 | dt: 30.361s
+[DE] iter  138 | best: -7.362736e+00 | no_improve:   1 | div: 0.0314 | dt: 62.307s
+[DE] iter  139 | best: -7.362736e+00 | no_improve:   2 | div: 0.0313 | dt: 69.121s
+[DE] iter  140 | best: -7.362869e+00 | no_improve:   0 | div: 0.0311 | dt: 31.372s
+[DE] iter  141 | best: -7.362869e+00 | no_improve:   1 | div: 0.0309 | dt: 30.563s
+[DE] iter  142 | best: -7.362869e+00 | no_improve:   2 | div: 0.0309 | dt: 54.432s
+[DE] iter  143 | best: -7.363234e+00 | no_improve:   0 | div: 0.0310 | dt: 35.469s
+[DE] iter  144 | best: -7.363234e+00 | no_improve:   1 | div: 0.0310 | dt: 30.764s
+[DE] iter  145 | best: -7.363234e+00 | no_improve:   2 | div: 0.0312 | dt: 31.299s
+[DE] iter  146 | best: -7.363234e+00 | no_improve:   3 | div: 0.0312 | dt: 30.482s
+[DE] iter  147 | best: -7.363285e+00 | no_improve:   0 | div: 0.0313 | dt: 30.421s
+[DE] iter  148 | best: -7.363325e+00 | no_improve:   0 | div: 0.0312 | dt: 31.102s
+[DE] iter  149 | best: -7.363325e+00 | no_improve:   1 | div: 0.0313 | dt: 38.199s
+[DE] iter  150 | best: -7.363325e+00 | no_improve:   2 | div: 0.0312 | dt: 30.271s
+[DE] iter  151 | best: -7.363325e+00 | no_improve:   3 | div: 0.0312 | dt: 30.376s
+[DE] iter  152 | best: -7.363325e+00 | no_improve:   4 | div: 0.0311 | dt: 30.668s
+[DE] iter  153 | best: -7.363466e+00 | no_improve:   0 | div: 0.0311 | dt: 30.613s
+[DE] iter  154 | best: -7.363466e+00 | no_improve:   1 | div: 0.0311 | dt: 30.458s
+[DE] iter  155 | best: -7.363466e+00 | no_improve:   2 | div: 0.0313 | dt: 30.544s
+[DE] iter  156 | best: -7.363466e+00 | no_improve:   3 | div: 0.0313 | dt: 30.214s
+[DE] iter  157 | best: -7.363466e+00 | no_improve:   4 | div: 0.0313 | dt: 30.861s
+[DE] iter  158 | best: -7.363466e+00 | no_improve:   5 | div: 0.0312 | dt: 30.148s
+[DE] iter  159 | best: -7.363466e+00 | no_improve:   6 | div: 0.0312 | dt: 30.560s
+[DE] iter  160 | best: -7.363466e+00 | no_improve:   7 | div: 0.0312 | dt: 31.173s
+[DE] iter  161 | best: -7.363466e+00 | no_improve:   8 | div: 0.0312 | dt: 30.637s
+[DE] iter  162 | best: -7.363466e+00 | no_improve:   9 | div: 0.0312 | dt: 30.474s
+[DE] iter  163 | best: -7.363466e+00 | no_improve:  10 | div: 0.0312 | dt: 49.672s
+[DE] iter  164 | best: -7.363466e+00 | no_improve:  11 | div: 0.0313 | dt: 83.937s
+[DE] iter  165 | best: -7.363847e+00 | no_improve:   0 | div: 0.0313 | dt: 63.732s
+[DE] iter  166 | best: -7.363847e+00 | no_improve:   1 | div: 0.0312 | dt: 30.441s
+[DE] iter  167 | best: -7.363847e+00 | no_improve:   2 | div: 0.0312 | dt: 72.896s
+[DE] iter  168 | best: -7.363847e+00 | no_improve:   3 | div: 0.0311 | dt: 73.336s
+[DE] iter  169 | best: -7.363847e+00 | no_improve:   4 | div: 0.0311 | dt: 30.660s
+[DE] iter  170 | best: -7.363847e+00 | no_improve:   5 | div: 0.0311 | dt: 43.158s
+[DE] iter  171 | best: -7.363847e+00 | no_improve:   6 | div: 0.0311 | dt: 30.795s
+[DE] iter  172 | best: -7.363847e+00 | no_improve:   7 | div: 0.0318 | dt: 30.755s
+[DE] iter  173 | best: -7.363847e+00 | no_improve:   8 | div: 0.0319 | dt: 30.674s
+[DE] iter  174 | best: -7.363847e+00 | no_improve:   9 | div: 0.0319 | dt: 30.570s
+[DE] iter  175 | best: -7.363847e+00 | no_improve:  10 | div: 0.0319 | dt: 30.372s
+[DE] iter  176 | best: -7.363847e+00 | no_improve:  11 | div: 0.0319 | dt: 30.429s
+[DE] iter  177 | best: -7.363847e+00 | no_improve:  12 | div: 0.0318 | dt: 30.521s
+[DE] iter  178 | best: -7.363847e+00 | no_improve:  13 | div: 0.0317 | dt: 30.642s
+[DE] iter  179 | best: -7.363847e+00 | no_improve:  14 | div: 0.0318 | dt: 30.510s
+[DE] iter  180 | best: -7.363847e+00 | no_improve:  15 | div: 0.0320 | dt: 30.500s
+[DE] iter  181 | best: -7.363847e+00 | no_improve:  16 | div: 0.0320 | dt: 30.903s
+[DE] iter  182 | best: -7.363847e+00 | no_improve:  17 | div: 0.0319 | dt: 30.412s
+[DE] iter  183 | best: -7.363847e+00 | no_improve:  18 | div: 0.0319 | dt: 30.248s
+[DE] iter  184 | best: -7.363847e+00 | no_improve:  19 | div: 0.0319 | dt: 30.550s
+[DE] iter  185 | best: -7.363847e+00 | no_improve:  20 | div: 0.0315 | dt: 30.525s
+[DE] iter  186 | best: -7.363847e+00 | no_improve:  21 | div: 0.0315 | dt: 36.533s
+[DE] iter  187 | best: -7.363847e+00 | no_improve:  22 | div: 0.0315 | dt: 30.368s
+[DE] iter  188 | best: -7.363847e+00 | no_improve:  23 | div: 0.0314 | dt: 31.128s
+[DE] iter  189 | best: -7.363847e+00 | no_improve:  24 | div: 0.0314 | dt: 30.931s
+[DE] iter  190 | best: -7.363847e+00 | no_improve:  25 | div: 0.0314 | dt: 30.724s
+[DE] iter  191 | best: -7.363847e+00 | no_improve:  26 | div: 0.0314 | dt: 31.751s
+[DE] iter  192 | best: -7.363847e+00 | no_improve:  27 | div: 0.0315 | dt: 31.655s
+[DE] iter  193 | best: -7.363847e+00 | no_improve:  28 | div: 0.0315 | dt: 46.070s
+[DE] iter  194 | best: -7.363847e+00 | no_improve:  29 | div: 0.0315 | dt: 30.772s
+[DE] iter  195 | best: -7.363847e+00 | no_improve:  30 | div: 0.0315 | dt: 30.376s
+[DE] iter  196 | best: -7.363847e+00 | no_improve:  31 | div: 0.0315 | dt: 30.477s
+[DE] iter  197 | best: -7.363847e+00 | no_improve:  32 | div: 0.0315 | dt: 30.319s
+[DE] iter  198 | best: -7.363847e+00 | no_improve:  33 | div: 0.0315 | dt: 30.465s
+[DE] iter  199 | best: -7.363847e+00 | no_improve:  34 | div: 0.0315 | dt: 30.738s
+[DE] iter  200 | best: -7.363847e+00 | no_improve:  35 | div: 0.0315 | dt: 58.735s
+[DE] iter  201 | best: -7.363847e+00 | no_improve:  36 | div: 0.0313 | dt: 30.405s
+[DE] iter  202 | best: -7.363847e+00 | no_improve:  37 | div: 0.0313 | dt: 30.418s
+[DE] iter  203 | best: -7.363847e+00 | no_improve:  38 | div: 0.0313 | dt: 30.330s
+[DE] iter  204 | best: -7.363847e+00 | no_improve:  39 | div: 0.0314 | dt: 30.131s
+[DE] iter  205 | best: -7.363864e+00 | no_improve:   0 | div: 0.0313 | dt: 30.886s
+[DE] iter  206 | best: -7.363864e+00 | no_improve:   1 | div: 0.0309 | dt: 57.416s
+[DE] iter  207 | best: -7.363864e+00 | no_improve:   2 | div: 0.0309 | dt: 47.406s
