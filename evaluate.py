@@ -103,8 +103,6 @@ def format_netlist(template: str, param_values: Dict[str, float]) -> str:
             return str(param_values[key])
         return match.group(0)
     netlist = re.sub(r'\{(\w+)\}', _replace, template)
-    # Use minimal model lib for faster simulation
-    netlist = netlist.replace("sky130.lib.spice", "sky130_minimal.lib.spice")
     return netlist
 
 

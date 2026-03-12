@@ -1,5 +1,5 @@
 * SKY130 5-Stage Current-Starved Ring Oscillator
-* NMOS starving with LVT starving transistor for wider tuning range
+* NMOS starving with standard nfet, wider parameter ranges
 * Cross-coupled capacitive loading for noise reduction
 
 .lib "sky130_models/sky130.lib.spice" tt
@@ -14,31 +14,31 @@ Vctrl vctrl 0 0.9
 * === Stage 1 ===
 XMp1 n1 n5 vdd vdd sky130_fd_pr__pfet_01v8 W={Wp}u L={Lp}u nf=1
 XMn1 n1 n5 sn1 vss sky130_fd_pr__nfet_01v8 W={Wn}u L={Ln}u nf=1
-XMsn1 sn1 vctrl vss vss sky130_fd_pr__nfet_01v8_lvt W={Ws}u L={Ls}u nf=1
+XMsn1 sn1 vctrl vss vss sky130_fd_pr__nfet_01v8 W={Ws}u L={Ls}u nf=1
 Cc1 n1 n3 {Cc}p
 
 * === Stage 2 ===
 XMp2 n2 n1 vdd vdd sky130_fd_pr__pfet_01v8 W={Wp}u L={Lp}u nf=1
 XMn2 n2 n1 sn2 vss sky130_fd_pr__nfet_01v8 W={Wn}u L={Ln}u nf=1
-XMsn2 sn2 vctrl vss vss sky130_fd_pr__nfet_01v8_lvt W={Ws}u L={Ls}u nf=1
+XMsn2 sn2 vctrl vss vss sky130_fd_pr__nfet_01v8 W={Ws}u L={Ls}u nf=1
 Cc2 n2 n4 {Cc}p
 
 * === Stage 3 ===
 XMp3 n3 n2 vdd vdd sky130_fd_pr__pfet_01v8 W={Wp}u L={Lp}u nf=1
 XMn3 n3 n2 sn3 vss sky130_fd_pr__nfet_01v8 W={Wn}u L={Ln}u nf=1
-XMsn3 sn3 vctrl vss vss sky130_fd_pr__nfet_01v8_lvt W={Ws}u L={Ls}u nf=1
+XMsn3 sn3 vctrl vss vss sky130_fd_pr__nfet_01v8 W={Ws}u L={Ls}u nf=1
 Cc3 n3 n5 {Cc}p
 
 * === Stage 4 ===
 XMp4 n4 n3 vdd vdd sky130_fd_pr__pfet_01v8 W={Wp}u L={Lp}u nf=1
 XMn4 n4 n3 sn4 vss sky130_fd_pr__nfet_01v8 W={Wn}u L={Ln}u nf=1
-XMsn4 sn4 vctrl vss vss sky130_fd_pr__nfet_01v8_lvt W={Ws}u L={Ls}u nf=1
+XMsn4 sn4 vctrl vss vss sky130_fd_pr__nfet_01v8 W={Ws}u L={Ls}u nf=1
 Cc4 n4 n1 {Cc}p
 
 * === Stage 5 ===
 XMp5 n5 n4 vdd vdd sky130_fd_pr__pfet_01v8 W={Wp}u L={Lp}u nf=1
 XMn5 n5 n4 sn5 vss sky130_fd_pr__nfet_01v8 W={Wn}u L={Ln}u nf=1
-XMsn5 sn5 vctrl vss vss sky130_fd_pr__nfet_01v8_lvt W={Ws}u L={Ls}u nf=1
+XMsn5 sn5 vctrl vss vss sky130_fd_pr__nfet_01v8 W={Ws}u L={Ls}u nf=1
 Cc5 n5 n2 {Cc}p
 
 * Output buffer (fixed)
