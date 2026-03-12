@@ -1,0 +1,116 @@
+Loading design...
+Design: SKY130 Voltage-Controlled Ring Oscillator
+Parameters: 12
+Specs: 5
+
+DE: 12 params, pop=30, patience=10, workers=4
+[DE] iter    1 | best: -6.862552e+00 | no_improve:   0 | div: 0.2888 | dt: 21.909s
+[DE] iter    2 | best: -6.988663e+00 | no_improve:   0 | div: 0.2675 | dt: 65.188s
+[DE] iter    3 | best: -7.155549e+00 | no_improve:   0 | div: 0.2454 | dt: 28.677s
+[DE] iter    4 | best: -7.155549e+00 | no_improve:   1 | div: 0.2315 | dt: 26.398s
+[DE] iter    5 | best: -7.155549e+00 | no_improve:   2 | div: 0.2286 | dt: 27.598s
+[DE] iter    6 | best: -7.155549e+00 | no_improve:   3 | div: 0.2248 | dt: 28.697s
+[DE] iter    7 | best: -7.155549e+00 | no_improve:   4 | div: 0.2132 | dt: 53.363s
+[DE] iter    8 | best: -7.155549e+00 | no_improve:   5 | div: 0.2185 | dt: 89.978s
+[DE] iter    9 | best: -7.155549e+00 | no_improve:   6 | div: 0.2095 | dt: 26.413s
+[DE] iter   10 | best: -7.155549e+00 | no_improve:   7 | div: 0.2018 | dt: 28.833s
+[DE] iter   11 | best: -7.155549e+00 | no_improve:   8 | div: 0.1992 | dt: 27.815s
+[DE] iter   12 | best: -7.155549e+00 | no_improve:   9 | div: 0.1981 | dt: 29.127s
+[DE] iter   13 | best: -7.155549e+00 | no_improve:  10 | div: 0.1916 | dt: 64.341s
+[DE] iter   14 | best: -7.155549e+00 | no_improve:  11 | div: 0.1759 | dt: 29.186s
+[DE] iter   15 | best: -7.244133e+00 | no_improve:   0 | div: 0.1714 | dt: 29.008s
+[DE] iter   16 | best: -7.244133e+00 | no_improve:   1 | div: 0.1737 | dt: 30.307s
+[DE] iter   17 | best: -7.244133e+00 | no_improve:   2 | div: 0.1606 | dt: 29.116s
+[DE] iter   18 | best: -7.244133e+00 | no_improve:   3 | div: 0.1604 | dt: 27.924s
+[DE] iter   19 | best: -7.261451e+00 | no_improve:   0 | div: 0.1585 | dt: 71.067s
+[DE] iter   20 | best: -7.261451e+00 | no_improve:   1 | div: 0.1599 | dt: 52.225s
+[DE] iter   21 | best: -7.261451e+00 | no_improve:   2 | div: 0.1660 | dt: 28.790s
+[DE] iter   22 | best: -7.261451e+00 | no_improve:   3 | div: 0.1660 | dt: 28.929s
+[DE] iter   23 | best: -7.261451e+00 | no_improve:   4 | div: 0.1646 | dt: 95.662s
+[DE] iter   24 | best: -7.261451e+00 | no_improve:   5 | div: 0.1646 | dt: 65.673s
+[DE] iter   25 | best: -7.261451e+00 | no_improve:   6 | div: 0.1632 | dt: 103.682s
+[DE] iter   26 | best: -7.261451e+00 | no_improve:   7 | div: 0.1620 | dt: 31.419s
+[DE] iter   27 | best: -7.261451e+00 | no_improve:   8 | div: 0.1582 | dt: 28.569s
+[DE] iter   28 | best: -7.261451e+00 | no_improve:   9 | div: 0.1620 | dt: 32.063s
+[DE] iter   29 | best: -7.261451e+00 | no_improve:  10 | div: 0.1621 | dt: 28.344s
+[DE] iter   30 | best: -7.261451e+00 | no_improve:  11 | div: 0.1588 | dt: 52.280s
+[DE] iter   31 | best: -7.261451e+00 | no_improve:  12 | div: 0.1550 | dt: 28.981s
+[DE] iter   32 | best: -7.318362e+00 | no_improve:   0 | div: 0.1540 | dt: 29.455s
+[DE] iter   33 | best: -7.318362e+00 | no_improve:   1 | div: 0.1517 | dt: 31.266s
+[DE] iter   34 | best: -7.318362e+00 | no_improve:   2 | div: 0.1477 | dt: 30.941s
+[DE] iter   35 | best: -7.318362e+00 | no_improve:   3 | div: 0.1486 | dt: 29.070s
+[DE] iter   36 | best: -7.318362e+00 | no_improve:   4 | div: 0.1469 | dt: 28.691s
+[DE] iter   37 | best: -7.318362e+00 | no_improve:   5 | div: 0.1451 | dt: 27.669s
+[DE] iter   38 | best: -7.318362e+00 | no_improve:   6 | div: 0.1471 | dt: 30.067s
+[DE] iter   39 | best: -7.318362e+00 | no_improve:   7 | div: 0.1471 | dt: 100.459s
+[DE] iter   40 | best: -7.318362e+00 | no_improve:   8 | div: 0.1452 | dt: 31.893s
+[DE] iter   41 | best: -7.318362e+00 | no_improve:   9 | div: 0.1458 | dt: 30.748s
+[DE] iter   42 | best: -7.318362e+00 | no_improve:  10 | div: 0.1448 | dt: 73.323s
+[DE] iter   43 | best: -7.318362e+00 | no_improve:  11 | div: 0.1447 | dt: 28.960s
+[DE] iter   44 | best: -7.318362e+00 | no_improve:  12 | div: 0.1444 | dt: 31.173s
+[DE] iter   45 | best: -7.318362e+00 | no_improve:  13 | div: 0.1428 | dt: 31.259s
+[DE] iter   46 | best: -7.318362e+00 | no_improve:  14 | div: 0.1431 | dt: 28.893s
+[DE] iter   47 | best: -7.318362e+00 | no_improve:  15 | div: 0.1405 | dt: 38.580s
+[DE] iter   48 | best: -7.318362e+00 | no_improve:  16 | div: 0.1351 | dt: 30.496s
+[DE] iter   49 | best: -7.318362e+00 | no_improve:  17 | div: 0.1345 | dt: 30.538s
+[DE] iter   50 | best: -7.318362e+00 | no_improve:  18 | div: 0.1345 | dt: 30.721s
+
+============================================================
+  Stop reason:  max_iterations
+  Converged:    False
+  Iterations:   50
+  Best metric:  -7.318362e+00
+  Diversity:    0.1345
+  Best parameters:
+    Lbn: 2.398159e-01
+    Lbp: 4.249444e-01
+    Ln: 4.302492e-01
+    Lp: 1.082048e+00
+    Ls: 1.213066e+00
+    Lsp: 2.497212e+00
+    Wbn: 1.186561e+00
+    Wbp: 1.696589e+00
+    Wn: 1.541725e+00
+    Wp: 1.177856e+00
+    Ws: 3.281079e+00
+    Wsp: 4.026669e+00
+============================================================
+
+
+======================================================================
+  EVALUATION REPORT — SKY130 Voltage-Controlled Ring Oscillator
+======================================================================
+
+  Score: 0.80 / 1.00  |  Time: 2005.9s
+  DE converged: False  |  Iterations: 50  |  Diversity: 0.1345
+  Stop reason: max_iterations
+
+  Specs met: 4/5
+
+  Spec                            Target     Measured     Unit   Status  Score
+  -------------------------------------------------------------------------
+  freq_hz                          >50e6     1.09e+08       Hz     PASS  1.00
+  tuning_range_ratio                  >2          N/A        x     FAIL  0.00
+  power_uw                          <500       41.380       uW     PASS  1.00
+  temp_variation_pct                 <10        0.081        %     PASS  1.00
+  jitter_pct                          <1        0.500        %     PASS  1.00
+
+  Best Parameters:
+    Lbn                  = 2.3982e-01
+    Lbp                  = 4.2494e-01
+    Ln                   = 4.3025e-01
+    Lp                   = 1.0820e+00
+    Ls                   = 1.2131e+00
+    Lsp                  = 2.4972e+00
+    Wbn                  = 1.1866e+00
+    Wbp                  = 1.6966e+00
+    Wn                   = 1.5417e+00
+    Wp                   = 1.1779e+00
+    Ws                   = 3.2811e+00
+    Wsp                  = 4.0267e+00
+
+======================================================================
+
+
+Saved: best_parameters.csv, measurements.json, plots/
+Score: 0.80 | Specs met: 4/5 | Converged: False
