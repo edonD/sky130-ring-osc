@@ -1,0 +1,21 @@
+Loading design...
+Design: SKY130 Voltage-Controlled Ring Oscillator
+Parameters: 6
+Specs: 5
+
+DE: 6 params, pop=30, patience=10, workers=4
+[DE] iter    1 | best: -7.037470e+00 | no_improve:   0 | div: 0.2897 | dt: 20.739s
+[DE] iter    2 | best: -7.084538e+00 | no_improve:   0 | div: 0.2756 | dt: 22.438s
+[DE] iter    3 | best: -7.084538e+00 | no_improve:   1 | div: 0.2552 | dt: 38.989s
+[DE] iter    4 | best: -7.084538e+00 | no_improve:   2 | div: 0.2474 | dt: 22.564s
+[DE] iter    5 | best: -7.084538e+00 | no_improve:   3 | div: 0.2349 | dt: 48.829s
+[DE] iter    6 | best: -7.084538e+00 | no_improve:   4 | div: 0.2327 | dt: 25.153s
+[DE] iter    7 | best: -7.106236e+00 | no_improve:   0 | div: 0.2186 | dt: 79.104s
+[DE] iter    8 | best: -7.106236e+00 | no_improve:   1 | div: 0.1968 | dt: 49.925s
+[DE] iter    9 | best: -7.106236e+00 | no_improve:   2 | div: 0.1901 | dt: 27.038s
+[DE] iter   10 | best: -7.118949e+00 | no_improve:   0 | div: 0.1774 | dt: 69.241s
+[DE] iter   11 | best: -7.118949e+00 | no_improve:   1 | div: 0.1763 | dt: 27.988s
+[DE] iter   12 | best: -7.124798e+00 | no_improve:   0 | div: 0.1649 | dt: 107.370s
+[DE] iter   13 | best: -7.215831e+00 | no_improve:   0 | div: 0.1605 | dt: 25.523s
+[DE] iter   14 | best: -7.215831e+00 | no_improve:   1 | div: 0.1560 | dt: 24.795s
+[DE] iter   15 | best: -7.215831e+00 | no_improve:   2 | div: 0.1559 | dt: 27.011s

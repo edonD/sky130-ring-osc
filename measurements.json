@@ -1,38 +1,42 @@
 {
   "measurements": {
-    "RESULT_FREQ_HZ": 665422000.0,
-    "RESULT_POWER_UW": 189.404,
-    "RESULT_FREQ_LOW": 145827000.0,
-    "RESULT_FREQ_HIGH": 754104000.0,
-    "RESULT_TUNING_RANGE_RATIO": 5.17122343598922,
-    "RESULT_TEMP_VARIATION_PCT": 1.6641546467685255,
+    "Doing analysis at TEMP": 27.0,
+    "tcross_a": 9.02308e-08,
+    "tcross_b": 1.36486e-07,
+    "RESULT_FREQ_HZ": 108096000.0,
+    "avg_idd": -2.26074e-05,
+    "RESULT_POWER_UW": 40.6934,
+    "RESULT_FREQ_LOW": 45936000.0,
+    "RESULT_FREQ_HIGH": 123521000.0,
+    "RESULT_TUNING_RANGE_RATIO": 2.688980320445838,
+    "RESULT_TEMP_VARIATION_PCT": 0.29383319883945125,
     "RESULT_JITTER_PCT": 0.5
   },
   "score": 1.0,
   "details": {
     "freq_hz": {
-      "measured": 665422000.0,
+      "measured": 108096000.0,
       "target": ">50e6",
       "met": true,
       "score": 1.0,
       "unit": "Hz"
     },
     "tuning_range_ratio": {
-      "measured": 5.17122343598922,
+      "measured": 2.688980320445838,
       "target": ">2",
       "met": true,
       "score": 1.0,
       "unit": "x"
     },
     "power_uw": {
-      "measured": 189.404,
+      "measured": 40.6934,
       "target": "<500",
       "met": true,
       "score": 1.0,
       "unit": "uW"
     },
     "temp_variation_pct": {
-      "measured": 1.6641546467685255,
+      "measured": 0.29383319883945125,
       "target": "<10",
       "met": true,
       "score": 1.0,
@@ -47,18 +51,24 @@
     }
   },
   "parameters": {
-    "Ln": 0.7160077332311959,
-    "Lp": 0.21908937319202793,
-    "Ls": 1.6693827534769634,
-    "Wn": 1.6970617507059702,
-    "Wp": 1.9435254150365375,
-    "Ws": 13.777809656517311
+    "Lbn": 1.9655964376119615,
+    "Lbp": 3.536137432889039,
+    "Ln": 0.8079176311658803,
+    "Lp": 1.4488210406710091,
+    "Lsn": 0.9724302835683029,
+    "Lsp": 0.8250496515927073,
+    "Wbn": 4.037310409074408,
+    "Wbp": 0.7259597024749913,
+    "Wn": 1.4014096269389105,
+    "Wp": 0.5422081816292381,
+    "Wsn": 2.8389532864918823,
+    "Wsp": 1.6321042300680209
   },
   "de_result": {
-    "converged": true,
-    "iterations": 93,
-    "diversity": 0.08085521249319193,
-    "stop_reason": "stagnated (div=0.0809, no_improve=90)",
-    "best_metric": -9.0
+    "converged": false,
+    "iterations": 50,
+    "diversity": 0.12609064246705157,
+    "stop_reason": "max_iterations",
+    "best_metric": -7.27845976023211
   }
 }
