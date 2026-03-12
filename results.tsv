@@ -8,4 +8,4 @@ step	commit	score	topology	specs_met	notes
 8	156070a	1.00	5-stage NMOS-starved ring osc	5/5	freq=100MHz tuning=4.73x pwr=29uW temp_var=0.001% jitter=0.5%
 9	pending	1.00	5-stage NMOS-starved DE-optimized Ln=1.39	5/5	freq=102MHz tuning=7.88x pwr=36uW temp_var=0.01% jitter=0.5% validated
 10	643bb84	1.00	5-stage NMOS-starved LVT DE-optimized	5/5	freq=109MHz tuning=2.50x pwr=35uW temp_var=0.11% jitter=0.001% fully validated
-11	pending	1.00	5-stage LVT NMOS-starved cross-coupled caps	5/5	freq=110MHz tuning=3.67x pwr=58uW temp_var=0.04% jitter=0.0005% validated
+11	413d7ad	1.00	5-stage LVT NMOS-starved cross-coupled caps	5/5	freq=110MHz tuning=3.67x pwr=58uW temp_var=0.04% jitter=0.0005% validated
