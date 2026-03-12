@@ -7,9 +7,4 @@ Ws,0.5,50,log
 Ls,0.15,5,log
 Wsp,0.5,50,log
 Lsp,0.15,5,log
-Wbn,0.5,20,log
-Lbn,0.15,3,log
-Wbp,0.5,20,log
-Lbp,0.15,3,log
-Rb,1,100,log
 Cc,0.01,10,log
