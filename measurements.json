@@ -1,19 +1,19 @@
 {
   "measurements": {
     "Doing analysis at TEMP": 27.0,
-    "tcross_a": 9.51546e-08,
-    "tcross_b": 1.43112e-07,
-    "RESULT_FREQ_HZ": 104259000.0,
-    "avg_idd": -2.02598e-05,
-    "RESULT_POWER_UW": 36.4677,
-    "RESULT_FREQ_HIGH": 175784000.0,
-    "RESULT_TEMP_VARIATION_PCT": 0.025893071205945816,
+    "tcross_a": 9.39965e-08,
+    "tcross_b": 1.43216e-07,
+    "RESULT_FREQ_HZ": 101586000.0,
+    "avg_idd": -1.59965e-05,
+    "RESULT_POWER_UW": 28.7937,
+    "RESULT_FREQ_HIGH": 156214000.0,
+    "RESULT_TEMP_VARIATION_PCT": 0.0,
     "RESULT_JITTER_PCT": 0.5
   },
   "score": 0.8,
   "details": {
     "freq_hz": {
-      "measured": 104259000.0,
+      "measured": 101586000.0,
       "target": ">50e6",
       "met": true,
       "score": 1.0,
@@ -27,14 +27,14 @@
       "unit": "x"
     },
     "power_uw": {
-      "measured": 36.4677,
+      "measured": 28.7937,
       "target": "<500",
       "met": true,
       "score": 1.0,
       "unit": "uW"
     },
     "temp_variation_pct": {
-      "measured": 0.025893071205945816,
+      "measured": 0.0,
       "target": "<10",
       "met": true,
       "score": 1.0,
@@ -49,18 +49,18 @@
     }
   },
   "parameters": {
-    "Ln": 0.4872045746824333,
-    "Lp": 0.7085563883699115,
-    "Ls": 0.42232327693260274,
-    "Wn": 2.406365932723821,
-    "Wp": 0.5111332424383495,
-    "Ws": 0.6447989067776626
+    "Ln": 0.2457858627499308,
+    "Lp": 1.1843698345310587,
+    "Ls": 0.5442175395553079,
+    "Wn": 1.2283153552714576,
+    "Wp": 0.5562997533624899,
+    "Ws": 0.5141337777167165
   },
   "de_result": {
-    "converged": false,
-    "iterations": 50,
-    "diversity": 0.06414692201688936,
-    "stop_reason": "max_iterations",
-    "best_metric": -7.348950585758811
+    "converged": true,
+    "iterations": 191,
+    "diversity": 0.001857543268298346,
+    "stop_reason": "converged (div=0.0019, no_improve=30)",
+    "best_metric": -7.3848252
   }
 }

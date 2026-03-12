@@ -3,6 +3,5 @@ Wp,0.5,20,log
 Lp,0.15,1.5,log
 Wn,0.5,15,log
 Ln,0.15,2,log
-Ws,1,50,log
-Ls,0.5,5,log
-Cc,0.01,10,log
+Ws,0.5,50,log
+Ls,0.15,5,log
